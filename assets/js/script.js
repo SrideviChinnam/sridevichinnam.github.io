@@ -97,8 +97,6 @@ function handleDeviceChange(e) {
             nextItem.classList.add("active");
             if (args.uncutMove) {
               addLoppAnimClasses();
-              // $(".big-logo").hide();
-              // $("body").addClass("scroll-started");
             }
           } else {
             activeItem.classList.add("ss-moving");
