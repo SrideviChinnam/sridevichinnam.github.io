@@ -1,7 +1,7 @@
 const smallDevice = window.matchMedia("(min-width: 1200px)");
 
 smallDevice.addListener(handleDeviceChange);
-
+var no=1;
 function handleDeviceChange(e) {
   if (e.matches) {
     function scrollSlide(args) {
@@ -182,8 +182,57 @@ function handleDeviceChange(e) {
         uncutMove: true,
       });
   }
-//   else outputElement.textContent = "Mobile";
+  // $(window).on('activate.bs.scrollspy', function () {
+  //   $("header .navbar .nav-link").each(function(){
+  //     $(this).click(function(){
+  //       var elid = $(this).attr('href');
+  //       if ( $(elid).children().length > 0 ) {
+          
+  //       }
+  //     }); 
+  //   });   
+  // });
 }
 
 // Run it initially
 handleDeviceChange(smallDevice);
+
+$(document).ready(function(){
+    
+  $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if (scroll > 50) {
+           $("#navbar").addClass("fixed-top", 3000); 	       
+      }
+
+      else{
+          $("#navbar").removeClass("fixed-top", 3000);	
+      }
+  })
+  $(function () {
+    $(document).click(function (event) {
+        var clickover = $(event.target);
+        var _opened = $(".navbar-collapse").hasClass("navbar-collapse collapse show");
+        if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+            $("button.navbar-toggler").click();
+        }
+    });
+});
+var prevScrollPos = window.pageYOffset;
+console.log(prevScrollPos);
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  
+  if (prevScrollPos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+    console.log("Prev: " + prevScrollPos);
+    console.log("Curr: " + currentScrollPos);
+  } else {
+    document.getElementById("navbar").style.top = "-250px";
+    console.log("Prev: " + prevScrollPos);
+    console.log("Curr: " + currentScrollPos);
+  }
+  prevScrollPos = currentScrollPos;
+}
+});
+

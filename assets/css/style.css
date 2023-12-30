@@ -122,19 +122,20 @@ button.navbar-toggler::before {
   top: 53%;
   background: var(--black)
 }
-.navbar-toggler:active span {
+.navbar-toggler[aria-expanded="true"] span {
   display: none;
 }
-.navbar-toggler:active::before, .navbar-toggler:active::after{
+.navbar-toggler[aria-expanded="true"]::before, .navbar-toggler[aria-expanded="true"]::after{
   width: 50%;
 }
-.navbar-toggler:active::after{
+.navbar-toggler[aria-expanded="true"]::after{
   transform: rotate(45deg);
 }
-.navbar-toggler:active::before {
+.navbar-toggler[aria-expanded="true"]::before {
   transform: rotate(-45deg);
   top: 50%;
 }
+
 /* ================== Fixed Horizontal scroll main container Section ================== */
 .banner-cnt{
   background: url('../images/brush-strock.svg') no-repeat;
@@ -420,6 +421,7 @@ div#portfolio {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .left-fixed-menu .h-100 {
   height: fit-content !important;
@@ -475,13 +477,39 @@ div#portfolio {
   }
 }
 @media(min-width:1200px){
-  header nav {
+  header nav.navbar-expand-lg {
     position: absolute !important;
     right: 0;
     z-index: 9999;
-    top: 50px;
+    top: 0px;
     background: transparent !important;
+    width: 100%;
+    justify-content: center;
   }
+  
+  header nav p{   
+    margin: 1rem 0rem 3rem 4rem;
+    padding: 5px 22px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--alice);
+    color: var(--main-color);
+    width: fit-content;
+    position: relative;
+    box-shadow: 0 0 10px 0 #ddd;
+    border-radius: 25px;
+  }
+  header nav p:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -1;
+    border-radius: 25px;
+    left: 0;
+    top: 0;
+}
   .big-logo{
     background-color: var(--main-color);
     height: 100%;
@@ -595,11 +623,23 @@ div#portfolio {
 }
 @media(max-width:992px){
   header nav .nav-link.active::before, header nav .nav-link:hover::before, .footer-icon .nav-link:hover::before {
-    width: 10%;
+    width: 60%;
     left: 0;
+  }
+  header nav .nav-link, header nav .nav-link.active{
+    width: fit-content;
   }
   header nav .nav-link::before{
     left: 0;
+  }
+  .navbar-collapse {
+    position: absolute;
+    width: 100%;
+    top: 98%;
+    background: #f2f2fc;
+    left: 0;
+    padding: 0.5rem 2.5rem;
+    border-top: 1px solid #ddd;
   }
 }
 @media(max-width:600px){
@@ -608,6 +648,10 @@ div#portfolio {
   }
   .project-cnt a,.project-cnt.app-design a, .project-cnt.tem-design a{
     width: 45%;
+    margin-bottom: 1rem;
+  }
+  .project-cnt{
+    justify-content: space-between;
   }
 }
 
