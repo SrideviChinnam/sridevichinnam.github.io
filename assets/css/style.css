@@ -407,6 +407,9 @@ div#portfolio {
   margin-top: 0.25rem!important;
   display: block;
 }
+#home img.w-75{
+  transform: scaleX(-1);
+}
 /* ================== Responsive Section ================== */
 @media(max-width:1200px){
   header .navbar{
