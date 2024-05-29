@@ -117,7 +117,7 @@ p{
 .navbar-brand {
   font-size: 24px;
   color: var(--primary-color);
-  font-weight: 300;
+  font-weight: 700;
 }
 .language-selector .form-select, .navbar-nav .nav-link,  
 .navbar-nav .show>.nav-link,
