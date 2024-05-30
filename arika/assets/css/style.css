@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6{
  color: var(--black);
 }
 .heading-secondary{
-    font-size: 28px;
+    font-size: 25px;
     margin: 1rem 0;
     color: var(--black-shade);
     font-weight: 700;
@@ -172,7 +172,10 @@ width:70%
   vertical-align: middle;
   margin-left: 12px;
 }
-
+.navbar .btn-primary{
+  border-radius: 25px;
+  margin-left: 8px;
+}
 /* ================== Banner Section ================== */
 .carousel-caption {
   background: rgba(255, 255, 255, .90);
@@ -209,9 +212,11 @@ width:70%
   align-items: center;
   justify-content: flex-start;
 }
-.banner span , .form-control{
+.banner label span{
   margin-top: 3px;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 12px;
+  color: #67767C;
 }
 .select2-container .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -243,6 +248,7 @@ width:70%
   border-radius: 0px !important;
   background: #f9f9f9;
   height: 45px !important;
+  margin-top: 15px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered{
   color: var(--black-shade) !important;
@@ -315,9 +321,9 @@ width:70%
   background: var(--primary-color);
   color: var(--white);
 }
-.banner .form-control{
+/* .banner .form-control{
   margin-top: 6px;
-}
+} */
 /* ================== Section ================== */
 .next-place .card{
   border:none !important
