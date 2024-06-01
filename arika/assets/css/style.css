@@ -31,7 +31,7 @@ ul{
   list-style: none;
 }
 .bg-gray{
-  background-color: #fbfbfb;
+  background-color: #f4f2fe;
 }
 /* ================== Scroll Bar ================== */
 ::-webkit-scrollbar-track
@@ -111,7 +111,7 @@ p{
   color: var(--black-shade);
 }
 .custom-sec{
-  padding: 5rem 0 2rem;
+  padding: 6rem 0 2rem;
 }
 /* ================== Navbar Section ================== */
 .language-selector{
@@ -119,7 +119,7 @@ p{
   align-items: center;
 }
 .navbar-brand {
-  font-size: 24px;
+  font-size: 24px !important;
   color: var(--primary-color);
   font-weight: 700;
 }
@@ -221,6 +221,9 @@ width:70%
   font-weight: 500;
   font-size: 12px;
   color: #67767C;
+}
+.select2-container{
+  width: 100%;
 }
 .select2-container .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -518,6 +521,141 @@ background-color:#5143d9 ;
 .arika-serv-cnt{
   padding: 0 1.5rem;
 }
+.digital-exp li{
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.are-you-business-cnt{
+  background-color: var(--primary-color);
+  position: relative;
+}
+.digital-exp li p {
+  margin-bottom: 0;
+  color: var(--black-shade);
+}
+.digital-exp svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+.app-store, .footer .copyright.justify-content-between{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(179, 179, 179, .2);
+  margin-top: 2rem !important;
+}
+.app-store img{
+  width: 250px;
+  height: 80px;
+  margin-right: 15px;
+  object-fit: contain;
+}
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 270px;
+  height: 450px;
+  background: white;
+  overflow: hidden;
+}
+.future-liv-cnt{
+  text-align: center;
+}
+.footer {
+  background: var(--primary-color);
+}
+.footer li{
+  margin-bottom: .5rem;
+}
+.footer a{
+  color: var(--white);
+  font-size: 16px;
+}
+.footer a:hover{
+  opacity: .7;
+}
+.badges{
+  display: flex;
+  align-items: center;
+}
+.badges img{
+  width: 150px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.footer h4 {
+  font-size: 14px;
+  color: var(--white);
+  opacity: .8;
+  margin: 1rem 0 .7rem;
+}
+.footer .copyright.justify-content-between ul{
+  display: flex;
+  align-items: center;
+}
+.footer .copyright.justify-content-between div{
+  color: var(--white);
+  opacity: .8;
+  font-size: 16px;
+}
+.footer .copyright.justify-content-between ul li {
+  margin-left: 15px;
+  margin-bottom: 0;
+}
+.footer .social-media a, .footer .copyright.justify-content-between div.social-media {
+  opacity: 1 !important;
+}
+.footer svg {
+  width: 25px;
+  height: 25px;
+  opacity: 1 !important;
+}
+.footer .social-media a:hover{
+  opacity: .7 !important;
+}
 /* ================== Responsive Section ================== */
 @media(min-width:1800px){
  
@@ -542,15 +680,55 @@ background-color:#5143d9 ;
 .arika-serv-right .arika-serv-cnt{
   margin-left: auto;
 }
+.are-you-business-cnt::before {
+  position: absolute;
+  content: "";
+  width: 65%;
+  height: 100%;
+  background: var(--primary-color);
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+}
+.phone-video {
+  position: absolute;
+  right: 0;
+  top: -15%;
+}
 }
 @media(max-width:991px){
   .custom-sec{
-    padding: 2.5rem 0 0;
+    padding: 3.5rem 0 0;
   }
   .video-cnt {
-    left: 0%;
-    right: 0;
+    left: 0% !important;
+    right: 0 !important;
     margin: auto;
+    text-align: center;
+  }
+  .are-you-business-cnt{
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+  .are-you-business-cnt img{
+    display: none;
+  }
+  .app-store{
+    justify-content: center;
+  }
+  .carousel-caption h1, .carousel-caption h2{
+    font-size: 25px;
+  }
+  .carousel-caption p{
+    font-size: 16px;
+  }
+}
+@media(max-width:1200px){
+  .carousel-caption{
+    display: none;
+  }
+  .carousel-caption.d-block{
+    position: initial !important;
+    width: 100%;
+    padding: 2rem 0 !important;
   }
 }
 
