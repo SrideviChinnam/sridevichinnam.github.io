@@ -474,7 +474,7 @@ background-color:#5143d9 ;
   filter: grayscale(100%);
   object-fit: contain;
 }
-.arika-way-cnt{
+.project-way-cnt{
   background: url("../images/img-bg.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -484,7 +484,7 @@ background-color:#5143d9 ;
   position: relative;
   overflow: hidden;
 }
-.arika-way-cnt::before{
+.project-way-cnt::before{
   position: absolute;
   content: "";
   width:100%;
@@ -493,12 +493,12 @@ background-color:#5143d9 ;
   top: 0;
   background-color: rgba(0, 0, 0, .37);
 }
-.arika-way .heading-primary, .arika-way p {
+.project-way .heading-primary, .project-way p {
   color: var(--white);
   margin-bottom: 1rem;
   position: relative;
 }
-.arika-serv .container{
+.project-serv .container{
   background-color: #f6f8f9;
   border-radius: 10px;
   overflow:hidden;
@@ -514,11 +514,11 @@ background-color:#5143d9 ;
   object-fit: fill;
   object-fit: cover;
 }
-.arika-serv-right .video-cnt{
+.project-serv-right .video-cnt{
   left: initial;
   right: -10%;
 }
-.arika-serv-cnt{
+.project-serv-cnt{
   padding: 0 1.5rem;
 }
 .digital-exp li{
@@ -620,12 +620,7 @@ background-color:#5143d9 ;
   display: flex;
   align-items: center;
 }
-.badges img{
-  width: 150px;
-  height: 60px;
-  object-fit: contain;
-  margin-right: 15px;
-}
+
 .footer h4 {
   font-size: 14px;
   color: var(--white);
@@ -656,6 +651,13 @@ background-color:#5143d9 ;
 .footer .social-media a:hover{
   opacity: .7 !important;
 }
+.footer .badges img{
+  height: auto;
+  width: 40px;
+  object-fit: contain;
+  margin-right: 40px;
+  margin: 20px 0;
+}
 /* ================== Responsive Section ================== */
 @media(min-width:1800px){
  
@@ -673,11 +675,11 @@ background-color:#5143d9 ;
 .carousel-caption {
   padding: 3.5rem;
 }
-.arika-serv-cnt {
+.project-serv-cnt {
   padding: 0 2rem;
   width: 90%;
 }
-.arika-serv-right .arika-serv-cnt{
+.project-serv-right .project-serv-cnt{
   margin-left: auto;
 }
 .are-you-business-cnt::before {
@@ -689,9 +691,9 @@ background-color:#5143d9 ;
   clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
 }
 .phone-video {
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  top: -15%;
+  top: -15%; */
 }
 }
 @media(max-width:991px){
@@ -719,6 +721,9 @@ background-color:#5143d9 ;
   }
   .carousel-caption p{
     font-size: 16px;
+  }
+  .project-way-cnt {
+    padding: 10rem 2rem;
   }
 }
 @media(max-width:1200px){
