@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.owl-carousel').owlCarousel({
+  $('.location-image-slider').owlCarousel({
     loop: true,
     margin: 10,
     dots:true,
@@ -18,7 +18,7 @@ $(document).ready(function(){
         items: 1
       },
       1000: {
-        items: 2
+        items: 1
       }
     }
   });
@@ -60,4 +60,5 @@ $(document).ready(function(){
   //         $(".navbar").removeClass("fixed-top", 3000);	
   //     }
   // })
+ 
 });
