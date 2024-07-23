@@ -267,7 +267,7 @@ width:70%
   border: none !important;
 }
 .select2-container--default .select2-selection--single,
-.select2-search--dropdown, .form-control, .careers .form-select {
+.select2-search--dropdown, .form-control, .careers .form-select, .booking-form .form-select {
   border: none !important;
   border-radius: 0px !important;
   background: #f9f9f9;
@@ -1064,9 +1064,11 @@ background-color:#5143d9 ;
   width: 100%;
   object-fit: cover;
 }
-.our-value svg {
+.our-value svg, .our-value iconify-icon {
   width: 70% !important;
   fill: var(--primary-color);
+  color: var(--primary-color);
+  font-size: 5rem;
 }
 .our-value-cnt{
   background-color: #f5f6f7;
@@ -1692,6 +1694,89 @@ span[data-hover]{
 .cor-crd h2, .cor-crd p{
   color: #f8f8f8 !important;
 }
+.small-text{
+  font-size: 16px;
+}
+.small-text a {
+  color: #3a0ca3 !important;
+  font-weight: 600;
+}
+.form-check {
+  padding: 1rem;
+  border: 1px solid #d8d8d8;
+  margin-bottom: 11px;
+  padding-left: 2.5rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.form-check-input:checked {
+  background-color: #3a0ca3;
+  border-color: #3a0ca3;
+}
+.form-check-input{
+  width:1.5rem;
+  height: 1.5rem;
+}
+.form-check-input~.form-check-label {
+  padding-left: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.form-check-input~.form-check-label iconify-icon {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.form-check-input:checked~.form-check-label iconify-icon,
+.form-check-input:checked~.form-check-label{
+  color: var(--primary-color);
+}
+.info__title, .price .price__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black-shade);
+}
+.booking-form .d-flex {
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.booking-form .d-flex .info__small-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--black-shade);
+}
+.booking-form .info__guests .guests.info__data {
+  font-size: 14px;
+  color: var(--gray);
+}
+.booking-form .d-flex .info__dates .dates, .price span {
+  display: flex;
+  font-size: 12px;
+  opacity: .7;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+}
+.price .price__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 .5rem !important;
+}
+.price .price__item .d-flex{
+  margin: 0;
+}
+.item__price {
+  font-size: 14px;
+  font-weight: 700;
+}
+.total__price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
 /* ================== Responsive Section ================== */
 @media(min-width:1800px){
  
@@ -1836,6 +1921,28 @@ span[data-hover]{
 }
 .carousel-indicators {
   display: none !important;
+}
+.who-we-are .custom-card, .contact{
+  transform: translateY(-2%);
+}
+.explain-bar {
+  flex-direction: column;
+  text-align: center;
+}
+.explain-contents + .explain-contents,
+.explain-bar .explain-contents {
+  border-left: none;
+  padding-left: 0;
+  border-bottom: 1px solid #d8d8d8;
+  text-align: center;
+  padding-bottom: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.explain-bar .explain-contents{
+  padding-top: 15px;
 }
 }
 @media(min-width:1200px){

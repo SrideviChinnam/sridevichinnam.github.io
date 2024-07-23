@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- ================== Animation CSS ================== -->
     <link rel="stylesheet" href="assets/css/animation.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
   </head>
   <body>
     <a class="color-pallat" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -75,8 +76,178 @@
    </header>
    <!-- ================== Banner Section ================== -->
 
-   <section class="banner">
-    
+   <section class="custom-sec booking-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 pe-lg-5">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="heading-primary">Personal Details</h2>
+              <p class="small-text">Fetch your details <a type="button" data-bs-toggle="modal" data-bs-target="#login-modal-div">Login</a></p>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="fname" placeholder="First Name">
+                <label for="fname">First Name</label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                <label for="lname">Last Name</label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <select class="form-select" id="floatingSelectGrid">
+                  <option selected>Country Code</option>
+                  <option value="1">option</option>
+                  <option value="2">option</option>
+                  <option value="3">option</option>
+                </select>
+                <label for="floatingSelectGrid">Country Code<span class="required">*</span></label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <input type="tell" class="form-control" id="mobile" placeholder="Mobile">
+                <label for="mobile">Mobile</label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <div class="form-floating">
+                <input type="password" class="form-control" id="cpassword" placeholder="Change Password">
+                <label for="cpassword">Change Password</label>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-4 mb-4 pb-2" style="border-color: #d4d4d4;">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <button class="btn btn-outline-secondary mb-3 w-100" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+            </div>
+            <div class="col-lg-6">
+              <button class="btn btn-outline-secondary w-100" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Include me for exclusive promotional offers and the latest news.
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <h2 class="heading-primary my-4">Choose payment method</h2>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  <iconify-icon icon="solar:card-linear"></iconify-icon> Card
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  <iconify-icon icon="basil:bank-outline"></iconify-icon> Bank
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  <iconify-icon icon="clarity:bitcoin-line"></iconify-icon> Crypto
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <form class="bg-white shadow rounded-3 p-4 book-now">
+            <div class="row g-4 align-items-center">
+              <div class="col-12">
+                <h3> Villa | Beach Pool</h3>
+                <p>Frond B - Palm Jumeirah - Dubai - United Arab Emirates</p>
+              </div>
+              <div class="col-12">
+                <div class="info">
+                  <div class="info__title">Your trip</div>
+                  <div class="d-flex">
+                    <div class="info__guests">
+                      <div class="info__small-title">Guests</div>
+                      <div class="guests info__data">1 Guest</div>
+                    </div>
+                    <span style="color: rgba(75, 81, 84, 0.2);">|</span>
+                    <div class="info__dates">
+                      <div class="info__small-title">10 nights</div>
+                      <div class="dates gap-2">
+                        <div class="dates__checkin info__data">21 Aug 2024</div>
+                        <div class="dates__arrow">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path></svg>
+                        </div>
+                        <div class="dates__checkout info__data">31 Aug 2024</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="price my-0 py-2">
+                  <div class="price__title mb-4">Price details</div>
+                  <div class="price__item">
+                    <div class="item__label d-flex align-items-center">
+                      <span>10 nights x</span> 
+                      <span>AED 5,395.61</span>
+                    </div>
+                    <div class="item__price">AED 53,956.15</div>
+                  </div>
+                  <div class="price__item">
+                    <div class="item__label d-flex align-items-center"> 
+                      <span>Checkout cleaning fee</span>
+                    </div>
+                    <div class="item__price">AED 918.00</div>
+                  </div>
+                  <div class="price__item">
+                    <div class="item__label d-flex flex-row gap-2 align-items-center"> 
+                      <span>Taxes &amp; fees</span>
+                    </div>
+                    <div class="item__price">AED 3,163.71</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="total mb-0 py-3 border-top">
+                  <div class="total__label">Total amount</div>
+                  <div class="total__price">AED 58,037.86</div>
+                </div>
+              </div>
+              <div class="col-12 mt-0">
+                <div class="total d-flex flex-row align-items-start my-0 position-relative py-1">
+                  <div class="d-flex flex-column my-0">
+                    <div class="total__label total__deposit">
+                      <div class="d-inline-flex flex-row align-items-center position-relative">
+                        <div class="w-100 h-auto">
+                          <div class="flex flex-row align-items-center" role="button">
+                            <span>Refundable security deposit</span>
+                            <svg stroke="currentColor" fill="#576f76" stroke-width="0" viewBox="0 0 24 24" class="icon mx-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M11 11h2v6h-2zm0-4h2v2h-2z"></path></svg>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="m-0 fw-normal"><small>Due On 20 Aug 2024</small></p>
+                    </div>
+                  </div>
+                  <div class="total__price total__deposit text-nowrap">AED 500.00</div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>    
    </section>  
   <!-- ================== Footer Section ================== -->
   <footer class="footer custom-sec">
