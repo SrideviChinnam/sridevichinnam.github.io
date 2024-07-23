@@ -1834,6 +1834,9 @@ span[data-hover]{
 .banner-text {
   padding: 5rem 2rem;
 }
+.carousel-indicators {
+  display: none !important;
+}
 }
 @media(min-width:1200px){
   
