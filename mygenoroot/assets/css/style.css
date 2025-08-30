@@ -1,0 +1,199 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+/* ================== Root ================== */
+:root {
+  --blue-primary: #3880ED;
+  --blue-secondary:#81C8F4;
+  --black:#000;
+  --dark-gray:#64748B;
+  --white:#fff;
+  --jura:"Jura", sans-serif;
+}
+body, html {
+  overflow-x: hidden;
+}
+body{
+  font-family: var(--jura);
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, h4{
+  color: var(--black);
+  font-weight: 700;
+}
+p{
+  color: var(--dark-gray);
+  font-size: 20px;
+  font-weight: 300;
+}
+.main-heading{
+  color: var(--black);
+  font-size: 30px;
+}
+.custom-underline{
+  position: relative;
+}
+.custom-underline::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: var(--dark-cyne);
+  bottom: 0;
+}
+/* ================== Scroll Bar ================== */
+::-webkit-scrollbar-track
+{
+    border-left: 1px solid #e0e0e0;
+    margin: 0px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background-color: #d2d3d5;
+}
+.btn-primary{
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-secondary));
+  padding: 6px 20px;
+  color: var(--white);
+  text-align: center;
+  width: fit-content;
+  position: relative;
+  border: none !important;
+  outline: none !important;
+}
+.btn-primary::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid  var(--blue-primary);
+  opacity: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  background: none;
+  color: var(--blue-primary);
+
+}
+.btn-primary:hover::before, .btn-primary:focus::before, .btn-primary:active::before, .btn-primary.active::before {
+  opacity: 1;
+}
+.badge {
+  top: -2px;
+  background: var(--white);
+  position: absolute !important;
+  font-size: 10px;
+  right: -2px;
+  color: var(--blue-primary) !important;
+}
+/* ================== Navbar Section ================== */
+nav{
+  padding: .2rem 1rem !important;
+}
+.navbar-brand{
+  padding: 0 !important;
+}
+.navbar-brand img{
+  height: 40px;
+  margin: 0px 0;
+}
+.nav-item{
+  padding-left: 15px !important;
+  padding-right: 15PX !important;
+}
+.nav-link{
+  position: relative;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.nav-link::before{
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background:  linear-gradient(90deg, var(--blue-primary), var(--blue-secondary));
+  border-radius: 5px;
+  content: "";
+  transition: all .5s;
+  left: 0;
+  right:0;
+  margin: auto;
+  bottom: 6px;
+}
+.nav-link:hover::before{
+  width:100%;
+}
+/* ================== Banner Section ================== */
+.banner-cnt .carousel-item{
+  background: url(../images/tree.jpg) no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.banner-cnt .carousel-item.slide1{
+  background: url(../images/memorial.jpg) no-repeat;
+}
+.banner-cnt .carousel-item.slide2{
+  background: url(../images/dna.png) no-repeat;
+}
+.banner-content{
+  padding: 8rem 0;
+}
+.banner-cnt .carousel-item::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  left: 0;
+  right:0;
+  margin: auto;
+  top: 0;
+}
+.banner-cnt h2, .banner-cnt p{
+  position: relative;
+  color: var(--white);
+}
+.banner-cnt h2{
+  font-size: 35px;
+}
+.section{
+  padding: 5rem 0;
+}
+.section:nth-child(odd){
+  background-color: #F9FAFC;
+}
+.blue-title{
+  color:var(--blue-primary)
+}
+/* ================== Responsive Section ================== */
+@media(min-width:991px){
+  .banner-content{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media(max-width:400px){
+  .banner-cnt h2{
+    font-size: 30px !important;
+  }
+  .main-heading{
+    font-size: 25px;
+  }
+  h4{
+    font-size: 18px;
+  }
+}
