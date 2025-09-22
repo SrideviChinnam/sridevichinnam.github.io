@@ -223,26 +223,26 @@ nav{
 .banner-cnt .carousel-item{
   background: url(../images/My-Echo.JPG) no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
 
 .banner-cnt .carousel-item.slide1{
   background: url(../images/memorial.jpg) no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
 .banner-cnt .carousel-item.slide2{
   background: url(../images/DNA.JPG) no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
 .banner-cnt .carousel-item.slide3{
   background: url(../images/Family-Tree.JPG) no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
 .banner-content{
