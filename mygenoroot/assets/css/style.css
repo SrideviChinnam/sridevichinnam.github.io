@@ -224,26 +224,22 @@ nav{
   background: url(../images/My-Echo.JPG) no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .banner-cnt .carousel-item.slide1{
   background: url(../images/memorial.jpg) no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 .banner-cnt .carousel-item.slide2{
   background: url(../images/DNA.JPG) no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 .banner-cnt .carousel-item.slide3{
   background: url(../images/Family-Tree.JPG) no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
 }
 .banner-content{
   padding: 8rem 0;
@@ -531,23 +527,22 @@ footer{
   padding: 0rem 0 1rem;
 }
 .address{
-  background: linear-gradient(90deg, var(--blue-primary), var(--blue-secondary));
+  /* background: linear-gradient(90deg, var(--blue-primary), var(--blue-secondary)); */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transform: translateY(-2rem);
   border-radius: 10px;
-  padding: 10px 12px
+  padding: 10px 0
 }
 .address p{
   margin-bottom: 0;
-  color: var(--white);
+  color: var(--dark-gray);
   font-size: 12px;
   font-weight: 800;
 }
 .address a{
-  color: var(--white);
+  color: var(--dark-gray);
 }
 .circle-icon {
   width: 100px;
@@ -999,6 +994,43 @@ a.page-link {
   margin: auto;
   bottom: 15px;
 } */
+.feature-sub > div{
+  position: relative;
+  padding-right: 15px;
+}
+.feature-sub > div::after {
+  content: "";
+  height: 14px;
+  width: 1px;
+  background: var(--dark-gray);
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2px;
+}
+
+.feature-item{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid #f0f2f5
+}
+.feature-item:last-child{border-bottom:0}
+.feature-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e9f1ff;color:#3880ED;
+  min-width:46px
+}
+.feature-title{margin:0;font-size:20px;color:#1f2937;font-weight:700}
+.feature-sub{margin:2px 0 0;font-size:14px;color:#64748B}
+.echo-hero .badge{position:static}
 
 @media(min-width:992px){
   .subscription-section .col-lg-4:nth-child(2) .subscription{
@@ -1023,4 +1055,36 @@ a.page-link {
     display: flex;
     align-items: center;
   }
+}
+
+/* ================== MyEcho Feature Icons ================== */
+.feature-icon{
+  color: #475569; /* dark gray */
+  transition: all .1s;
+  background: #e7f0fd; /* light blue */
+}
+.feature-item:hover .feature-icon, .feature-icon:hover{
+  background: linear-gradient(90deg, var(--blue-primary), var(--blue-secondary));
+  color: var(--white);
+}
+.feature-item:hover {
+  background: #f7fbff;
+} 
+/* Feature sub links: gray by default, blue on item hover */
+.feature-sub a{
+  color: var(--dark-gray);
+  text-decoration: none;
+  transition: color .1s;
+}
+.feature-sub a:hover, .feature-item:hover .feature-title{
+  color: var(--blue-primary);
+}
+.echo-hero .test-cnt p{
+  color: var(--dark-gray) !important;
+}
+.side-options .btn {
+  margin-left: 6px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
