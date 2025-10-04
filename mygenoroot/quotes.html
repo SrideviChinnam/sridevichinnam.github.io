@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Letters - My Geno Root</title>
+    <title>All Quotes - My Geno Root</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="assets/images/logo.svg">
@@ -9,10 +9,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- ================== Iconyfy ================== -->
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <style>
-      .preview-card{white-space:pre-wrap}
+      .quote-item .title{font-weight:600;color:#1f2937}
+      .quote-item .meta{font-size:12px;color:#64748B}
+      .quote-item .quote-text{font-style:italic;color:#374151;line-height:1.6}
+      .quote-item .author-text{color:#6b7280;margin-top:8px}
+      .search-input{max-width:420px}
+      .quote-card:hover{background:#f8f9fa}
+      .quote-preview{display: flex; flex-direction: column; gap:20px; background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:20px}
     </style>
   </head>
   <body>
@@ -42,7 +47,7 @@
                 </ul>
                 <form class="d-flex">
                   <button class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 -V 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
                     Cart
                     <span class="badge">3</span>
                   </button>
@@ -65,47 +70,41 @@
                 <a href="thoughts.html" class="btn btn-sm"><iconify-icon icon="mynaui:user-waves" width="20" height="20"></iconify-icon> Thoughts</a>
               </div>
             </div>
-          </div>
-         <div class="col-lg-12">
-           <div class="card p-3" id="formCard">
-             <div class="d-flex justify-content-between align-items-center">
-               <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>Create a Letter</h3>
-               <a href="letters-preview.html" class="btn btn-outline-primary btn-sm">My Entries</a>
+          <div class="col-lg-12">
+           <div class="card p-3">
+             <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+               <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>My Quotes</h3>
+               <div class="d-flex align-items-center gap-2">
+                 <input type="text" id="searchInput" class="form-control search-input" placeholder="Search quotes">
+                 <a href="quote.html" class="btn btn-primary">New Quote</a>
+               </div>
              </div>
-             <form id="letterForm" class="mt-3">
-               <div class="row g-3">
-                 <div class="col-md-6">
-                   <label class="form-label">From<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="from" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">To<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="to" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Subject<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="subject" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Date</label>
-                   <input type="date" class="form-control" name="date">
-                 </div>
-                 <div class="col-12">
-                   <label class="form-label">Body<span class="text-danger">*</span></label>
-                   <textarea class="form-control" name="body" rows="7" required placeholder="Write your letter..."></textarea>
-                 </div>
-               </div>
-               <div class="mt-3 d-flex gap-2">
-                 <button type="submit" class="btn btn-primary">Save</button>
-                 <button type="reset" class="btn btn-outline-secondary">Clear</button>
-               </div>
-             </form>
+             <div id="quotesContainer" class="mt-3"></div>
            </div>
-
          </div>
        </div>
      </div>
    </section>
+
+   <!-- Quote Preview Modal -->
+   <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+     <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="quoteModalLabel">Quote Preview</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <div id="quoteContent" class="quote-preview"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-outline-primary" id="editQuoteBtn">Edit</button>
+           <button type="button" class="btn btn-outline-danger" id="deleteQuoteBtn">Delete</button>
+         </div>
+       </div>
+     </div>
+   </div>
 
    <footer class="section-bg-light">
     <div class="container">
@@ -169,71 +168,113 @@
    </footer>
 
    <script>
-     const form = document.getElementById('letterForm');
-
-     function getLetters(){
-       try { return JSON.parse(localStorage.getItem('mgr_letters')) || []; } catch(e){ return []; }
+     function getQuotes(){
+       try { return JSON.parse(localStorage.getItem('mgr_quotes')) || []; } catch(e){ return []; }
      }
 
-     function setLetters(letters){
-       localStorage.setItem('mgr_letters', JSON.stringify(letters));
+     function setQuotes(quotes){
+       localStorage.setItem('mgr_quotes', JSON.stringify(quotes));
      }
 
-     function getParam(name){
-       const params = new URLSearchParams(window.location.search);
-       return params.get(name);
+     function formatDate(iso){
+       try { return new Date(iso).toLocaleDateString(); } catch(e){ return iso; }
      }
 
-     function collectFormData(){
-       const fd = new FormData(form);
-       const from = (fd.get('from')||'').trim();
-       const to = (fd.get('to')||'').trim();
-       const subject = (fd.get('subject')||'').trim();
-       const date = fd.get('date') || new Date().toISOString().slice(0,10);
-       const body = (fd.get('body')||'').trim();
-       return { from, to, subject, date, body };
+     function renderQuotePreview(quote){
+       const safe = (s) => String(s||'').replace(/</g,'&lt;');
+       return `
+         <div class="d-flex gap-3 mb-3">
+           <svg class="quote-icon" width="20" height="20" viewBox="0 0 20 20" style="color: var(--blue-primary); flex-shrink: 0; margin-top: 4px;">
+             <path fill="currentColor" d="M5.315 3.401c-1.61 0-2.916 1.343-2.916 3c0 1.656 1.306 3 2.916 3c2.915 0 .972 5.799-2.916 5.799v1.4c6.939.001 9.658-13.199 2.916-13.199m8.4 0c-1.609 0-2.915 1.343-2.915 3c0 1.656 1.306 3 2.915 3c2.916 0 .973 5.799-2.915 5.799v1.4c6.938.001 9.657-13.199 2.915-13.199"/>
+           </svg>
+           <div>
+             <blockquote class="mb-3" style="font-style: italic; font-size: 18px; line-height: 1.6;">${safe(quote.text)}</blockquote>
+             <div><strong>Author:</strong> ${safe(quote.author || 'Unknown')}</div>
+             <div><strong>Source:</strong> ${safe(quote.source || 'N/A')}</div>
+             <div><strong>Date Added:</strong> ${safe(formatDate(quote.createdAt))}</div>
+           </div>
+         </div>
+       `;
      }
 
-     function loadLetterIfEditing(){
-       const id = getParam('id');
-       if(!id) return;
-       const letters = getLetters();
-       const letter = letters.find(l=>String(l.id)===String(id));
-       if(!letter) return;
-       form.querySelector('input[name="from"]').value = letter.from;
-       form.querySelector('input[name="to"]').value = letter.to;
-       form.querySelector('input[name="subject"]').value = letter.subject;
-       form.querySelector('input[name="date"]').value = letter.date.slice(0,10);
-       form.querySelector('textarea[name="body"]').value = letter.body;
-     }
-
-     function saveLetter(){
-       const data = collectFormData();
-       if(!data.from || !data.to || !data.subject || !data.body){
-         alert('Please fill in all required fields.');
-         return false;
+     function render(quotes){
+       const container = document.getElementById('quotesContainer');
+       const q = (document.getElementById('searchInput').value||'').toLowerCase();
+       const filtered = quotes.filter(qt=>
+         !q || (qt.text||'').toLowerCase().includes(q) || (qt.author||'').toLowerCase().includes(q) || (qt.source||'').toLowerCase().includes(q)
+       );
+       if(filtered.length === 0){
+         container.innerHTML = '<div class="text-muted">No quotes found.</div>';
+         return;
        }
-       const idParam = getParam('id');
-       const letters = getLetters();
-       const now = new Date();
-       if(idParam){
-         const idx = letters.findIndex(l=>String(l.id)===String(idParam));
-         if(idx !== -1){
-           letters[idx] = { ...letters[idx], ...data, updatedAt: now.toISOString() };
+       container.innerHTML = filtered.map(quote=>{
+         return `
+           <div class="border rounded p-3 mb-2 quote-card">
+             <div class="d-flex justify-content-between align-items-start">
+               <div style="flex: 1;">
+                 <div class="fw-bold mb-2">${String(quote.title||'Untitled Quote').replace(/</g,'&lt;')}</div>
+                 <div class="quote-text">"${String(quote.text||'').replace(/</g,'&lt;')}"</div>
+                 <div class="author-text">— ${String(quote.author||'Unknown').replace(/</g,'&lt;')}</div>
+                 <div class="meta">${formatDate(quote.createdAt)} • Source: ${String(quote.source||'N/A').replace(/</g,'&lt;')}</div>
+               </div>
+               <div class="d-flex gap-2">
+                 <button class="btn btn-sm btn-outline-primary" data-quote-id="${quote.id}" data-action="preview">Preview</button>
+                 <a href="quote.html?id=${quote.id}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                 <button class="btn btn-sm btn-outline-danger" data-quote-id="${quote.id}" data-action="delete">Delete</button>
+               </div>
+             </div>
+           </div>
+         `;
+       }).join('');
+     }
+
+     function setupEventListeners(quotes){
+       document.querySelectorAll('[data-quote-id]').forEach(btn=>{
+         const action = btn.getAttribute('data-action');
+         const id = btn.getAttribute('data-quote-id');
+         
+         if(action === 'delete'){
+           btn.addEventListener('click', function(){
+             if(confirm('Delete this quote?')){
+                   const idx = quotes.findIndex(q=>String(q.id)===String(id));
+               if(idx !== -1){ 
+                 quotes.splice(idx,1); 
+                 setQuotes(quotes); 
+                 render(quotes); 
+               }
+             }
+           });
+         } else if(action === 'preview'){
+           btn.addEventListener('click', function(){
+             const quote = quotes.find(q=>String(q.id)===String(id));
+             if(quote){
+               document.getElementById('quoteContent').innerHTML = renderQuotePreview(quote);
+               document.getElementById('editQuoteBtn').onclick = () => {
+                 window.location.href = `quote.html?id=${quote.id}`;
+               };
+               document.getElementById('deleteQuoteBtn').onclick = () => {
+                 if(confirm('Delete this quote?')){
+                   const idx = quotes.findIndex(q=>String(q.id)===String(id));
+                   if(idx !== -1){ 
+                     quotes.splice(idx,1); 
+                     setQuotes(quotes); 
+                     new bootstrap.Modal(document.getElementById('quoteModal')).hide();
+                     render(quotes); 
+                   }
+                 }
+               };
+               new bootstrap.Modal(document.getElementById('quoteModal')).show();
+             }
+           });
          }
-       } else {
-         letters.unshift({ id: now.getTime(), ...data, createdAt: now.toISOString(), updatedAt: now.toISOString() });
-       }
-       setLetters(letters);
-       window.location.href = 'letters-preview.html';
-       return true;
+       });
      }
 
-     form.addEventListener('submit', function(e){
-       e.preventDefault();
-       saveLetter();
+     const quotes = getQuotes();
+     document.getElementById('searchInput').addEventListener('input', ()=>{
+       render(quotes);
+       setupEventListeners(quotes);
      });
-
      // Set active navigation state
      function setActiveNav() {
        const currentPage = window.location.pathname.split('/').pop();
@@ -259,10 +300,10 @@
        });
      }
 
-     // init
-     loadLetterIfEditing();
+     render(quotes);
+     setupEventListeners(quotes);
      setActiveNav();
    </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
  </html>
-

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Letters - My Geno Root</title>
+    <title>Quote Editor - My Geno Root</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="assets/images/logo.svg">
@@ -9,10 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- ================== Iconyfy ================== -->
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <style>
-      .preview-card{white-space:pre-wrap}
+      .quote-icon {
+        color: var(--blue-primary);
+      }
     </style>
   </head>
   <body>
@@ -69,39 +70,38 @@
          <div class="col-lg-12">
            <div class="card p-3" id="formCard">
              <div class="d-flex justify-content-between align-items-center">
-               <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>Create a Letter</h3>
-               <a href="letters-preview.html" class="btn btn-outline-primary btn-sm">My Entries</a>
+               <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>Save a Quote</h3>
+               <a href="quotes.html" class="btn btn-outline-primary btn-sm">My Entries</a>
              </div>
-             <form id="letterForm" class="mt-3">
+             <form id="quoteForm" class="mt-3">
                <div class="row g-3">
                  <div class="col-md-6">
-                   <label class="form-label">From<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="from" required>
+                   <label class="form-label">Title<span class="text-danger">*</span></label>
+                   <input type="text" class="form-control" name="title" required placeholder="Enter quote title">
                  </div>
                  <div class="col-md-6">
-                   <label class="form-label">To<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="to" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Subject<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="subject" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Date</label>
-                   <input type="date" class="form-control" name="date">
+                   <label class="form-label">Created</label>
+                   <input type="text" class="form-control" name="created" disabled>
                  </div>
                  <div class="col-12">
-                   <label class="form-label">Body<span class="text-danger">*</span></label>
-                   <textarea class="form-control" name="body" rows="7" required placeholder="Write your letter..."></textarea>
+                   <label class="form-label">Quote Text<span class="text-danger">*</span></label>
+                   <textarea class="form-control" name="text" rows="4" required placeholder="Enter the quote text..."></textarea>
+                 </div>
+                 <div class="col-md-6">
+                   <label class="form-label">Author</label>
+                   <input type="text" class="form-control" name="author" placeholder="Quote author (optional)">
+                 </div>
+                 <div class="col-md-6">
+                   <label class="form-label">Source</label>
+                   <input type="text" class="form-control" name="source" placeholder="Book, speech, etc. (optional)">
                  </div>
                </div>
                <div class="mt-3 d-flex gap-2">
-                 <button type="submit" class="btn btn-primary">Save</button>
-                 <button type="reset" class="btn btn-outline-secondary">Clear</button>
+                 <button type="button" class="btn btn-primary" id="saveBtn">Save Quote</button>
+                 <button type="reset" class="btn btn-outline-secondary" id="clearBtn">Clear</button>
                </div>
              </form>
            </div>
-
          </div>
        </div>
      </div>
@@ -169,69 +169,87 @@
    </footer>
 
    <script>
-     const form = document.getElementById('letterForm');
+     const quoteForm = document.getElementById('quoteForm');
+     const saveBtn = document.getElementById('saveBtn');
+     const createdInput = quoteForm.querySelector('input[name="created"]');
 
-     function getLetters(){
-       try { return JSON.parse(localStorage.getItem('mgr_letters')) || []; } catch(e){ return []; }
+     function formatDateTime(date){
+       return new Date(date).toLocaleString();
      }
 
-     function setLetters(letters){
-       localStorage.setItem('mgr_letters', JSON.stringify(letters));
+     function getStoredQuotes(){
+       try { return JSON.parse(localStorage.getItem('mgr_quotes')) || []; } catch(e){ return []; }
      }
 
-     function getParam(name){
-       const params = new URLSearchParams(window.location.search);
-       return params.get(name);
+     function setStoredQuotes(quotes){
+       localStorage.setItem('mgr_quotes', JSON.stringify(quotes));
      }
 
-     function collectFormData(){
-       const fd = new FormData(form);
-       const from = (fd.get('from')||'').trim();
-       const to = (fd.get('to')||'').trim();
-       const subject = (fd.get('subject')||'').trim();
-       const date = fd.get('date') || new Date().toISOString().slice(0,10);
-       const body = (fd.get('body')||'').trim();
-       return { from, to, subject, date, body };
+     function updateCreatedNow(){
+       createdInput.value = formatDateTime(new Date());
      }
 
-     function loadLetterIfEditing(){
-       const id = getParam('id');
-       if(!id) return;
-       const letters = getLetters();
-       const letter = letters.find(l=>String(l.id)===String(id));
-       if(!letter) return;
-       form.querySelector('input[name="from"]').value = letter.from;
-       form.querySelector('input[name="to"]').value = letter.to;
-       form.querySelector('input[name="subject"]').value = letter.subject;
-       form.querySelector('input[name="date"]').value = letter.date.slice(0,10);
-       form.querySelector('textarea[name="body"]').value = letter.body;
-     }
+     // Check if editing existing quote
+     const urlParams = new URLSearchParams(window.location.search);
+     const quoteId = urlParams.get('id');
+     let editingQuote = null;
 
-     function saveLetter(){
-       const data = collectFormData();
-       if(!data.from || !data.to || !data.subject || !data.body){
-         alert('Please fill in all required fields.');
-         return false;
+     if(quoteId) {
+       const quotes = getStoredQuotes();
+       editingQuote = quotes.find(q => String(q.id) === String(quoteId));
+       if(editingQuote) {
+         quoteForm.querySelector('input[name="title"]').value = editingQuote.title || '';
+         quoteForm.querySelector('textarea[name="text"]').value = editingQuote.text || '';
+         quoteForm.querySelector('input[name="author"]').value = editingQuote.author || '';
+         quoteForm.querySelector('input[name="source"]').value = editingQuote.source || '';
+         document.querySelector('h3 .line').nextSibling.textContent = 'Edit Quote';
        }
-       const idParam = getParam('id');
-       const letters = getLetters();
+     }
+
+     updateCreatedNow();
+     setInterval(updateCreatedNow, 1000 * 30);
+
+     saveBtn.addEventListener('click', function(){
+       const data = new FormData(quoteForm);
+       const title = (data.get('title')||'').trim();
+       const text = (data.get('text')||'').trim();
+       const author = (data.get('author')||'').trim();
+       const source = (data.get('source')||'').trim();
+
+       if(!title || !text){
+         alert('Please enter both title and quote text.');
+         return;
+       }
+
+       const quotes = getStoredQuotes();
        const now = new Date();
-       if(idParam){
-         const idx = letters.findIndex(l=>String(l.id)===String(idParam));
-         if(idx !== -1){
-           letters[idx] = { ...letters[idx], ...data, updatedAt: now.toISOString() };
-         }
-       } else {
-         letters.unshift({ id: now.getTime(), ...data, createdAt: now.toISOString(), updatedAt: now.toISOString() });
-       }
-       setLetters(letters);
-       window.location.href = 'letters-preview.html';
-       return true;
-     }
 
-     form.addEventListener('submit', function(e){
-       e.preventDefault();
-       saveLetter();
+       if(editingQuote) {
+         // Update existing quote
+         editingQuote.title = title;
+         editingQuote.text = text;
+         editingQuote.author = author;
+         editingQuote.source = source;
+         editingQuote.updatedAt = now.toISOString();
+         setStoredQuotes(quotes);
+       } else {
+         // Create new quote
+         quotes.unshift({ 
+           id: now.getTime(), 
+           title, 
+           text, 
+           author, 
+           source, 
+           createdAt: now.toISOString() 
+         });
+         setStoredQuotes(quotes);
+       }
+
+       window.location.href = 'quotes.html';
+     });
+
+     quoteForm.addEventListener('reset', function(){
+       setTimeout(updateCreatedNow, 0);
      });
 
      // Set active navigation state
@@ -258,11 +276,9 @@
          }
        });
      }
-
-     // init
-     loadLetterIfEditing();
+     
      setActiveNav();
    </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
  </html>
-

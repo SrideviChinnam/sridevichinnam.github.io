@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Letters - My Geno Root</title>
+    <title>Thought Editor - My Geno Root</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="assets/images/logo.svg">
@@ -9,11 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- ================== Iconyfy ================== -->
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
-    <style>
-      .preview-card{white-space:pre-wrap}
-    </style>
   </head>
   <body>
     <header>
@@ -42,7 +38,7 @@
                 </ul>
                 <form class="d-flex">
                   <button class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0RequestDeleteQuote</source>.965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
                     Cart
                     <span class="badge">3</span>
                   </button>
@@ -69,39 +65,33 @@
          <div class="col-lg-12">
            <div class="card p-3" id="formCard">
              <div class="d-flex justify-content-between align-items-center">
-               <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>Create a Letter</h3>
-               <a href="letters-preview.html" class="btn btn-outline-primary btn-sm">My Entries</a>
+               <h3 class="main-heading justify-content-start mb-0">
+                 <span class="line"></span>
+                 <span id="formTitle">Capture Your Thought</span>
+               </h3>
+               <a href="thoughts.html" class="btn btn-outline-primary btn-sm">My Entries</a>
              </div>
-             <form id="letterForm" class="mt-3">
+             <form id="thoughtForm" class="mt-3">
                <div class="row g-3">
                  <div class="col-md-6">
-                   <label class="form-label">From<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="from" required>
+                   <label class="form-label">Created</label>
+                   <input type="text" class="form-control" name="created" disabled>
                  </div>
                  <div class="col-md-6">
-                   <label class="form-label">To<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="to" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Subject<span class="text-danger">*</span></label>
-                   <input type="text" class="form-control" name="subject" required>
-                 </div>
-                 <div class="col-md-6">
-                   <label class="form-label">Date</label>
-                   <input type="date" class="form-control" name="date">
+                   <label class="form-label">Tags</label>
+                   <input type="text" class="form-control" name="tags" placeholder="reflection, heritage, wisdom (optional)">
                  </div>
                  <div class="col-12">
-                   <label class="form-label">Body<span class="text-danger">*</span></label>
-                   <textarea class="form-control" name="body" rows="7" required placeholder="Write your letter..."></textarea>
+                   <label class="form-label">Your Thought<span class="text-danger">*</span></label>
+                   <textarea class="form-control" name="text" rows="7" required placeholder="Share your reflection, insight, or contemplation..."></textarea>
                  </div>
                </div>
                <div class="mt-3 d-flex gap-2">
-                 <button type="submit" class="btn btn-primary">Save</button>
-                 <button type="reset" class="btn btn-outline-secondary">Clear</button>
+                 <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                 <button type="reset" class="btn btn-outline-secondary" id="clearBtn">Clear</button>
                </div>
              </form>
            </div>
-
          </div>
        </div>
      </div>
@@ -169,69 +159,83 @@
    </footer>
 
    <script>
-     const form = document.getElementById('letterForm');
+     const thoughtForm = document.getElementById('thoughtForm');
+     const saveBtn = document.getElementById('saveBtn');
+     const createdInput = thoughtForm.querySelector('input[name="created"]');
 
-     function getLetters(){
-       try { return JSON.parse(localStorage.getItem('mgr_letters')) || []; } catch(e){ return []; }
+     function formatDateTime(date){
+       return new Date(date).toLocaleString();
      }
 
-     function setLetters(letters){
-       localStorage.setItem('mgr_letters', JSON.stringify(letters));
+     function getStoredThoughts(){
+       try { return JSON.parse(localStorage.getItem('mgr_thoughts')) || []; } catch(e){ return []; }
      }
 
-     function getParam(name){
-       const params = new URLSearchParams(window.location.search);
-       return params.get(name);
+     function setStoredThoughts(thoughts){
+       localStorage.setItem('mgr_thoughts', JSON.stringify(thoughts));
      }
 
-     function collectFormData(){
-       const fd = new FormData(form);
-       const from = (fd.get('from')||'').trim();
-       const to = (fd.get('to')||'').trim();
-       const subject = (fd.get('subject')||'').trim();
-       const date = fd.get('date') || new Date().toISOString().slice(0,10);
-       const body = (fd.get('body')||'').trim();
-       return { from, to, subject, date, body };
+     function parseTags(tagString) {
+       return (tagString || '').split(',').map(t => t.trim()).filter(t => t.length > 0);
      }
 
-     function loadLetterIfEditing(){
-       const id = getParam('id');
-       if(!id) return;
-       const letters = getLetters();
-       const letter = letters.find(l=>String(l.id)===String(id));
-       if(!letter) return;
-       form.querySelector('input[name="from"]').value = letter.from;
-       form.querySelector('input[name="to"]').value = letter.to;
-       form.querySelector('input[name="subject"]').value = letter.subject;
-       form.querySelector('input[name="date"]').value = letter.date.slice(0,10);
-       form.querySelector('textarea[name="body"]').value = letter.body;
+       function updateCreatedNow(){
+       createdInput.value = formatDateTime(new Date());
      }
 
-     function saveLetter(){
-       const data = collectFormData();
-       if(!data.from || !data.to || !data.subject || !data.body){
-         alert('Please fill in all required fields.');
-         return false;
+     // Check if editing existing thought
+     const urlParams = new URLSearchParams(window.location.search);
+     const thoughtId = urlParams.get('id');
+     let editingThought = null;
+
+     if(thoughtId) {
+       const thoughts = getStoredThoughts();
+       editingThought = thoughts.find(t => String(t.id) === String(thoughtId));
+       if(editingThought) {
+         thoughtForm.querySelector('textarea[name="text"]').value = editingThought.text || '';
+         thoughtForm.querySelector('input[name="tags"]').value = (editingThought.tags || []).join(', ');
+         document.getElementById('formTitle').textContent = '✏️ Edit Your Thought';
        }
-       const idParam = getParam('id');
-       const letters = getLetters();
+     }
+
+     updateCreatedNow();
+     setInterval(updateCreatedNow, 1000 * 30);
+
+     saveBtn.addEventListener('click', function(){
+       const data = new FormData(thoughtForm);
+       const text = (data.get('text')||'').trim();
+       const tags = parseTags(data.get('tags')||'');
+
+       if(!text){
+         alert('Please enter your thought.');
+         return;
+       }
+
+       const thoughts = getStoredThoughts();
        const now = new Date();
-       if(idParam){
-         const idx = letters.findIndex(l=>String(l.id)===String(idParam));
-         if(idx !== -1){
-           letters[idx] = { ...letters[idx], ...data, updatedAt: now.toISOString() };
-         }
-       } else {
-         letters.unshift({ id: now.getTime(), ...data, createdAt: now.toISOString(), updatedAt: now.toISOString() });
-       }
-       setLetters(letters);
-       window.location.href = 'letters-preview.html';
-       return true;
-     }
 
-     form.addEventListener('submit', function(e){
-       e.preventDefault();
-       saveLetter();
+       if(editingThought) {
+         // Update existing thought
+         editingThought.text = text;
+         editingThought.tags = tags;
+         editingThought.updatedAt = now.toISOString();
+         setStoredThoughts(thoughts);
+       } else {
+         // Create new thought
+         thoughts.unshift({ 
+           id: now.getTime(), 
+           text, 
+           tags, 
+           createdAt: now.toISOString() 
+         });
+         setStoredThoughts(thoughts);
+       }
+
+       window.location.href = 'thoughts.html';
+     });
+
+     thoughtForm.addEventListener('reset', function(){
+       setTimeout(updateCreatedNow, 0);
      });
 
      // Set active navigation state
@@ -258,11 +262,9 @@
          }
        });
      }
-
-     // init
-     loadLetterIfEditing();
+     
      setActiveNav();
    </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
  </html>
-

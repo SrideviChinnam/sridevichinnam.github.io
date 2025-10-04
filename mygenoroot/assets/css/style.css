@@ -145,6 +145,7 @@ p{
   position: relative;
   border: none !important;
   outline: none !important;
+  white-space: nowrap;
 }
 .btn-primary::before{
   position: absolute;
@@ -219,6 +220,148 @@ nav{
 .nav-link:hover::before, footer .nav-link:hover::before{
   width:100%;
 }
+
+/* ================== Side Options Navigation ================== */
+.side-options {
+  /* position: sticky;
+  top: 20px; */
+}
+
+.side-options .btn {
+  margin-left: 6px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.side-options .btn:hover {
+  background-color: var(--blue-primary) !important;
+  color: white !important;
+  border-color: var(--blue-primary);
+  transform: translateY(-2px);
+}
+
+.side-options .btn.active {
+  background-color: var(--blue-primary) !important;
+  color: white !important;
+  border-color: var(--blue-primary);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.side-options .btn.active:hover {
+  background-color: var(--blue-secondary) !important;
+  border-color: var(--blue-secondary);
+}
+
+
+/* ================== Common Content Styles ================== */
+.search-input {
+  max-width: 420px;
+}
+
+.letter-card:hover,
+.quote-card:hover,
+.thought-card:hover,
+.note-card:hover {
+  background: #f8f9fa;
+}
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.quote-icon {
+  color: var(--blue-primary);
+}
+
+/* ================== Content Preview Styles ================== */
+.letter-preview,
+.quote-preview,
+.thought-preview {
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+  background: #fff; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  padding: 20px;
+}
+
+/* ================== Quote Styles ================== */
+.quote-item .title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.quote-item .meta {
+  font-size: 12px;
+  color: #64748B;
+}
+
+.quote-item .quote-text {
+  font-style: italic;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.quote-item .author-text {
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* ================== Thought Styles ================== */
+.thought-item .title {
+  font-weight: 600;
+  color: #1f2937;
+  padding-bottom: 10px;
+}
+
+.thought-reflections {
+  font-style: italic; 
+  color: #374151; 
+  margin-top: 10px; 
+  margin-bottom: 15px;
+}
+
+.thought-item .meta {
+  font-size: 12px;
+  color: #64748B;
+}
+
+.thought-tags {
+  flex-wrap: wrap; 
+  gap: 5px;
+}
+
+.thought-tag {
+  background: #e3f2fd; 
+  color: #1976d2; 
+  padding: 4px 8px; 
+  border-radius: 12px; 
+  font-size: 11px;
+}
+
+/* ================== Note Styles ================== */
+.note-item .title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.note-item .meta {
+  font-size: 12px;
+  color: #64748B;
+}
+
+.note-item pre {
+  white-space: pre-wrap;
+}
+
+.preview-card {
+  white-space: pre-wrap;
+}
+
 /* ================== Banner Section ================== */
 .banner-cnt .carousel-item{
   background: url(../images/My-Echo.JPG) no-repeat;
