@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Record Voice Note - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <style>
+      .recording-controls{display: flex; align-items: center; justify-content: center; gap: 20px; margin: 20px 0;}
+      .record-btn{width: 80px; height: 80px; border-radius: 50%; border: none; font-size: 24px; transition: all 0.3s;}
+      .record-btn.recording{background: #dc3545; color: white; animation: pulse 1s infinite;}
+      .record-btn.ready{background: #28a745; color: white;}
+      .record-btn.disabled{background: #6c757d; color: white; cursor: not-allowed;}
+      @keyframes pulse{0%{transform: scale(1)}50%{transform: scale(1.1)}100%{transform: scale(1)}}
+      .recording-timer{font-size: 24px; font-weight: bold; color: #dc3545; text-align: center; margin: 10px 0;}
+      .audio-visualizer{height: 60px; background: #f8f9fa; border-radius: 8px; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: #6c757d;}
+      .audio-player{width: 100%; margin: 20px 0;}
+      .voice-to-text-result{background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin: 15px 0; min-height: 100px;}
+      .voice-to-text-result.has-text{background: #e7f3ff; border-color: #007bff;}
+      .permission-alert{background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 15px; border-radius: 8px; margin: 20px 0;}
+      .storage-info{background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; padding: 10px; border-radius: 8px; margin: 10px 0; font-size: 14px;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo-text.svg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="dna-test.html">NewStand</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Who We Are</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <button class="btn btn-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                  Cart
+                  <span class="badge">3</span>
+                </button>
+              </form>
+            </div>
+        </div>
+      </nav>
+     </header>
+
+ <section class="section section-bg-light py-5">
+   <div class="container">
+     <div class="row g-2">
+      <div class="col-lg-12">
+          <div class="card bg-transparent p-0 side-options">
+            <div class="d-flex justify-content-end align-items-center">
+              <a href="voice-notes.html" class="btn btn-sm"><iconify-icon icon="mynaui:microphone" width="20" height="20"></iconify-icon> Voice Notes</a>
+              <a href="#" class="btn btn-sm"><iconify-icon icon="mynaui:library" width="20" height="20"></iconify-icon> Voice Library</a>
+              <a href="#" class="btn btn-sm"><iconify-icon icon="mynaui:text" width="20" height="20"></iconify-icon> Voice to Text</a>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-12">
+         <div class="card p-3" id="formCard">
+           <div class="d-flex justify-content-between align-items-center">
+             <h3 class="main-heading justify-content-start mb-0"><span class="line"></span>Record Voice Note</h3>
+             <a href="voice-notes.html" class="btn btn-outline-primary btn-sm">My Voice Notes</a>
+           </div>
+           
+           <!-- Permission Alert -->
+           <div id="permissionAlert" class="permission-alert" style="display: none;">
+             <i class="fas fa-exclamation-triangle"></i>
+             <strong>Microphone Permission Required:</strong> Please allow microphone access to record voice notes.
+           </div>
+
+           <!-- Storage Info -->
+           <div class="storage-info">
+             <i class="fas fa-info-circle"></i>
+             <strong>Storage:</strong> Voice notes are stored locally in your browser. Maximum recording time: 5 minutes per note.
+           </div>
+
+           <form id="voiceForm" class="mt-3">
+             <div class="row g-3">
+               <div class="col-md-6">
+                 <label class="form-label">Title<span class="text-danger">*</span></label>
+                 <input type="text" class="form-control" name="title" required placeholder="Enter voice note title">
+               </div>
+               <div class="col-md-6">
+                 <label class="form-label">Tags</label>
+                 <input type="text" class="form-control" name="tags" placeholder="family, memories, story (comma separated)">
+               </div>
+               <div class="col-12">
+                 <label class="form-label">Description</label>
+                 <textarea class="form-control" name="description" rows="3" placeholder="Describe your voice note..."></textarea>
+               </div>
+             </div>
+
+             <!-- Recording Controls -->
+             <div class="recording-controls">
+               <button type="button" id="recordBtn" class="record-btn disabled">
+                 <i class="fas fa-microphone"></i>
+               </button>
+               <button type="button" id="stopBtn" class="btn btn-outline-danger" disabled>
+                 <i class="fas fa-stop"></i> Stop
+               </button>
+               <button type="button" id="playBtn" class="btn btn-outline-primary" disabled>
+                 <i class="fas fa-play"></i> Play
+               </button>
+             </div>
+
+             <div id="recordingTimer" class="recording-timer" style="display: none;">00:00</div>
+             
+             <div id="audioVisualizer" class="audio-visualizer">
+               <i class="fas fa-microphone-slash"></i> Ready to record
+             </div>
+
+             <!-- Audio Player -->
+             <div id="audioPlayerContainer" style="display: none;">
+               <audio id="audioPlayer" class="audio-player" controls></audio>
+             </div>
+
+             <!-- Voice to Text -->
+             <div class="mt-3">
+               <label class="form-label">Voice to Text (Optional)</label>
+               <div class="voice-to-text-result" id="voiceToTextResult">
+                 <div class="text-muted text-center">
+                   <i class="fas fa-keyboard"></i> Click "Convert to Text" to transcribe your recording
+                 </div>
+               </div>
+               <button type="button" id="convertToTextBtn" class="btn btn-outline-info btn-sm" disabled>
+                 <i class="fas fa-keyboard"></i> Convert to Text
+               </button>
+             </div>
+
+             <div class="mt-3 d-flex gap-2">
+               <button type="submit" id="saveBtn" class="btn btn-primary" disabled>Save Voice Note</button>
+               <button type="reset" class="btn btn-outline-secondary">Clear</button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <footer class="section-bg-light">
+  <div class="container">
+    <div class="row border-bottom pb-3 pt-4 mb-3  mx-0 align-items-center">
+      <div class="col-12 col-lg-4">
+        <ul class="nav"> 
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+          <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+        </ul>
+      </div>
+      <div class="col-12 col-lg-4 text-center">
+        <a href="index.html" class="navbar-brand">
+          <img class="" src="assets/images/logo.svg">
+        </a>
+      </div>
+      <div class="col-12 col-lg-4 text-end">
+        <ul class="nav justify-content-lg-end socila-icons"> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m13.081 10.712l-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576l6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576l5.842-6.962m-8.004 9.538L5.077 20.25"/></svg>
+            </a>
+          </li> 
+        </ul>
+      </div>
+    </div>
+    <div class="row align-items-center mx-0">
+      <div class="col-12 col-lg-6">
+        <ul class="nav"> 
+          <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6 text-end">
+        <ul class="nav justify-content-lg-end"> 
+          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+          <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script>
+   const voiceForm = document.getElementById('voiceForm');
+   const saveBtn = document.getElementById('saveBtn');
+   const recordBtn = document.getElementById('recordBtn');
+   const stopBtn = document.getElementById('stopBtn');
+   const playBtn = document.getElementById('playBtn');
+   const convertToTextBtn = document.getElementById('convertToTextBtn');
+   const recordingTimer = document.getElementById('recordingTimer');
+   const audioVisualizer = document.getElementById('audioVisualizer');
+   const audioPlayerContainer = document.getElementById('audioPlayerContainer');
+   const audioPlayer = document.getElementById('audioPlayer');
+   const voiceToTextResult = document.getElementById('voiceToTextResult');
+   const permissionAlert = document.getElementById('permissionAlert');
+
+   let mediaRecorder;
+   let audioChunks = [];
+   let audioBlob;
+   let recordingStartTime;
+   let recordingTimerInterval;
+   let isRecording = false;
+   let hasRecording = false;
+
+   // Check for MediaRecorder support
+   if (!navigator.mediaRecorder) {
+     alert('Voice recording is not supported in this browser. Please use Chrome, Firefox, or Safari.');
+   }
+
+   // Request microphone permission and initialize
+   async function initializeRecording() {
+     try {
+       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+       permissionAlert.style.display = 'none';
+       recordBtn.classList.remove('disabled');
+       recordBtn.classList.add('ready');
+       audioVisualizer.innerHTML = '<i class="fas fa-microphone"></i> Ready to record';
+       
+       // Initialize MediaRecorder
+       mediaRecorder = new MediaRecorder(stream);
+       
+       mediaRecorder.ondataavailable = function(event) {
+         audioChunks.push(event.data);
+       };
+       
+       mediaRecorder.onstop = function() {
+         audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+         const audioUrl = URL.createObjectURL(audioBlob);
+         audioPlayer.src = audioUrl;
+         audioPlayerContainer.style.display = 'block';
+         playBtn.disabled = false;
+         convertToTextBtn.disabled = false;
+         hasRecording = true;
+         updateSaveButton();
+       };
+       
+     } catch (error) {
+       console.error('Error accessing microphone:', error);
+       permissionAlert.style.display = 'block';
+       recordBtn.classList.add('disabled');
+       recordBtn.classList.remove('ready');
+       audioVisualizer.innerHTML = '<i class="fas fa-microphone-slash"></i> Microphone access denied';
+     }
+   }
+
+   // Recording functions
+   function startRecording() {
+     if (!mediaRecorder || isRecording) return;
+     
+     audioChunks = [];
+     mediaRecorder.start();
+     isRecording = true;
+     recordingStartTime = Date.now();
+     
+     recordBtn.classList.remove('ready');
+     recordBtn.classList.add('recording');
+     stopBtn.disabled = false;
+     recordingTimer.style.display = 'block';
+     audioVisualizer.innerHTML = '<i class="fas fa-microphone"></i> Recording...';
+     
+     // Start timer
+     recordingTimerInterval = setInterval(updateTimer, 1000);
+   }
+
+   function stopRecording() {
+     if (!isRecording) return;
+     
+     mediaRecorder.stop();
+     isRecording = false;
+     clearInterval(recordingTimerInterval);
+     
+     recordBtn.classList.remove('recording');
+     recordBtn.classList.add('ready');
+     stopBtn.disabled = true;
+     recordingTimer.style.display = 'none';
+     audioVisualizer.innerHTML = '<i class="fas fa-check-circle"></i> Recording complete';
+   }
+
+   function updateTimer() {
+     const elapsed = Math.floor((Date.now() - recordingStartTime) / 1000);
+     const minutes = Math.floor(elapsed / 60);
+     const seconds = elapsed % 60;
+     recordingTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+     
+     // Auto-stop at 5 minutes
+     if (elapsed >= 300) {
+       stopRecording();
+       alert('Maximum recording time reached (5 minutes)');
+     }
+   }
+
+   function playRecording() {
+     if (audioPlayer.src) {
+       audioPlayer.play();
+     }
+   }
+
+   // Voice to Text conversion
+   function convertToText() {
+     if (!audioBlob) return;
+     
+     // Check for Web Speech API support
+     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+       alert('Voice-to-text is not supported in this browser.');
+       return;
+     }
+     
+     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+     const recognition = new SpeechRecognition();
+     
+     recognition.continuous = true;
+     recognition.interimResults = true;
+     recognition.lang = 'en-US';
+     
+     voiceToTextResult.innerHTML = '<div class="text-center"><i class="fas fa-spinner fa-spin"></i> Converting speech to text...</div>';
+     
+     recognition.onresult = function(event) {
+       let finalTranscript = '';
+       for (let i = event.resultIndex; i < event.results.length; i++) {
+         if (event.results[i].isFinal) {
+           finalTranscript += event.results[i][0].transcript;
+         }
+       }
+       
+       if (finalTranscript) {
+         voiceToTextResult.innerHTML = `<div class="text-success"><i class="fas fa-check-circle"></i> <strong>Transcription:</strong></div><div class="mt-2">${finalTranscript}</div>`;
+         voiceToTextResult.classList.add('has-text');
+       }
+     };
+     
+     recognition.onerror = function(event) {
+       voiceToTextResult.innerHTML = '<div class="text-danger"><i class="fas fa-exclamation-triangle"></i> Speech recognition failed. Please try again.</div>';
+     };
+     
+     recognition.start();
+   }
+
+   // Form validation and save
+   function updateSaveButton() {
+     const title = voiceForm.querySelector('input[name="title"]').value.trim();
+     saveBtn.disabled = !title || !hasRecording;
+   }
+
+   function getVoices(){
+     try { return JSON.parse(localStorage.getItem('mgr_voice_notes')) || []; } catch(e){ return []; }
+   }
+
+   function setVoices(voices){
+     localStorage.setItem('mgr_voice_notes', JSON.stringify(voices));
+   }
+
+   function parseTags(tagString) {
+     return (tagString || '').split(',').map(t => t.trim()).filter(t => t.length > 0);
+   }
+
+   function getParam(name){
+     const params = new URLSearchParams(window.location.search);
+     return params.get(name);
+   }
+
+   function loadVoiceIfEditing(){
+     const id = getParam('id');
+     if(!id) return;
+     
+     const voices = getVoices();
+     const voice = voices.find(v => String(v.id) === String(id));
+     if(!voice) return;
+     
+     // Populate form with existing voice data
+     voiceForm.querySelector('input[name="title"]').value = voice.title || '';
+     voiceForm.querySelector('input[name="tags"]').value = (voice.tags || []).join(', ');
+     voiceForm.querySelector('textarea[name="description"]').value = voice.description || '';
+     
+     // Load existing audio
+     if(voice.audioData) {
+       audioBlob = new Blob([Uint8Array.from(atob(voice.audioData), c => c.charCodeAt(0))], { type: 'audio/webm' });
+       const audioUrl = URL.createObjectURL(audioBlob);
+       audioPlayer.src = audioUrl;
+       audioPlayerContainer.style.display = 'block';
+       playBtn.disabled = false;
+       convertToTextBtn.disabled = false;
+       hasRecording = true;
+       updateSaveButton();
+     }
+   }
+
+   // Event listeners
+   recordBtn.addEventListener('click', startRecording);
+   stopBtn.addEventListener('click', stopRecording);
+   playBtn.addEventListener('click', playRecording);
+   convertToTextBtn.addEventListener('click', convertToText);
+
+   voiceForm.querySelector('input[name="title"]').addEventListener('input', updateSaveButton);
+
+   saveBtn.addEventListener('click', function(){
+     const data = new FormData(voiceForm);
+     const title = (data.get('title')||'').trim();
+     const description = (data.get('description')||'').trim();
+     const tags = parseTags(data.get('tags'));
+     
+     if(!title || !hasRecording){
+       alert('Please enter a title and record a voice note.');
+       return;
+     }
+
+     // Convert audio blob to base64 for storage
+     const reader = new FileReader();
+     reader.onload = function() {
+       const base64Audio = reader.result.split(',')[1];
+       
+       const voices = getVoices();
+       const now = new Date();
+       const id = getParam('id') || now.getTime();
+       
+       const voiceData = {
+         id: id,
+         title,
+         description,
+         tags,
+         audioData: base64Audio,
+         duration: audioPlayer.duration || 0,
+         createdAt: now.toISOString()
+       };
+
+       if(getParam('id')) {
+         // Update existing voice
+         const index = voices.findIndex(v => String(v.id) === String(id));
+         if(index !== -1) {
+           voices[index] = voiceData;
+         }
+       } else {
+         // Add new voice
+         voices.unshift(voiceData);
+       }
+       
+       setVoices(voices);
+       window.location.href = 'voice-notes.html';
+     };
+     
+     reader.readAsDataURL(audioBlob);
+   });
+
+   voiceForm.addEventListener('reset', function(){
+     setTimeout(() => {
+       hasRecording = false;
+       audioBlob = null;
+       audioPlayerContainer.style.display = 'none';
+       audioVisualizer.innerHTML = '<i class="fas fa-microphone"></i> Ready to record';
+       voiceToTextResult.innerHTML = '<div class="text-muted text-center"><i class="fas fa-keyboard"></i> Click "Convert to Text" to transcribe your recording</div>';
+       voiceToTextResult.classList.remove('has-text');
+       updateSaveButton();
+     }, 0);
+   });
+
+   // Initialize
+   initializeRecording();
+   loadVoiceIfEditing();
+   setActiveNav();
+
+   // Set active navigation state
+   function setActiveNav() {
+     const currentPage = window.location.pathname.split('/').pop();
+     const navBtns = document.querySelectorAll('.side-options .btn');
+     
+     navBtns.forEach(btn => {
+       const href = btn.getAttribute('href');
+       const page = href ? href.split('/').pop() : '';
+       
+       // Remove existing active class
+       btn.classList.remove('active');
+       
+       // Check if current page matches Voice Notes navigation
+       if (
+         (href === 'voice-notes.html' && (currentPage === 'voice-note.html' || currentPage === 'voice-notes.html'))
+       ) {
+         btn.classList.add('active');
+       }
+     });
+   }
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

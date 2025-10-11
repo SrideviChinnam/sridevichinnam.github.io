@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-area { border: 1px solid #ccc; padding: 20px; margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; }
+        canvas { border: 1px solid #ccc; margin: 10px 0; }
+        .log { background: #f8f9fa; padding: 10px; margin: 10px 0; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <h1>QR Code Generation Test</h1>
+    
+    <div class="test-area">
+        <h3>Test QR Code Generation</h3>
+        <button onclick="testQRGeneration()">Generate Test QR Code</button>
+        <button onclick="testMemoryQR()">Generate Memory QR Code</button>
+        <canvas id="qrCanvas" width="300" height="300"></canvas>
+    </div>
+    
+    <div id="log" class="log"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML += '<div>' + new Date().toLocaleTimeString() + ': ' + message + '</div>';
+            console.log(message);
+        }
+
+        function testQRGeneration() {
+            log('Testing QR code generation...');
+            
+            // Check if QRCode library is loaded
+            if (typeof QRCode === 'undefined') {
+                log('ERROR: QRCode library not loaded!');
+                return;
+            }
+            
+            log('QRCode library loaded successfully');
+            
+            const canvas = document.getElementById('qrCanvas');
+            const testUrl = 'https://www.google.com';
+            
+            log('Generating QR code for: ' + testUrl);
+            
+            QRCode.toCanvas(canvas, testUrl, {
+                width: 300,
+                margin: 2,
+                color: {
+                    dark: '#000000',
+                    light: '#FFFFFF'
+                }
+            }, function (error) {
+                if (error) {
+                    log('ERROR generating QR code: ' + error.message);
+                } else {
+                    log('SUCCESS: QR code generated!');
+                }
+            });
+        }
+
+        function testMemoryQR() {
+            log('Testing memory QR code generation...');
+            
+            // Check if QRCode library is loaded
+            if (typeof QRCode === 'undefined') {
+                log('ERROR: QRCode library not loaded!');
+                return;
+            }
+            
+            // Test with memory URL
+            const canvas = document.getElementById('qrCanvas');
+            const memoryUrl = 'memory-view.html?id=test123&view=media';
+            
+            log('Generating memory QR code for: ' + memoryUrl);
+            
+            QRCode.toCanvas(canvas, memoryUrl, {
+                width: 300,
+                margin: 2,
+                color: {
+                    dark: '#3880ED',
+                    light: '#FFFFFF'
+                }
+            }, function (error) {
+                if (error) {
+                    log('ERROR generating memory QR code: ' + error.message);
+                } else {
+                    log('SUCCESS: Memory QR code generated!');
+                }
+            });
+        }
+
+        // Test on page load
+        window.addEventListener('load', function() {
+            log('Page loaded');
+            
+            if (typeof QRCode === 'undefined') {
+                log('ERROR: QRCode library failed to load');
+            } else {
+                log('QRCode library loaded successfully');
+            }
+        });
+    </script>
+</body>
+</html>

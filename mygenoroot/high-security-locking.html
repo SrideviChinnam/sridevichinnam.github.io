@@ -1,0 +1,663 @@
+<!doctype html>
+<html>
+  <head>
+    <title>High Security Locking - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <style>
+      .security-level {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .security-level:hover {
+        border-color: var(--blue-primary);
+        background: #f8f9fa;
+      }
+      .security-level.selected {
+        border-color: var(--blue-primary);
+        background: #e3f2fd;
+      }
+      .security-badge {
+        background: #dc3545;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .encryption-badge {
+        background: #28a745;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .form-section {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+      }
+      .security-features {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .access-log {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 15px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .log-entry {
+        padding: 8px 0;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 14px;
+      }
+      .log-entry:last-child {
+        border-bottom: none;
+      }
+      .password-strength {
+        height: 4px;
+        border-radius: 2px;
+        margin-top: 5px;
+        transition: all 0.3s ease;
+      }
+      .strength-weak { background: #dc3545; width: 25%; }
+      .strength-fair { background: #ffc107; width: 50%; }
+      .strength-good { background: #17a2b8; width: 75%; }
+      .strength-strong { background: #28a745; width: 100%; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo-text.svg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="dna-test.html">NewStand</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Who We Are</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <button class="btn btn-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                  Cart
+                  <span class="badge">3</span>
+                </button>
+              </form>
+            </div>
+        </div>
+      </nav>
+     </header>
+
+ <section class="section section-bg-light py-5">
+   <div class="container">
+     <div class="row g-2">
+      <div class="col-lg-12">
+          <div class="card bg-transparent p-0 side-options">
+            <div class="d-flex justify-content-end align-items-center">
+              <a href="document-preserving.html" class="btn btn-sm"><iconify-icon icon="mynaui:shield-check" width="20" height="20"></iconify-icon> Document Preserving</a>
+              <a href="high-security-locking.html" class="btn btn-sm"><iconify-icon icon="mynaui:lock" width="20" height="20"></iconify-icon> High Security Locking</a>
+              <a href="smart-search.html" class="btn btn-sm"><iconify-icon icon="mynaui:search" width="20" height="20"></iconify-icon> Smart Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+         <div class="card p-3">
+           <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+             <div class="d-flex justify-content-start align-items-center mb-0">
+               <h3 class="main-heading mb-0"><span class="line"></span>High Security Locking</h3>
+             </div>
+             <div class="d-flex align-items-center gap-2">
+               <a href="documents.html" class="btn btn-outline-secondary">View All Documents</a>
+             </div>
+           </div>
+
+           <form id="securityForm">
+             <!-- Document Selection Section -->
+             <div class="form-section">
+               <h5 class="mb-3"><i class="fas fa-file-alt me-2"></i>Select Document to Secure</h5>
+               <div class="mb-3">
+                 <label for="documentSelect" class="form-label">Choose Document</label>
+                 <select class="form-select" id="documentSelect" required>
+                   <option value="">Select a document to secure...</option>
+                 </select>
+                 <div class="form-text">Only non-secured documents are shown</div>
+               </div>
+               <div id="selectedDocumentInfo" class="d-none">
+                 <div class="alert alert-info">
+                   <h6><i class="fas fa-info-circle me-2"></i>Selected Document</h6>
+                   <div id="documentDetails"></div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Security Level Selection -->
+             <div class="form-section">
+               <h5 class="mb-3"><i class="fas fa-shield-alt me-2"></i>Security Level</h5>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="security-level" data-level="basic">
+                     <div class="d-flex justify-content-between align-items-center">
+                       <div>
+                         <h6 class="mb-1">Basic Security</h6>
+                         <p class="text-muted mb-0 small">Password protection with standard encryption</p>
+                       </div>
+                       <div class="text-end">
+                         <span class="encryption-badge">AES-128</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="security-level" data-level="advanced">
+                     <div class="d-flex justify-content-between align-items-center">
+                       <div>
+                         <h6 class="mb-1">Advanced Security</h6>
+                         <p class="text-muted mb-0 small">Strong encryption with multi-factor authentication</p>
+                       </div>
+                       <div class="text-end">
+                         <span class="encryption-badge">AES-256</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="security-level" data-level="military">
+                     <div class="d-flex justify-content-between align-items-center">
+                       <div>
+                         <h6 class="mb-1">Military Grade</h6>
+                         <p class="text-muted mb-0 small">Highest level encryption with biometric access</p>
+                       </div>
+                       <div class="text-end">
+                         <span class="encryption-badge">AES-512</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="security-level" data-level="custom">
+                     <div class="d-flex justify-content-between align-items-center">
+                       <div>
+                         <h6 class="mb-1">Custom Security</h6>
+                         <p class="text-muted mb-0 small">Configure your own security settings</p>
+                       </div>
+                       <div class="text-end">
+                         <span class="encryption-badge">CUSTOM</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Password Configuration -->
+             <div class="form-section">
+               <h5 class="mb-3"><i class="fas fa-key me-2"></i>Access Control</h5>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="password" class="form-label">Master Password *</label>
+                     <input type="password" class="form-control" id="password" required>
+                     <div id="passwordStrength" class="password-strength"></div>
+                     <div class="form-text">Use a strong password with letters, numbers, and symbols</div>
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                     <input type="password" class="form-control" id="confirmPassword" required>
+                   </div>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="hint" class="form-label">Password Hint</label>
+                     <input type="text" class="form-control" id="hint" placeholder="Optional hint to help remember password">
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="backupCode" class="form-label">Backup Access Code</label>
+                     <input type="text" class="form-control" id="backupCode" placeholder="Optional backup code">
+                     <div class="form-text">Keep this code safe in case you forget your password</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Advanced Security Features -->
+             <div class="form-section">
+               <h5 class="mb-3"><i class="fas fa-cogs me-2"></i>Advanced Security Features</h5>
+               <div class="security-features">
+                 <div class="row">
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enable2FA">
+                       <label class="form-check-label" for="enable2FA">
+                         <strong>Two-Factor Authentication</strong>
+                       </label>
+                       <div class="form-text">Require additional verification via SMS or app</div>
+                     </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enableBiometric">
+                       <label class="form-check-label" for="enableBiometric">
+                         <strong>Biometric Access</strong>
+                       </label>
+                       <div class="form-text">Use fingerprint or face recognition</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enableTimeLock">
+                       <label class="form-check-label" for="enableTimeLock">
+                         <strong>Time-Based Access</strong>
+                       </label>
+                       <div class="form-text">Restrict access to specific time periods</div>
+                     </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enableLocationLock">
+                       <label class="form-check-label" for="enableLocationLock">
+                         <strong>Location-Based Access</strong>
+                       </label>
+                       <div class="form-text">Restrict access to specific locations</div>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enableAuditLog">
+                       <label class="form-check-label" for="enableAuditLog">
+                         <strong>Access Audit Log</strong>
+                       </label>
+                       <div class="form-text">Track all access attempts and activities</div>
+                     </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-check mb-3">
+                       <input class="form-check-input" type="checkbox" id="enableAutoLock">
+                       <label class="form-check-label" for="enableAutoLock">
+                         <strong>Auto-Lock After Inactivity</strong>
+                       </label>
+                       <div class="form-text">Automatically lock after period of inactivity</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Access Schedule (if time-based access is enabled) -->
+             <div class="form-section" id="timeScheduleSection" style="display: none;">
+               <h5 class="mb-3"><i class="fas fa-clock me-2"></i>Access Schedule</h5>
+               <div class="row">
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="startTime" class="form-label">Start Time</label>
+                     <input type="time" class="form-control" id="startTime">
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class="mb-3">
+                     <label for="endTime" class="form-label">End Time</label>
+                     <input type="time" class="form-control" id="endTime">
+                   </div>
+                 </div>
+               </div>
+               <div class="mb-3">
+                 <label class="form-label">Allowed Days</label>
+                 <div class="d-flex gap-2 flex-wrap">
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="monday" value="monday">
+                     <label class="form-check-label" for="monday">Mon</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="tuesday" value="tuesday">
+                     <label class="form-check-label" for="tuesday">Tue</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="wednesday" value="wednesday">
+                     <label class="form-check-label" for="wednesday">Wed</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="thursday" value="thursday">
+                     <label class="form-check-label" for="thursday">Thu</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="friday" value="friday">
+                     <label class="form-check-input" type="checkbox" id="friday" value="friday">
+                     <label class="form-check-label" for="friday">Fri</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="saturday" value="saturday">
+                     <label class="form-check-label" for="saturday">Sat</label>
+                   </div>
+                   <div class="form-check">
+                     <input class="form-check-input" type="checkbox" id="sunday" value="sunday">
+                     <label class="form-check-label" for="sunday">Sun</label>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Access Log Preview -->
+             <div class="form-section" id="auditLogSection" style="display: none;">
+               <h5 class="mb-3"><i class="fas fa-list me-2"></i>Access Log Preview</h5>
+               <div class="access-log">
+                 <div class="log-entry">
+                   <div class="d-flex justify-content-between">
+                     <span><i class="fas fa-user me-2"></i>Document created and secured</span>
+                     <small class="text-muted">Just now</small>
+                   </div>
+                 </div>
+                 <div class="log-entry">
+                   <div class="d-flex justify-content-between">
+                     <span><i class="fas fa-lock me-2"></i>Security settings applied</span>
+                     <small class="text-muted">Just now</small>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- Action Buttons -->
+             <div class="d-flex gap-2 justify-content-end">
+               <a href="documents.html" class="btn btn-outline-secondary">Cancel</a>
+               <button type="submit" class="btn btn-primary">
+                 <i class="fas fa-lock me-2"></i>Apply Security Lock
+               </button>
+             </div>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <footer class="section-bg-light">
+  <div class="container">
+    <div class="row border-bottom pb-3 pt-4 mb-3  mx-0 align-items-center">
+      <div class="col-12 col-lg-4">
+        <ul class="nav"> 
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+          <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+        </ul>
+      </div>
+      <div class="col-12 col-lg-4 text-center">
+        <a href="index.html" class="navbar-brand">
+          <img class="" src="assets/images/logo.svg">
+        </a>
+      </div>
+      <div class="col-12 col-lg-4 text-end">
+        <ul class="nav justify-content-lg-end socila-icons"> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="#" class="btn btn-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m13.081 10.712l-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576l6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576l5.842-6.962m-8.004 9.538L5.077 20.25"/></svg>
+            </a>
+          </li> 
+        </ul>
+      </div>
+    </div>
+    <div class="row align-items-center mx-0">
+      <div class="col-12 col-lg-6">
+        <ul class="nav"> 
+          <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+        </ul>
+      </div>
+      <div class="col-12 col-lg-6 text-end">
+        <ul class="nav justify-content-lg-end"> 
+          <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+          <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script>
+   let selectedSecurityLevel = null;
+
+   function loadDocuments() {
+     const documents = JSON.parse(localStorage.getItem('mgr_documents') || '[]');
+     const documentSelect = document.getElementById('documentSelect');
+     
+     // Clear existing options
+     documentSelect.innerHTML = '<option value="">Select a document to secure...</option>';
+     
+     // Add non-secured documents
+     documents.filter(doc => !doc.isSecure).forEach(doc => {
+       const option = document.createElement('option');
+       option.value = doc.id;
+       option.textContent = `${doc.title} (${doc.fileType})`;
+       documentSelect.appendChild(option);
+     });
+   }
+
+   function setupSecurityLevelSelection() {
+     document.querySelectorAll('.security-level').forEach(level => {
+       level.addEventListener('click', () => {
+         // Remove selected class from all levels
+         document.querySelectorAll('.security-level').forEach(l => l.classList.remove('selected'));
+         
+         // Add selected class to clicked level
+         level.classList.add('selected');
+         selectedSecurityLevel = level.dataset.level;
+       });
+     });
+   }
+
+   function setupPasswordStrength() {
+     const passwordInput = document.getElementById('password');
+     const strengthBar = document.getElementById('passwordStrength');
+     
+     passwordInput.addEventListener('input', () => {
+       const password = passwordInput.value;
+       let strength = 0;
+       
+       if (password.length >= 8) strength++;
+       if (/[a-z]/.test(password)) strength++;
+       if (/[A-Z]/.test(password)) strength++;
+       if (/[0-9]/.test(password)) strength++;
+       if (/[^A-Za-z0-9]/.test(password)) strength++;
+       
+       strengthBar.className = 'password-strength';
+       
+       if (strength <= 2) {
+         strengthBar.classList.add('strength-weak');
+       } else if (strength === 3) {
+         strengthBar.classList.add('strength-fair');
+       } else if (strength === 4) {
+         strengthBar.classList.add('strength-good');
+       } else {
+         strengthBar.classList.add('strength-strong');
+       }
+     });
+   }
+
+   function setupAdvancedFeatures() {
+     const timeLockCheckbox = document.getElementById('enableTimeLock');
+     const auditLogCheckbox = document.getElementById('enableAuditLog');
+     const timeScheduleSection = document.getElementById('timeScheduleSection');
+     const auditLogSection = document.getElementById('auditLogSection');
+     
+     timeLockCheckbox.addEventListener('change', () => {
+       timeScheduleSection.style.display = timeLockCheckbox.checked ? 'block' : 'none';
+     });
+     
+     auditLogCheckbox.addEventListener('change', () => {
+       auditLogSection.style.display = auditLogCheckbox.checked ? 'block' : 'none';
+     });
+   }
+
+   function setupDocumentSelection() {
+     const documentSelect = document.getElementById('documentSelect');
+     const selectedDocumentInfo = document.getElementById('selectedDocumentInfo');
+     const documentDetails = document.getElementById('documentDetails');
+     
+     documentSelect.addEventListener('change', () => {
+       if (documentSelect.value) {
+         const documents = JSON.parse(localStorage.getItem('mgr_documents') || '[]');
+         const selectedDoc = documents.find(doc => doc.id === documentSelect.value);
+         
+         if (selectedDoc) {
+           documentDetails.innerHTML = `
+             <strong>Title:</strong> ${selectedDoc.title}<br>
+             <strong>Type:</strong> ${selectedDoc.fileType}<br>
+             <strong>Size:</strong> ${selectedDoc.fileSize}<br>
+             <strong>Category:</strong> ${selectedDoc.category || 'Not specified'}
+           `;
+           selectedDocumentInfo.classList.remove('d-none');
+         }
+       } else {
+         selectedDocumentInfo.classList.add('d-none');
+       }
+     });
+   }
+
+   function setupFormSubmission() {
+     document.getElementById('securityForm').addEventListener('submit', (e) => {
+       e.preventDefault();
+
+       const documentId = document.getElementById('documentSelect').value;
+       const password = document.getElementById('password').value;
+       const confirmPassword = document.getElementById('confirmPassword').value;
+
+       if (!documentId) {
+         alert('Please select a document to secure.');
+         return;
+       }
+
+       if (!selectedSecurityLevel) {
+         alert('Please select a security level.');
+         return;
+       }
+
+       if (password !== confirmPassword) {
+         alert('Passwords do not match.');
+         return;
+       }
+
+       if (password.length < 8) {
+         alert('Password must be at least 8 characters long.');
+         return;
+       }
+
+       // Update document with security settings
+       const documents = JSON.parse(localStorage.getItem('mgr_documents') || '[]');
+       const documentIndex = documents.findIndex(doc => doc.id === documentId);
+       
+       if (documentIndex !== -1) {
+         documents[documentIndex].isSecure = true;
+         documents[documentIndex].securityLevel = selectedSecurityLevel;
+         documents[documentIndex].password = password; // In real app, this would be hashed
+         documents[documentIndex].hint = document.getElementById('hint').value;
+         documents[documentIndex].backupCode = document.getElementById('backupCode').value;
+         documents[documentIndex].enable2FA = document.getElementById('enable2FA').checked;
+         documents[documentIndex].enableBiometric = document.getElementById('enableBiometric').checked;
+         documents[documentIndex].enableTimeLock = document.getElementById('enableTimeLock').checked;
+         documents[documentIndex].enableLocationLock = document.getElementById('enableLocationLock').checked;
+         documents[documentIndex].enableAuditLog = document.getElementById('enableAuditLog').checked;
+         documents[documentIndex].enableAutoLock = document.getElementById('enableAutoLock').checked;
+         documents[documentIndex].securedAt = new Date().toISOString();
+
+         localStorage.setItem('mgr_documents', JSON.stringify(documents));
+
+         alert('Document secured successfully!');
+         window.location.href = 'documents.html';
+       }
+     });
+   }
+
+   // Set active navigation state
+   function setActiveNav() {
+     const currentPage = window.location.pathname.split('/').pop();
+     const navBtns = document.querySelectorAll('.side-options .btn');
+     
+     navBtns.forEach(btn => {
+       const href = btn.getAttribute('href');
+       const page = href ? href.split('/').pop() : '';
+       
+       // Remove existing active class
+       btn.classList.remove('active');
+       
+       // Check if current page matches Documents navigation
+       if (href === 'high-security-locking.html' && currentPage === 'high-security-locking.html') {
+         btn.classList.add('active');
+       }
+     });
+   }
+
+   // Initialize
+   loadDocuments();
+   setupSecurityLevelSelection();
+   setupPasswordStrength();
+   setupAdvancedFeatures();
+   setupDocumentSelection();
+   setupFormSubmission();
+   setActiveNav();
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

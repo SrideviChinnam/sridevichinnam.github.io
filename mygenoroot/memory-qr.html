@@ -1,0 +1,571 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Generate QR Code - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo-text.svg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="memory-list.html">My Memories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="memory-create.html">Create Memory</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="memory-qr.html">Generate QR</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+     </header>
+
+    <section class="section section-bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="main-heading mb-0"><span class="line"></span>Generate QR Code</h3>
+                <a href="memory-list.html" class="btn btn-outline-primary">
+                  <i class="fas fa-list"></i> View All Memories
+                </a>
+              </div>
+
+              <!-- Step 1: Select Memory -->
+              <div class="row mb-4">
+                <div class="col-lg-12">
+                  <label class="form-label">Select Memory <span class="text-danger">*</span></label>
+                  <select class="form-select" id="memorySelect">
+                    <option value="">Choose a memory...</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Memory Preview -->
+              <div id="memoryPreview" class="memory-preview mb-4" style="display: none;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="preview-media" id="previewMedia"></div>
+                  </div>
+                  <div class="col-md-8">
+                    <h5 class="preview-title" id="previewTitle"></h5>
+                    <p class="preview-description" id="previewDescription"></p>
+                    <div class="preview-meta">
+                      <span class="preview-type" id="previewType"></span>
+                      <span class="preview-date" id="previewDate"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: QR Options -->
+              <div id="qrOptions" class="qr-options mb-4" style="display: none;">
+                <h5>QR Code Options</h5>
+                
+                <!-- Viewing Option -->
+                <div class="row mb-3">
+                  <div class="col-lg-6">
+                    <label class="form-label">Viewing Option</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="viewingOption" id="mediaOnly" value="media" checked>
+                      <label class="form-check-label" for="mediaOnly">
+                        <strong>Media Only</strong><br>
+                        <small class="text-muted">Shows only the media file when scanned</small>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="viewingOption" id="fullPage" value="full">
+                      <label class="form-check-label" for="fullPage">
+                        <strong>Full Page</strong><br>
+                        <small class="text-muted">Shows media with all details when scanned</small>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-6">
+                    <label for="customMessage" class="form-label">Custom Message (Optional)</label>
+                    <textarea class="form-control" id="customMessage" rows="3" placeholder="Add a personal message to the QR code..."></textarea>
+                  </div>
+                </div>
+
+                <!-- Generate Button -->
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary btn-lg" id="generateQRBtn" onclick="generateQRCode()">
+                    <i class="fas fa-qrcode"></i> Generate QR Code
+                  </button>
+                </div>
+              </div>
+
+              <!-- Generated QR Code -->
+              <div id="qrCodeSection" class="qr-code-section text-center" style="display: none;">
+                <h5>Generated QR Code</h5>
+                <div class="qr-code-container mb-3">
+                  <div id="qrCodeDisplay" style="display: inline-block; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); min-height: 340px; min-width: 340px;">
+                    <div id="qrLoading" style="display: none; padding: 50px;">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Generating QR Code...</span>
+                      </div>
+                      <p class="mt-2">Generating QR Code...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="qr-info mb-3">
+                  <p class="qr-url"><strong>URL:</strong> <span id="qrUrl"></span></p>
+                  <p class="qr-message" id="qrMessage"></p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="qr-actions">
+                  <button type="button" class="btn btn-success" onclick="downloadQRCode()">
+                    <i class="fas fa-download"></i> Download QR Code
+                  </button>
+                  <button type="button" class="btn btn-info" onclick="copyLink()">
+                    <i class="fas fa-copy"></i> Copy Link
+                  </button>
+                  <button type="button" class="btn btn-warning" onclick="printQRCode()">
+                    <i class="fas fa-print"></i> Print QR Code
+                  </button>
+                  <button type="button" class="btn btn-primary" onclick="shareSocial()">
+                    <i class="fab fa-twitter"></i> Share on Social Media
+                  </button>
+                  <button type="button" class="btn btn-secondary" onclick="emailQR()">
+                    <i class="fas fa-envelope"></i> Email QR Code
+                  </button>
+                </div>
+              </div>
+
+              <!-- Generated QR Codes List -->
+              <div id="generatedQRCodes" class="generated-qr-codes mt-5" style="display: none;">
+                <h5>Previously Generated QR Codes</h5>
+                <div id="qrCodesList" class="qr-codes-list">
+                  <!-- Previously generated QR codes will be listed here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section-bg-light">
+      <div class="container">
+        <div class="row border-bottom pb-3 pt-4 mb-3 mx-0 align-items-center">
+          <div class="col-12 col-lg-4">
+            <ul class="nav"> 
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+              <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 text-center">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo.svg">
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 text-end">
+            <ul class="nav justify-content-lg-end socila-icons"> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m13.081 10.712l-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576l6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576l5.842-6.962m-8.004 9.538L5.077 20.25"/></svg>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center mx-0">
+          <div class="col-12 col-lg-6">
+            <ul class="nav"> 
+              <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6 text-end">
+            <ul class="nav justify-content-lg-end"> 
+              <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+              <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      let currentMemory = null;
+      let currentQRData = null;
+
+      // Initialize when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        loadMemories();
+        setupEventListeners();
+        
+        // Check if memory ID is passed in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const memoryId = urlParams.get('memory');
+        if (memoryId) {
+          setTimeout(() => {
+            document.getElementById('memorySelect').value = memoryId;
+            showMemoryPreview(memoryId);
+          }, 500);
+        }
+      });
+
+      function setupEventListeners() {
+        // Memory selection
+        document.getElementById('memorySelect').addEventListener('change', function() {
+          if (this.value) {
+            showMemoryPreview(this.value);
+          } else {
+            hideMemoryPreview();
+          }
+        });
+      }
+
+      function loadMemories() {
+        const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+        const select = document.getElementById('memorySelect');
+        
+        select.innerHTML = '<option value="">Choose a memory...</option>';
+        
+        memories.forEach(memory => {
+          const option = document.createElement('option');
+          option.value = memory.id;
+          option.textContent = memory.title;
+          select.appendChild(option);
+        });
+        
+        if (memories.length === 0) {
+          select.innerHTML = '<option value="">No memories found. Create a memory first!</option>';
+          select.disabled = true;
+        }
+      }
+
+      function showMemoryPreview(memoryId) {
+        const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+        const memory = memories.find(m => m.id === memoryId);
+        
+        if (memory) {
+          currentMemory = memory;
+          
+          const preview = document.getElementById('memoryPreview');
+          const previewMedia = document.getElementById('previewMedia');
+          const previewTitle = document.getElementById('previewTitle');
+          const previewDescription = document.getElementById('previewDescription');
+          const previewType = document.getElementById('previewType');
+          const previewDate = document.getElementById('previewDate');
+          
+          previewTitle.textContent = memory.title;
+          previewDescription.textContent = memory.description || 'No description';
+          previewType.textContent = memory.type.charAt(0).toUpperCase() + memory.type.slice(1);
+          previewDate.textContent = formatDate(memory.createdAt);
+          
+          // Show media preview
+          previewMedia.innerHTML = getMediaPreview(memory.file);
+          
+          preview.style.display = 'block';
+          document.getElementById('qrOptions').style.display = 'block';
+          
+          // Show previously generated QR codes
+          showGeneratedQRCodes();
+        } else {
+          hideMemoryPreview();
+        }
+      }
+
+      function hideMemoryPreview() {
+        document.getElementById('memoryPreview').style.display = 'none';
+        document.getElementById('qrOptions').style.display = 'none';
+        document.getElementById('qrCodeSection').style.display = 'none';
+        document.getElementById('generatedQRCodes').style.display = 'none';
+        currentMemory = null;
+      }
+
+      function generateQRCode() {
+        if (!currentMemory) {
+          alert('Please select a memory first');
+          return;
+        }
+        
+        const viewingOption = document.querySelector('input[name="viewingOption"]:checked').value;
+        const customMessage = document.getElementById('customMessage').value;
+        
+        // Create URL for QR code (absolute URL for QR scanning)
+        const baseUrl = window.location.origin + window.location.pathname.replace('memory-qr.html', '');
+        const qrUrl = `${baseUrl}memory-view.html?id=${currentMemory.id}&view=${viewingOption}`;
+        
+        // Show QR code section and loading state
+        document.getElementById('qrCodeSection').style.display = 'block';
+        document.getElementById('qrLoading').style.display = 'block';
+        
+        // Try multiple QR code services for reliability
+        const qrServices = [
+          `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrUrl)}`,
+          `https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=${encodeURIComponent(qrUrl)}`,
+          `https://quickchart.io/qr?text=${encodeURIComponent(qrUrl)}&size=300`
+        ];
+        
+        // Create QR code image with fallback
+        const img = new Image();
+        img.style.maxWidth = '300px';
+        img.style.height = 'auto';
+        img.style.border = '1px solid #ddd';
+        img.style.borderRadius = '8px';
+        img.alt = 'QR Code';
+        
+        img.onload = function() {
+          // Hide loading and show QR code
+          document.getElementById('qrLoading').style.display = 'none';
+          document.getElementById('qrCodeDisplay').innerHTML = '';
+          document.getElementById('qrCodeDisplay').appendChild(img);
+        };
+        
+        img.onerror = function() {
+          // Try second service
+          img.src = qrServices[1];
+          img.onerror = function() {
+            // Try third service
+            img.src = qrServices[2];
+            img.onerror = function() {
+              // Show error message
+              document.getElementById('qrLoading').style.display = 'none';
+              document.getElementById('qrCodeDisplay').innerHTML = '<p class="text-danger">Failed to generate QR code. Please try again.</p>';
+            };
+          };
+        };
+        
+        // Start loading first QR service
+        img.src = qrServices[0];
+        
+        // Update QR info
+        document.getElementById('qrUrl').textContent = qrUrl;
+        document.getElementById('qrMessage').textContent = customMessage ? `Message: ${customMessage}` : '';
+        
+        // Save QR code data
+        currentQRData = {
+          memoryId: currentMemory.id,
+          viewingOption: viewingOption,
+          customMessage: customMessage,
+          generatedAt: new Date().toISOString(),
+          qrUrl: qrUrl,
+          qrImageUrl: qrServices[0]
+        };
+        
+        // Add to memory's QR codes
+        if (!currentMemory.qrCodes) {
+          currentMemory.qrCodes = [];
+        }
+        
+        const qrCodeEntry = {
+          id: Date.now().toString(),
+          url: qrUrl,
+          viewingOption: viewingOption,
+          customMessage: customMessage,
+          generatedAt: currentQRData.generatedAt,
+          qrImageUrl: qrServices[0]
+        };
+        
+        currentMemory.qrCodes.push(qrCodeEntry);
+        
+        // Update localStorage
+        const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+        const memoryIndex = memories.findIndex(m => m.id === currentMemory.id);
+        if (memoryIndex !== -1) {
+          memories[memoryIndex] = currentMemory;
+          localStorage.setItem('mgr_memories', JSON.stringify(memories));
+        }
+        
+        // Update generated QR codes list
+        showGeneratedQRCodes();
+        
+        alert('QR Code generated successfully!');
+      }
+
+      function showGeneratedQRCodes() {
+        if (!currentMemory || !currentMemory.qrCodes || currentMemory.qrCodes.length === 0) {
+          document.getElementById('generatedQRCodes').style.display = 'none';
+          return;
+        }
+        
+        const qrCodesList = document.getElementById('qrCodesList');
+        qrCodesList.innerHTML = currentMemory.qrCodes.map(qr => `
+          <div class="qr-code-item border p-3 mb-3 rounded">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h6>QR Code #${currentMemory.qrCodes.indexOf(qr) + 1}</h6>
+                <p class="mb-1"><strong>Viewing:</strong> ${qr.viewingOption === 'media' ? 'Media Only' : 'Full Page'}</p>
+                <p class="mb-1"><strong>Generated:</strong> ${formatDate(qr.generatedAt)}</p>
+                ${qr.customMessage ? `<p class="mb-1"><strong>Message:</strong> ${qr.customMessage}</p>` : ''}
+                <p class="mb-0"><strong>URL:</strong> <code>${qr.url}</code></p>
+              </div>
+              <div class="col-md-4 text-end">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyQRUrl('${qr.url}')">
+                  <i class="fas fa-copy"></i> Copy URL
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="deleteQRCode('${qr.id}')">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+        
+        document.getElementById('generatedQRCodes').style.display = 'block';
+      }
+
+      function copyQRUrl(url) {
+        navigator.clipboard.writeText(url).then(() => {
+          alert('QR Code URL copied to clipboard!');
+        }).catch(() => {
+          alert('Failed to copy URL. Please try again.');
+        });
+      }
+
+      function deleteQRCode(qrId) {
+        if (confirm('Are you sure you want to delete this QR code?')) {
+          currentMemory.qrCodes = currentMemory.qrCodes.filter(qr => qr.id !== qrId);
+          
+          // Update localStorage
+          const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+          const memoryIndex = memories.findIndex(m => m.id === currentMemory.id);
+          if (memoryIndex !== -1) {
+            memories[memoryIndex] = currentMemory;
+            localStorage.setItem('mgr_memories', JSON.stringify(memories));
+          }
+          
+          showGeneratedQRCodes();
+        }
+      }
+
+      function downloadQRCode() {
+        if (currentQRData && currentQRData.qrImageUrl) {
+          const link = document.createElement('a');
+          link.href = currentQRData.qrImageUrl;
+          link.download = `memory-qr-${currentMemory.title.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.png`;
+          link.click();
+        }
+      }
+
+      function copyLink() {
+        const qrUrl = document.getElementById('qrUrl').textContent;
+        navigator.clipboard.writeText(qrUrl).then(() => {
+          alert('Link copied to clipboard!');
+        }).catch(() => {
+          alert('Failed to copy link. Please try again.');
+        });
+      }
+
+      function printQRCode() {
+        const qrImage = document.querySelector('#qrCodeDisplay img');
+        if (qrImage) {
+          const printWindow = window.open('', '_blank');
+          printWindow.document.write(`
+            <html>
+              <head>
+                <title>QR Code - ${currentMemory.title}</title>
+                <style>
+                  body { text-align: center; font-family: Arial, sans-serif; }
+                  img { max-width: 100%; height: auto; }
+                  h1 { color: #3880ED; }
+                </style>
+              </head>
+              <body>
+                <h1>${currentMemory.title}</h1>
+                <img src="${qrImage.src}" alt="QR Code">
+                ${currentQRData.customMessage ? `<p><strong>Message:</strong> ${currentQRData.customMessage}</p>` : ''}
+              </body>
+            </html>
+          `);
+          printWindow.document.close();
+          printWindow.print();
+        }
+      }
+
+      function shareSocial() {
+        const qrUrl = document.getElementById('qrUrl').textContent;
+        const shareText = `Check out this memory: ${currentMemory.title}`;
+        const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(qrUrl)}`;
+        window.open(shareUrl, '_blank');
+      }
+
+      function emailQR() {
+        const qrUrl = document.getElementById('qrUrl').textContent;
+        const subject = `Memory QR Code: ${currentMemory.title}`;
+        const body = `Hi! I wanted to share this memory with you. Scan the QR code or visit: ${qrUrl}`;
+        const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoUrl;
+      }
+
+      // Helper functions
+      function getMediaPreview(file) {
+        if (file.type.startsWith('image/')) {
+          return `<img src="${file.data}" alt="Preview" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;">`;
+        } else if (file.type.startsWith('video/')) {
+          return `<video src="${file.data}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" muted>
+                    <div class="video-placeholder d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa;">
+                      <i class="fas fa-video fa-2x text-muted"></i>
+                    </div>
+                  </video>`;
+        } else if (file.type.startsWith('audio/')) {
+          return `<div class="audio-placeholder d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa; border-radius: 8px;">
+                    <i class="fas fa-volume-up fa-2x text-muted"></i>
+                  </div>`;
+        }
+        return `<div class="file-placeholder d-flex align-items-center justify-content-center" style="height: 150px; background: #f8f9fa; border-radius: 8px;">
+                  <i class="fas fa-file fa-2x text-muted"></i>
+                </div>`;
+      }
+
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        });
+      }
+    </script>
+  </body>
+</html>

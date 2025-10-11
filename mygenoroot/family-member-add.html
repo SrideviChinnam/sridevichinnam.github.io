@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Family Member - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================== Icon ================== -->
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <!-- ================== Fontawesome Icon ================== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ================== Custom CSS ================== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- ================== Animation CSS ================== -->
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <!-- ================== Family Tree CSS ================== -->
+    <link rel="stylesheet" href="assets/css/family-tree.css">
+    <!-- ================== Iconyfy ================== -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+   <!-- ================== Navbar Section ================== -->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+      <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">
+            <img class="" src="assets/images/logo-text.svg">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dna-test.html">NewStand</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Who We Are</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="family-tree.html">Family Tree</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                Cart
+                <span class="badge">3</span>
+              </button>
+            </form>
+          </div>
+      </div>
+    </nav>
+   </header>
+
+   <!-- ================== Add Family Member Section ================== -->
+   <section class="section">
+     <div class="container">
+       <!-- Breadcrumb -->
+       <nav aria-label="breadcrumb" class="mb-4">
+         <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="family-tree.html">Family Trees</a></li>
+           <li class="breadcrumb-item"><a href="#" id="tree-breadcrumb">Tree Name</a></li>
+           <li class="breadcrumb-item active" aria-current="page">Add Member</li>
+         </ol>
+       </nav>
+
+       <div class="row">
+         <div class="col-lg-8 mx-auto">
+           <div class="add-member-form">
+             <div class="text-center mb-5">
+               <h1 class="main-heading" data-animate-in="down">
+                 <span class="line"></span>Add Family Member
+               </h1>
+               <p class="lead" data-animate-in="up">Add a new family member to your family tree</p>
+             </div>
+
+             <form id="add-member-form" data-animate-in="up">
+               <!-- Relationship Information -->
+               <div class="form-section">
+                 <h3 class="section-title">Relationship Information</h3>
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="relationship-to" class="form-label">Relationship to *</label>
+                     <select class="form-select" id="relationship-to" name="relationshipTo" required>
+                       <option value="">Select relationship</option>
+                       <option value="parent">Parent</option>
+                       <option value="child">Child</option>
+                       <option value="spouse">Spouse</option>
+                       <option value="sibling">Sibling</option>
+                       <option value="grandparent">Grandparent</option>
+                       <option value="grandchild">Grandchild</option>
+                       <option value="uncle">Uncle/Aunt</option>
+                       <option value="nephew">Nephew/Niece</option>
+                       <option value="cousin">Cousin</option>
+                       <option value="other">Other</option>
+                     </select>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="related-to" class="form-label">Related to *</label>
+                     <select class="form-select" id="related-to" name="relatedTo" required>
+                       <option value="">Select family member</option>
+                       <!-- Options will be populated dynamically -->
+                     </select>
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Personal Information -->
+               <div class="form-section">
+                 <h3 class="section-title">Personal Information</h3>
+                 
+                 <div class="row">
+                   <div class="col-md-4 mb-3">
+                     <label for="first-name" class="form-label">First Name *</label>
+                     <input type="text" class="form-control" id="first-name" name="firstName" required>
+                   </div>
+                   <div class="col-md-4 mb-3">
+                     <label for="middle-name" class="form-label">Middle Name</label>
+                     <input type="text" class="form-control" id="middle-name" name="middleName">
+                   </div>
+                   <div class="col-md-4 mb-3">
+                     <label for="last-name" class="form-label">Last Name *</label>
+                     <input type="text" class="form-control" id="last-name" name="lastName" required>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="birth-date" class="form-label">Birth Date</label>
+                     <input type="date" class="form-control" id="birth-date" name="birthDate">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="gender" class="form-label">Gender</label>
+                     <select class="form-select" id="gender" name="gender">
+                       <option value="">Select Gender</option>
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                       <option value="other">Other</option>
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="birth-place" class="form-label">Birth Place</label>
+                     <input type="text" class="form-control" id="birth-place" name="birthPlace" placeholder="City, Country">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="occupation" class="form-label">Occupation</label>
+                     <input type="text" class="form-control" id="occupation" name="occupation">
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Death Information (Optional) -->
+               <div class="form-section">
+                 <h3 class="section-title">Death Information (Optional)</h3>
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="death-date" class="form-label">Death Date</label>
+                     <input type="date" class="form-control" id="death-date" name="deathDate">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="death-place" class="form-label">Death Place</label>
+                     <input type="text" class="form-control" id="death-place" name="deathPlace" placeholder="City, Country">
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Additional Information -->
+               <div class="form-section">
+                 <h3 class="section-title">Additional Information</h3>
+                 <div class="mb-3">
+                   <label for="notes" class="form-label">Notes</label>
+                   <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="Additional information about this family member..."></textarea>
+                 </div>
+               </div>
+
+               <!-- Photo Upload -->
+               <div class="form-section">
+                 <h3 class="section-title">Profile Photo</h3>
+                 <div class="photo-upload">
+                   <div class="photo-preview">
+                     <img id="photo-preview" src="assets/images/family-tree/placeholders/default-avatar.png" alt="Photo Preview" class="img-fluid">
+                   </div>
+                   <div class="photo-upload-controls">
+                     <input type="file" class="form-control" id="photo-upload" accept="image/*">
+                     <label for="photo-upload" class="btn btn-outline-primary">
+                       <i class="fas fa-camera me-2"></i>Upload Photo
+                     </label>
+                     <button type="button" class="btn btn-outline-danger" id="remove-photo" style="display: none;">
+                       <i class="fas fa-trash me-2"></i>Remove Photo
+                     </button>
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Form Actions -->
+               <div class="form-actions">
+                 <div class="d-flex justify-content-between">
+                   <a href="#" id="cancel-link" class="btn btn-outline-secondary">
+                     <i class="fas fa-arrow-left me-2"></i>Cancel
+                   </a>
+                   <button type="submit" class="btn btn-primary btn-lg">
+                     <i class="fas fa-plus-circle me-2"></i>Add Family Member
+                   </button>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <!-- ================== Help Section ================== -->
+   <section class="section section-bg-light">
+     <div class="container">
+       <div class="row">
+         <div class="col-12 text-center">
+           <h3 class="mb-4">Need Help?</h3>
+           <div class="row">
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-users"></i>
+                 </div>
+                 <h5>Relationship Types</h5>
+                 <p>Choose the correct relationship type to ensure proper family tree connections.</p>
+               </div>
+             </div>
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-calendar"></i>
+                 </div>
+                 <h5>Date Formats</h5>
+                 <p>Use the date picker for birth and death dates to ensure consistent formatting.</p>
+               </div>
+             </div>
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-image"></i>
+                 </div>
+                 <h5>Photo Guidelines</h5>
+                 <p>Upload clear photos in JPG or PNG format for the best results.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <!-- ================== Footer Section ================== -->
+   <footer class="section-bg-light">
+     <div class="container">
+       <div class="row border-bottom pb-3 pt-4 mb-3 mx-0 align-items-center">
+         <div class="col-12 col-lg-4">
+           <ul class="nav"> 
+             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+             <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+           </ul>
+         </div>
+         <div class="col-12 col-lg-4 text-center">
+           <a href="index.html" class="navbar-brand">
+             <img class="" src="assets/images/logo.svg">
+           </a>
+         </div>
+         <div class="col-12 col-lg-6 text-end">
+           <ul class="nav justify-content-lg-end"> 
+             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+             <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+           </ul>
+         </div>
+       </div>
+       <div class="row align-items-center mx-0">
+         <div class="col-12 col-lg-6">
+           <ul class="nav"> 
+             <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+           </ul>
+         </div>
+         <div class="col-12 col-lg-6 text-end">
+           <ul class="nav justify-content-lg-end"> 
+             <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+             <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+           </ul>
+         </div>
+       </div>
+     </div>
+   </footer>
+
+   <!-- ================== Script Links ================== -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/script.js"></script>
+   <script src="assets/js/animation.js"></script>
+   <script src="assets/js/family-tree/core.js"></script>
+   <script src="assets/js/family-tree/add-member.js"></script>
+  </body>
+</html>

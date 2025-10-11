@@ -1,0 +1,602 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create Memory - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo-text.svg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="memory-list.html">My Memories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="memory-create.html">Create Memory</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="memory-qr.html">Generate QR</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+     </header>
+
+    <section class="section section-bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="main-heading mb-0"><span class="line"></span>Create New Memory</h3>
+                <a href="memory-list.html" class="btn btn-outline-primary">
+                  <i class="fas fa-list"></i> View All Memories
+                </a>
+              </div>
+
+              <form id="memoryForm">
+                <div class="row">
+                  <!-- Memory Type Selection -->
+                  <div class="col-lg-6 mb-4">
+                    <label class="form-label">Memory Type <span class="text-danger">*</span></label>
+                    <div class="memory-type-grid">
+                      <div class="memory-type-option" data-type="family">
+                        <div class="type-icon">
+                          <i class="fas fa-users"></i>
+                        </div>
+                        <span>Family Memory</span>
+                      </div>
+                      <div class="memory-type-option" data-type="personal">
+                        <div class="type-icon">
+                          <i class="fas fa-user"></i>
+                        </div>
+                        <span>Personal Memory</span>
+                      </div>
+                      <div class="memory-type-option" data-type="memorial">
+                        <div class="type-icon">
+                          <i class="fas fa-heart"></i>
+                        </div>
+                        <span>Memorial Memory</span>
+                      </div>
+                      <div class="memory-type-option" data-type="general">
+                        <div class="type-icon">
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span>General Memory</span>
+                      </div>
+                    </div>
+                    <input type="hidden" id="memoryType" name="memoryType" required>
+                  </div>
+
+                  <!-- Memory Title -->
+                  <div class="col-lg-6 mb-4">
+                    <label for="memoryTitle" class="form-label">Memory Title <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="memoryTitle" name="memoryTitle" placeholder="Enter memory title" required>
+                  </div>
+
+                  <!-- Memory Description -->
+                  <div class="col-lg-12 mb-4">
+                    <label for="memoryDescription" class="form-label">Memory Description</label>
+                    <textarea class="form-control" id="memoryDescription" name="memoryDescription" rows="4" placeholder="Tell the story behind this memory..."></textarea>
+                  </div>
+
+                  <!-- Memory Subject -->
+                  <div class="col-lg-6 mb-4">
+                    <label for="memorySubject" class="form-label">Who is this memory about?</label>
+                    <input type="text" class="form-control" id="memorySubject" name="memorySubject" placeholder="e.g., Grandma, Family Trip, My Wedding">
+                  </div>
+
+                  <!-- Memory Date -->
+                  <div class="col-lg-6 mb-4">
+                    <label for="memoryDate" class="form-label">Memory Date</label>
+                    <input type="date" class="form-control" id="memoryDate" name="memoryDate">
+                  </div>
+
+                  <!-- Tags -->
+                  <div class="col-lg-12 mb-4">
+                    <label for="memoryTags" class="form-label">Tags (comma separated)</label>
+                    <input type="text" class="form-control" id="memoryTags" name="memoryTags" placeholder="e.g., vacation, birthday, celebration">
+                    <div class="form-text">Add tags to help organize your memories</div>
+                  </div>
+
+                  <!-- File Upload -->
+                  <div class="col-lg-12 mb-4">
+                    <label class="form-label">Upload Media <span class="text-danger">*</span></label>
+                    <div class="file-upload-area" id="fileUploadArea">
+                      <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h5>Drop files here or click to upload</h5>
+                        <p class="text-muted">Supports: Images (max 10MB), Videos (max 100MB), Audio (max 50MB)</p>
+                        <input type="file" id="mediaFile" name="mediaFile" accept="image/*,video/*,audio/*" style="display: none;" required>
+                        <button type="button" class="btn btn-outline-primary" id="chooseFileBtn">
+                          Choose File
+                        </button>
+                      </div>
+                    </div>
+                    <div id="filePreview" class="file-preview mt-3" style="display: none;">
+                      <div class="preview-content">
+                        <div class="preview-media"></div>
+                        <div class="preview-info">
+                          <h6 class="preview-title"></h6>
+                          <p class="preview-size"></p>
+                          <button type="button" class="btn btn-sm btn-outline-danger" id="removeFileBtn">
+                            <i class="fas fa-trash"></i> Remove
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="fileError" class="alert alert-danger mt-2" style="display: none;"></div>
+                  </div>
+
+                  <!-- Action Buttons -->
+                  <div class="col-lg-12">
+                    <div class="d-flex gap-3">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Memory
+                      </button>
+                      <button type="button" class="btn btn-outline-secondary" id="resetBtn">
+                        <i class="fas fa-undo"></i> Reset
+                      </button>
+                      <button type="button" class="btn btn-outline-info" id="testBtn">
+                        <i class="fas fa-bug"></i> Test Storage
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section-bg-light">
+      <div class="container">
+        <div class="row border-bottom pb-3 pt-4 mb-3 mx-0 align-items-center">
+          <div class="col-12 col-lg-4">
+            <ul class="nav"> 
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+              <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 text-center">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo.svg">
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 text-end">
+            <ul class="nav justify-content-lg-end socila-icons"> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m13.081 10.712l-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576l6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576l5.842-6.962m-8.004 9.538L5.077 20.25"/></svg>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center mx-0">
+          <div class="col-12 col-lg-6">
+            <ul class="nav"> 
+              <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6 text-end">
+            <ul class="nav justify-content-lg-end"> 
+              <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+              <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Global variables
+      let selectedFile = null;
+      
+      // File size limits
+      const FILE_LIMITS = {
+        image: 10 * 1024 * 1024, // 10MB
+        video: 100 * 1024 * 1024, // 100MB
+        audio: 50 * 1024 * 1024 // 50MB
+      };
+
+      // Initialize when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Memory Create Page Loaded');
+        initializePage();
+      });
+
+      function initializePage() {
+        console.log('Initializing page...');
+        
+        // Get elements
+        const fileInput = document.getElementById('mediaFile');
+        const uploadArea = document.getElementById('fileUploadArea');
+        const chooseFileBtn = document.getElementById('chooseFileBtn');
+        const removeFileBtn = document.getElementById('removeFileBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const testBtn = document.getElementById('testBtn');
+        const memoryForm = document.getElementById('memoryForm');
+        const memoryTypeOptions = document.querySelectorAll('.memory-type-option');
+
+        console.log('Elements found:', {
+          fileInput: !!fileInput,
+          uploadArea: !!uploadArea,
+          chooseFileBtn: !!chooseFileBtn,
+          memoryForm: !!memoryForm
+        });
+
+        // Memory type selection
+        memoryTypeOptions.forEach(option => {
+          option.addEventListener('click', function() {
+            console.log('Memory type clicked:', this.dataset.type);
+            
+            // Remove selected class from all options
+            memoryTypeOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            this.classList.add('selected');
+            
+            // Set hidden input value
+            document.getElementById('memoryType').value = this.dataset.type;
+            
+            console.log('Memory type set to:', this.dataset.type);
+          });
+        });
+
+        // File upload - Choose File button
+        chooseFileBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Choose File button clicked');
+          fileInput.click();
+        });
+
+        // File upload - Click on upload area
+        uploadArea.addEventListener('click', function(e) {
+          console.log('Upload area clicked');
+          fileInput.click();
+        });
+
+        // File input change
+        fileInput.addEventListener('change', function(e) {
+          console.log('File input changed, files:', e.target.files.length);
+          if (e.target.files.length > 0) {
+            handleFileSelect(e.target.files[0]);
+          }
+        });
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          this.classList.add('dragover');
+          console.log('Drag over');
+        });
+
+        uploadArea.addEventListener('dragleave', function(e) {
+          e.preventDefault();
+          this.classList.remove('dragover');
+          console.log('Drag leave');
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+          e.preventDefault();
+          this.classList.remove('dragover');
+          const files = e.dataTransfer.files;
+          console.log('Files dropped:', files.length);
+          if (files.length > 0) {
+            handleFileSelect(files[0]);
+          }
+        });
+
+        // Remove file button
+        removeFileBtn.addEventListener('click', function() {
+          console.log('Remove file clicked');
+          removeFile();
+        });
+
+        // Reset button
+        resetBtn.addEventListener('click', function() {
+          console.log('Reset clicked');
+          resetForm();
+        });
+
+        // Test button
+        testBtn.addEventListener('click', function() {
+          console.log('Test clicked');
+          testLocalStorage();
+        });
+
+        // Form submission
+        memoryForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          console.log('Form submitted');
+          saveMemory();
+        });
+
+        console.log('All event listeners attached');
+      }
+
+      function handleFileSelect(file) {
+        console.log('Handling file:', file.name, file.size, file.type);
+        
+        // Validate file size
+        const fileType = file.type.split('/')[0];
+        const maxSize = FILE_LIMITS[fileType];
+        
+        console.log('File validation:', {
+          type: fileType,
+          size: file.size,
+          maxSize: maxSize,
+          isValid: !maxSize || file.size <= maxSize
+        });
+
+        if (maxSize && file.size > maxSize) {
+          const sizeLimit = fileType === 'image' ? '10MB' : fileType === 'video' ? '100MB' : '50MB';
+          showError(`File size too large. Maximum size allowed: ${sizeLimit}`);
+          return;
+        }
+
+        // Store selected file
+        selectedFile = file;
+        
+        // Show preview
+        showFilePreview(file);
+        
+        // Hide error
+        hideError();
+        
+        console.log('File selected successfully');
+      }
+
+      function showFilePreview(file) {
+        console.log('Showing file preview');
+        
+        const preview = document.getElementById('filePreview');
+        const previewMedia = preview.querySelector('.preview-media');
+        const previewTitle = preview.querySelector('.preview-title');
+        const previewSize = preview.querySelector('.preview-size');
+
+        previewTitle.textContent = file.name;
+        previewSize.textContent = formatFileSize(file.size);
+
+        // Create preview based on file type
+        previewMedia.innerHTML = '';
+        if (file.type.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          img.style.maxWidth = '100px';
+          img.style.maxHeight = '100px';
+          img.style.objectFit = 'cover';
+          img.style.borderRadius = '8px';
+          previewMedia.appendChild(img);
+        } else if (file.type.startsWith('video/')) {
+          const video = document.createElement('video');
+          video.src = URL.createObjectURL(file);
+          video.style.maxWidth = '100px';
+          video.style.maxHeight = '100px';
+          video.style.objectFit = 'cover';
+          video.style.borderRadius = '8px';
+          video.controls = true;
+          previewMedia.appendChild(video);
+        } else if (file.type.startsWith('audio/')) {
+          const audio = document.createElement('audio');
+          audio.src = URL.createObjectURL(file);
+          audio.controls = true;
+          audio.style.width = '200px';
+          previewMedia.appendChild(audio);
+        }
+
+        preview.style.display = 'block';
+        console.log('File preview shown');
+      }
+
+      function removeFile() {
+        console.log('Removing file');
+        
+        selectedFile = null;
+        document.getElementById('mediaFile').value = '';
+        document.getElementById('filePreview').style.display = 'none';
+        hideError();
+        
+        console.log('File removed');
+      }
+
+      function showError(message) {
+        console.log('Showing error:', message);
+        
+        const errorDiv = document.getElementById('fileError');
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+      }
+
+      function hideError() {
+        document.getElementById('fileError').style.display = 'none';
+      }
+
+      function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      function saveMemory() {
+        console.log('Starting to save memory...');
+        
+        // Validate form
+        const memoryType = document.getElementById('memoryType').value;
+        const memoryTitle = document.getElementById('memoryTitle').value.trim();
+        
+        console.log('Form validation:', {
+          memoryType: memoryType,
+          memoryTitle: memoryTitle,
+          hasFile: !!selectedFile
+        });
+
+        if (!memoryType) {
+          alert('Please select a memory type');
+          console.log('Validation failed: No memory type');
+          return;
+        }
+
+        if (!memoryTitle) {
+          alert('Please enter a memory title');
+          console.log('Validation failed: No memory title');
+          return;
+        }
+
+        if (!selectedFile) {
+          alert('Please upload a media file');
+          console.log('Validation failed: No file');
+          return;
+        }
+
+        console.log('Form validation passed');
+
+        // Create memory object
+        const memory = {
+          id: Date.now().toString(),
+          type: memoryType,
+          title: memoryTitle,
+          description: document.getElementById('memoryDescription').value,
+          subject: document.getElementById('memorySubject').value,
+          date: document.getElementById('memoryDate').value,
+          tags: document.getElementById('memoryTags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+          file: {
+            name: selectedFile.name,
+            size: selectedFile.size,
+            type: selectedFile.type,
+            data: null // Will be set after base64 conversion
+          },
+          createdAt: new Date().toISOString(),
+          qrCodes: []
+        };
+
+        console.log('Memory object created:', memory);
+
+        // Convert file to base64
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          console.log('File converted to base64');
+          
+          memory.file.data = e.target.result;
+          
+          // Save to localStorage
+          try {
+            const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+            memories.push(memory);
+            localStorage.setItem('mgr_memories', JSON.stringify(memories));
+            
+            console.log('Memory saved to localStorage successfully');
+            console.log('Total memories:', memories.length);
+            
+            // Show success message
+            alert('Memory saved successfully! You can now generate QR codes for it.');
+            
+            // Reset form
+            resetForm();
+            
+            // Redirect to memory list
+            window.location.href = 'memory-list.html';
+            
+          } catch (error) {
+            console.error('Error saving to localStorage:', error);
+            alert('Error saving memory: ' + error.message);
+          }
+        };
+        
+        reader.onerror = function() {
+          console.error('Error reading file');
+          alert('Error reading file. Please try again.');
+        };
+        
+        console.log('Starting file conversion...');
+        reader.readAsDataURL(selectedFile);
+      }
+
+      function resetForm() {
+        console.log('Resetting form');
+        
+        // Reset form fields
+        document.getElementById('memoryForm').reset();
+        
+        // Reset memory type selection
+        document.querySelectorAll('.memory-type-option').forEach(opt => opt.classList.remove('selected'));
+        document.getElementById('memoryType').value = '';
+        
+        // Reset file
+        selectedFile = null;
+        document.getElementById('filePreview').style.display = 'none';
+        hideError();
+        
+        console.log('Form reset complete');
+      }
+
+      function testLocalStorage() {
+        console.log('Testing localStorage...');
+        
+        try {
+          // Test basic localStorage
+          localStorage.setItem('test', 'working');
+          const testValue = localStorage.getItem('test');
+          console.log('Basic localStorage test:', testValue);
+          
+          // Test existing memories
+          const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+          console.log('Existing memories:', memories.length);
+          console.log('All memories:', memories);
+          
+          alert(`localStorage test: ${testValue}\nExisting memories: ${memories.length}`);
+        } catch (error) {
+          console.error('localStorage test failed:', error);
+          alert('localStorage test failed: ' + error.message);
+        }
+      }
+    </script>
+  </body>
+</html>

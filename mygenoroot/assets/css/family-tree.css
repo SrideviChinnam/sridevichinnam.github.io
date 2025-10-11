@@ -1,0 +1,908 @@
+/* ================== Family Tree Styles ================== */
+
+/* Treant.js Custom Styles */
+.family-node {
+  background: white;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.family-node:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.family-node.female {
+  border-color: #e91e63;
+}
+
+.family-node.male {
+  border-color: #2196f3;
+}
+
+.family-node.deceased {
+  border-color: #dc3545;
+  opacity: 0.8;
+}
+
+.family-member img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Treant.js specific image styling */
+.Treant .node img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* Ensure Treant.js nodes display images properly */
+.Treant .node {
+  text-align: center;
+}
+
+.Treant .node .node-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.Treant .node .node-title {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.Treant .node .node-contact {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.member-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.member-title {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.member-contact {
+  font-size: 11px;
+  color: #888;
+}
+
+.family-member .name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.family-member .title {
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.family-member .contact {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Tree container styling */
+#tree-container {
+  background: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Loading state */
+.tree-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Empty tree message */
+.empty-tree, .no-trees-message, .error-state {
+  padding: 40px 20px;
+}
+
+.empty-tree i, .no-trees-message i, .error-state i {
+  opacity: 0.5;
+}
+
+/* Dashboard Styles */
+.quick-actions {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Horizontal Tree Card Styles */
+.horizontal-tree-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.horizontal-tree-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.card-left {
+  flex: 0 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree-icon-large {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.card-middle {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.tree-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.tree-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.tree-tags {
+  margin-bottom: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+.tree-timestamp {
+  font-size: 12px;
+  color: #888;
+}
+
+.card-right {
+  flex: 0 0 auto;
+}
+
+.tree-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-view {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-edit {
+  background: white;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: #f8f9fa;
+  color: #333;
+  text-decoration: none;
+}
+
+.btn-delete {
+  background: white;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.stat-content h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  padding: 3rem;
+  text-align: center;
+}
+
+.empty-state i {
+  color: #ccc;
+}
+
+/* Tree Controls */
+.tree-controls-section {
+  background: #f8f9fa;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tree-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tree-info h2 {
+  margin: 0;
+  color: #333;
+}
+
+.tree-meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.tree-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Tree Visualization */
+.tree-visualization-section {
+  min-height: 70vh;
+  padding: 2rem 0;
+}
+
+.tree-container {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+#tree-svg-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.tree-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+/* Tree Sidebar */
+.tree-sidebar {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  height: fit-content;
+}
+
+.sidebar-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sidebar-section h5 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-box input {
+  flex: 1;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.member-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.tree-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Create Tree Form */
+.create-tree-form {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 3rem;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.import-options {
+  margin-top: 1rem;
+}
+
+.import-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px dashed #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.import-card:hover {
+  border-color: #007bff;
+  background: #e3f2fd;
+}
+
+.import-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.import-card h5 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.import-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+/* Help Cards */
+.help-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.help-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.help-card h5 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.help-card p {
+  color: #666;
+  margin: 0;
+}
+
+/* Member Profile */
+.member-profile-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.member-photo {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.member-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-photo:hover .photo-overlay {
+  opacity: 1;
+}
+
+.member-info {
+  padding: 2rem;
+}
+
+.member-info h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.member-title {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.member-details {
+  margin-bottom: 2rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #666;
+}
+
+.detail-item i {
+  width: 20px;
+  margin-right: 0.75rem;
+  color: #007bff;
+}
+
+.member-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Member Tabs */
+.member-tabs {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.member-tabs .nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  background: #f8f9fa;
+  margin: 0;
+}
+
+.member-tabs .nav-link {
+  border: none;
+  color: #666;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+}
+
+.member-tabs .nav-link.active {
+  background: white;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+.tab-content-section {
+  padding: 2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.info-item span {
+  color: #666;
+}
+
+.notes-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.notes-section h5 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Family Relationships */
+.family-relationships {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.relationship-group h5 {
+  color: #333;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.no-family-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.family-member-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.family-member-card:hover {
+  transform: translateY(-2px);
+}
+
+.family-member-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.family-member-card h6 {
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.family-member-card p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Memories and Documents */
+.memories-header,
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.memories-grid,
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.no-memories-message,
+.no-documents-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tree-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tree-actions {
+    justify-content: center;
+  }
+  
+  .create-tree-form {
+    padding: 1.5rem;
+  }
+  
+  .member-profile-card {
+    margin-bottom: 2rem;
+  }
+  
+  .member-photo img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .family-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .memories-grid,
+  .documents-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* D3.js Tree Styles */
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: #007bff;
+  stroke-width: 2px;
+}
+
+.node text {
+  font: 12px sans-serif;
+  text-anchor: middle;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+.node:hover circle {
+  stroke: #0056b3;
+  stroke-width: 3px;
+}
+
+.node.selected circle {
+  stroke: #28a745;
+  stroke-width: 3px;
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

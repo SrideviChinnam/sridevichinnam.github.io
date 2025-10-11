@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Create Family Tree - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================== Icon ================== -->
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <!-- ================== Fontawesome Icon ================== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- ================== Custom CSS ================== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- ================== Animation CSS ================== -->
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <!-- ================== Family Tree CSS ================== -->
+    <link rel="stylesheet" href="assets/css/family-tree.css">
+    <!-- ================== Iconyfy ================== -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+   <!-- ================== Navbar Section ================== -->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-3">
+      <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">
+            <img class="" src="assets/images/logo-text.svg">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dna-test.html">NewStand</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Who We Are</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="family-tree.html">Family Tree</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M2.997 3.496a.5.5 0 0 1 .5-.5h.438c.727 0 1.145.473 1.387.945c.165.323.284.717.383 1.059H16a1 1 0 0 1 .962 1.272l-1.496 5.275A2 2 0 0 1 13.542 13H8.463a2 2 0 0 1-1.93-1.473l-.642-2.355l-.01-.032l-1.03-3.498l-.1-.337c-.1-.346-.188-.652-.32-.909c-.159-.31-.305-.4-.496-.4h-.438a.5.5 0 0 1-.5-.5M6.845 8.87l.653 2.396a1 1 0 0 0 .965.736h5.08a1 1 0 0 0 .961-.727L16 6H6zM10 15.499a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0m6 0a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0a.5.5 0 0 0 1 0"/></svg>
+                Cart
+                <span class="badge">3</span>
+              </button>
+            </form>
+          </div>
+      </div>
+    </nav>
+   </header>
+
+   <!-- ================== Create Family Tree Section ================== -->
+   <section class="section">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8 mx-auto">
+           <div class="create-tree-form">
+             <div class="text-center mb-5">
+               <h1 class="main-heading" data-animate-in="down">
+                 <span class="line"></span>Create New Family Tree
+               </h1>
+               <p class="lead" data-animate-in="up">Start building your family history by creating a new family tree</p>
+             </div>
+
+             <form id="create-tree-form" data-animate-in="up">
+               <!-- Tree Information -->
+               <div class="form-section">
+                 <h3 class="section-title">Tree Information</h3>
+                 
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="tree-name" class="form-label">Tree Name *</label>
+                     <input type="text" class="form-control" id="tree-name" name="treeName" required placeholder="e.g., Smith Family Tree">
+                     <div class="form-text">Choose a descriptive name for your family tree</div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="tree-privacy" class="form-label">Privacy Setting</label>
+                     <select class="form-select" id="tree-privacy" name="privacy">
+                       <option value="private">Private - Only you can see</option>
+                       <option value="family">Family - Share with family members</option>
+                       <option value="public">Public - Anyone can view</option>
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="mb-3">
+                   <label for="tree-description" class="form-label">Description</label>
+                   <textarea class="form-control" id="tree-description" name="description" rows="3" placeholder="Optional description of your family tree..."></textarea>
+                 </div>
+               </div>
+
+               <!-- Root Person Information -->
+               <div class="form-section">
+                 <h3 class="section-title">Root Person (Starting Point)</h3>
+                 <p class="form-text mb-4">This person will be the starting point of your family tree. You can add more family members later.</p>
+                 
+                 <div class="row">
+                   <div class="col-md-4 mb-3">
+                     <label for="first-name" class="form-label">First Name *</label>
+                     <input type="text" class="form-control" id="first-name" name="firstName" required>
+                   </div>
+                   <div class="col-md-4 mb-3">
+                     <label for="middle-name" class="form-label">Middle Name</label>
+                     <input type="text" class="form-control" id="middle-name" name="middleName">
+                   </div>
+                   <div class="col-md-4 mb-3">
+                     <label for="last-name" class="form-label">Last Name *</label>
+                     <input type="text" class="form-control" id="last-name" name="lastName" required>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="birth-date" class="form-label">Birth Date</label>
+                     <input type="date" class="form-control" id="birth-date" name="birthDate">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="gender" class="form-label">Gender</label>
+                     <select class="form-select" id="gender" name="gender">
+                       <option value="">Select Gender</option>
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                       <option value="other">Other</option>
+                     </select>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col-md-6 mb-3">
+                     <label for="birth-place" class="form-label">Birth Place</label>
+                     <input type="text" class="form-control" id="birth-place" name="birthPlace" placeholder="City, Country">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                     <label for="occupation" class="form-label">Occupation</label>
+                     <input type="text" class="form-control" id="occupation" name="occupation">
+                   </div>
+                 </div>
+
+                 <!-- Profile Image Upload -->
+                 <div class="row">
+                   <div class="col-12 mb-3">
+                     <label for="profile-image" class="form-label">Profile Image</label>
+                     <input type="file" class="form-control" id="profile-image" name="profileImage" accept="image/*">
+                     <div class="form-text">Upload a photo for the root person (JPG, PNG, GIF - Max 5MB)</div>
+                     <div id="image-preview" class="mt-2" style="display: none;">
+                       <img id="preview-img" src="" alt="Preview" style="max-width: 150px; max-height: 150px; border-radius: 50%;">
+                     </div>
+                   </div>
+                 </div>
+
+                 <div class="mb-3">
+                   <label for="notes" class="form-label">Notes</label>
+                   <textarea class="form-control" id="notes" name="notes" rows="3" placeholder="Additional information about this person..."></textarea>
+                 </div>
+               </div>
+
+               <!-- Import Options -->
+               <div class="form-section">
+                 <h3 class="section-title">Import Options (Optional)</h3>
+                 <div class="import-options">
+                   <div class="row">
+                     <div class="col-md-6">
+                       <div class="import-card">
+                         <div class="import-icon">
+                           <i class="fas fa-file-upload"></i>
+                         </div>
+                         <h5>Upload GEDCOM File</h5>
+                         <p>Import existing family tree data from genealogy software</p>
+                         <input type="file" class="form-control" id="gedcom-file" accept=".ged">
+                       </div>
+                     </div>
+                     <div class="col-md-6">
+                       <div class="import-card">
+                         <div class="import-icon">
+                           <i class="fas fa-table"></i>
+                         </div>
+                         <h5>Import from Spreadsheet</h5>
+                         <p>Upload family data from Excel or CSV files</p>
+                         <input type="file" class="form-control" id="csv-file" accept=".csv,.xlsx,.xls">
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Form Actions -->
+               <div class="form-actions">
+                 <div class="d-flex justify-content-between">
+                   <a href="family-tree.html" class="btn btn-outline-secondary">
+                     <i class="fas fa-arrow-left me-2"></i>Cancel
+                   </a>
+                   <button type="submit" class="btn btn-primary btn-lg">
+                     <i class="fas fa-plus-circle me-2"></i>Create Family Tree
+                   </button>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <!-- ================== Help Section ================== -->
+   <section class="section section-bg-light">
+     <div class="container">
+       <div class="row">
+         <div class="col-12 text-center">
+           <h3 class="mb-4">Need Help Getting Started?</h3>
+           <div class="row">
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-lightbulb"></i>
+                 </div>
+                 <h5>Tips for Success</h5>
+                 <p>Start with yourself or a known ancestor and work backwards or forwards from there.</p>
+               </div>
+             </div>
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-users"></i>
+                 </div>
+                 <h5>Add Family Members</h5>
+                 <p>You can add parents, children, siblings, and spouses after creating your tree.</p>
+               </div>
+             </div>
+             <div class="col-md-4 mb-4">
+               <div class="help-card">
+                 <div class="help-icon">
+                   <i class="fas fa-shield-alt"></i>
+                 </div>
+                 <h5>Privacy Controls</h5>
+                 <p>Choose the right privacy setting to control who can see your family information.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <!-- ================== Footer Section ================== -->
+     <footer class="section-bg-light">
+      <div class="container">
+        <div class="row border-bottom pb-3 pt-4 mb-3  mx-0 align-items-center">
+          <div class="col-12 col-lg-4">
+            <ul class="nav"> 
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li> 
+              <li class="nav-item"><a href="about.html" class="nav-link">About</a></li> 
+              <li class="nav-item"><a href="dna-test.html" class="nav-link">Services</a></li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 text-center">
+            <a href="index.html" class="navbar-brand">
+              <img class="" src="assets/images/logo.svg">
+            </a>
+          </div>
+          <div class="col-12 col-lg-4 text-end">
+            <ul class="nav justify-content-lg-end socila-icons"> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002M7 8.48H3V21h4zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="btn btn-social">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m13.081 10.712l-4.786-6.71a.6.6 0 0 0-.489-.252H5.28a.6.6 0 0 0-.488.948l6.127 8.59m2.162-2.576l6.127 8.59a.6.6 0 0 1-.488.948h-2.526a.6.6 0 0 1-.489-.252l-4.786-6.71m2.162-2.576l5.842-6.962m-8.004 9.538L5.077 20.25"/></svg>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center mx-0">
+          <div class="col-12 col-lg-6">
+            <ul class="nav"> 
+              <li class="nav-item p-0 m-0">©2025 My Geno Root - All Rights Reserved</li> 
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6 text-end">
+            <ul class="nav justify-content-lg-end"> 
+              <li class="nav-item"><a href="privacy.html" class="nav-link">Privacy policy</a></li> 
+              <li class="nav-item"><a href="terms.html" class="nav-link">Terms and Conditions</a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+     </footer>
+
+   <!-- ================== Script Links ================== -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/script.js"></script>
+   <script src="assets/js/animation.js"></script>
+   <script src="assets/js/family-tree/core.js"></script>
+   <script src="assets/js/family-tree/create-tree.js"></script>
+  </body>
+</html>

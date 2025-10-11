@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Test - Memory View</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; font-family: Arial, sans-serif; }
+        .test-section { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .test-url { background: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>QR Code Scanning Test</h1>
+    
+    <div class="test-section">
+        <h3>Test QR Code URL</h3>
+        <p>When someone scans your QR code, they will visit this URL:</p>
+        <div class="test-url" id="testUrl">Loading...</div>
+        <button onclick="testQRUrl()" class="btn btn-primary">Test QR Code URL</button>
+        <button onclick="simulateScan()" class="btn btn-success">Simulate QR Scan</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Memory Data Test</h3>
+        <p>Check if memories exist in localStorage:</p>
+        <div id="memoryTest">Loading...</div>
+        <button onclick="checkMemories()" class="btn btn-info">Check Memories</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Direct Memory View Test</h3>
+        <p>Test opening memory-view.html directly:</p>
+        <button onclick="testMemoryView()" class="btn btn-warning">Test Memory View Page</button>
+    </div>
+
+    <script>
+        function testQRUrl() {
+            // Get the current URL structure
+            const baseUrl = window.location.origin + window.location.pathname.replace('qr-test.html', '');
+            const testMemoryId = '1760172494013'; // Use the ID from your screenshot
+            const testUrl = `${baseUrl}memory-view.html?id=${testMemoryId}&view=media`;
+            
+            document.getElementById('testUrl').textContent = testUrl;
+            
+            // Test if the URL is accessible
+            fetch(testUrl)
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('testUrl').innerHTML = `<span class="text-success">✅ ${testUrl}</span>`;
+                    } else {
+                        document.getElementById('testUrl').innerHTML = `<span class="text-danger">❌ ${testUrl} (Error: ${response.status})</span>`;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('testUrl').innerHTML = `<span class="text-danger">❌ ${testUrl} (Error: ${error.message})</span>`;
+                });
+        }
+        
+        function simulateScan() {
+            const testUrl = document.getElementById('testUrl').textContent;
+            if (testUrl && testUrl !== 'Loading...') {
+                window.open(testUrl, '_blank');
+            } else {
+                alert('Please run "Test QR Code URL" first');
+            }
+        }
+        
+        function checkMemories() {
+            try {
+                const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+                const memoryTestDiv = document.getElementById('memoryTest');
+                
+                if (memories.length === 0) {
+                    memoryTestDiv.innerHTML = '<span class="text-warning">⚠️ No memories found in localStorage</span>';
+                } else {
+                    memoryTestDiv.innerHTML = `
+                        <span class="text-success">✅ Found ${memories.length} memories:</span>
+                        <ul>
+                            ${memories.map(memory => `
+                                <li>
+                                    <strong>${memory.title}</strong> (ID: ${memory.id})
+                                    <br>Type: ${memory.type}
+                                    <br>File: ${memory.file.name}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    `;
+                }
+            } catch (error) {
+                document.getElementById('memoryTest').innerHTML = `<span class="text-danger">❌ Error reading memories: ${error.message}</span>`;
+            }
+        }
+        
+        function testMemoryView() {
+            const baseUrl = window.location.origin + window.location.pathname.replace('qr-test.html', '');
+            const testMemoryId = '1760172494013';
+            const testUrl = `${baseUrl}memory-view.html?id=${testMemoryId}&view=media`;
+            window.open(testUrl, '_blank');
+        }
+        
+        // Auto-run tests on page load
+        window.addEventListener('load', function() {
+            testQRUrl();
+            checkMemories();
+        });
+    </script>
+</body>
+</html>

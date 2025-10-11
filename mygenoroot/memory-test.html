@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Upload Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-area { border: 2px dashed #ccc; padding: 20px; margin: 20px 0; cursor: pointer; }
+        .test-area:hover { border-color: #007bff; background: #f8f9fa; }
+        .preview { margin: 10px 0; }
+        .preview img { max-width: 200px; max-height: 200px; }
+        button { padding: 10px 20px; margin: 5px; }
+        .log { background: #f8f9fa; padding: 10px; margin: 10px 0; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Memory Upload Test</h1>
+    
+    <div class="test-area" id="uploadArea">
+        <h3>Click here or drag files to upload</h3>
+        <p>Supports: Images, Videos, Audio</p>
+        <input type="file" id="fileInput" accept="image/*,video/*,audio/*" style="display: none;">
+        <button onclick="document.getElementById('fileInput').click()">Choose File</button>
+    </div>
+    
+    <div id="preview" class="preview" style="display: none;"></div>
+    
+    <div>
+        <button onclick="testSave()">Test Save to localStorage</button>
+        <button onclick="testLoad()">Test Load from localStorage</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+    </div>
+    
+    <div id="log" class="log"></div>
+
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML += '<div>' + new Date().toLocaleTimeString() + ': ' + message + '</div>';
+            console.log(message);
+        }
+
+        // File upload test
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+
+        uploadArea.addEventListener('click', function() {
+            log('Upload area clicked');
+            fileInput.click();
+        });
+
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            log('Drag over');
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            const files = e.dataTransfer.files;
+            log('Files dropped: ' + files.length);
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', function(e) {
+            log('File input changed: ' + e.target.files.length + ' files');
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            log('Handling file: ' + file.name + ' (' + file.size + ' bytes, ' + file.type + ')');
+            
+            // Show preview
+            preview.style.display = 'block';
+            preview.innerHTML = '<h4>Preview:</h4>';
+            
+            if (file.type.startsWith('image/')) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                preview.appendChild(img);
+            } else if (file.type.startsWith('video/')) {
+                const video = document.createElement('video');
+                video.src = URL.createObjectURL(file);
+                video.controls = true;
+                video.style.maxWidth = '300px';
+                preview.appendChild(video);
+            } else if (file.type.startsWith('audio/')) {
+                const audio = document.createElement('audio');
+                audio.src = URL.createObjectURL(file);
+                audio.controls = true;
+                preview.appendChild(audio);
+            }
+            
+            preview.innerHTML += '<p><strong>File:</strong> ' + file.name + '</p>';
+            preview.innerHTML += '<p><strong>Size:</strong> ' + formatFileSize(file.size) + '</p>';
+            preview.innerHTML += '<p><strong>Type:</strong> ' + file.type + '</p>';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function testSave() {
+            log('Testing localStorage save...');
+            try {
+                const testData = {
+                    id: Date.now().toString(),
+                    title: 'Test Memory',
+                    type: 'test',
+                    file: {
+                        name: 'test.jpg',
+                        size: 1024,
+                        type: 'image/jpeg',
+                        data: 'data:image/jpeg;base64,test'
+                    },
+                    createdAt: new Date().toISOString()
+                };
+                
+                const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+                memories.push(testData);
+                localStorage.setItem('mgr_memories', JSON.stringify(memories));
+                
+                log('Test memory saved successfully! Total memories: ' + memories.length);
+            } catch (error) {
+                log('Error saving test memory: ' + error.message);
+            }
+        }
+
+        function testLoad() {
+            log('Testing localStorage load...');
+            try {
+                const memories = JSON.parse(localStorage.getItem('mgr_memories') || '[]');
+                log('Loaded ' + memories.length + ' memories from localStorage');
+                memories.forEach((memory, index) => {
+                    log('Memory ' + (index + 1) + ': ' + memory.title + ' (' + memory.type + ')');
+                });
+            } catch (error) {
+                log('Error loading memories: ' + error.message);
+            }
+        }
+
+        function clearStorage() {
+            log('Clearing localStorage...');
+            localStorage.removeItem('mgr_memories');
+            log('localStorage cleared');
+        }
+
+        // Initialize
+        log('Test page loaded');
+        log('localStorage available: ' + (typeof Storage !== "undefined"));
+    </script>
+</body>
+</html>
