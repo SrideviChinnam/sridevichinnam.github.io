@@ -349,3 +349,4 @@ class FamilyTreeSearch {
 document.addEventListener('DOMContentLoaded', () => {
   window.search = new FamilyTreeSearch();
 });
+

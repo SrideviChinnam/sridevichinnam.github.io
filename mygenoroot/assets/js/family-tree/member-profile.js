@@ -461,3 +461,4 @@ class FamilyMemberProfile {
 document.addEventListener('DOMContentLoaded', () => {
   window.memberProfile = new FamilyMemberProfile();
 });
+

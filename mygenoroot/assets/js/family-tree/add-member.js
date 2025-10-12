@@ -535,3 +535,4 @@ class AddFamilyMember {
 document.addEventListener('DOMContentLoaded', () => {
   window.addMember = new AddFamilyMember();
 });
+
