@@ -1,0 +1,157 @@
+# Changelog
+
+All notable changes to the Folio Portfolio Template will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.3.0] - 2024-12-21
+
+### Added
+- **Dark/Light Mode Toggle** - Complete theme switching system with smooth transitions
+- **CSS Custom Properties** - Comprehensive variable system for easy theme customization
+- **Theme Persistence** - User preferences saved to localStorage
+- **Open Graph Meta Tags** - Social media sharing optimization for Facebook and Twitter
+- **Enhanced Theme Button** - Animated toggle button with icon transitions
+- **Dark Mode Styles** - Complete dark theme implementation for all sections
+
+### Changed
+- Converted all hardcoded colors to CSS custom properties
+- Enhanced navbar with theme toggle integration
+- Updated all sections to support both light and dark themes
+- Improved theme transition animations
+- Updated documentation with dark mode customization guide
+
+### Fixed
+- Theme consistency across all components
+- Improved accessibility with proper ARIA labels
+- Enhanced mobile theme toggle experience
+- Fixed theme persistence across page reloads
+
+## [1.2.0] - 2024-12-20
+
+### Added
+- Enhanced responsive design with additional breakpoints
+- Improved mobile navigation with better touch targets
+- Added smooth scrolling with mobile navbar height detection
+- Enhanced portfolio filter functionality
+- Added keyboard navigation support (ESC key)
+- Improved form validation with better error messages
+- Added performance optimizations with debounced scroll events
+
+### Changed
+- Updated color scheme to modern blue/purple/teal palette
+- Improved typography with Inter font family
+- Enhanced button hover effects and animations
+- Optimized CSS for better performance
+- Updated portfolio section with glass-morphism effects
+- Improved mobile layout and spacing
+
+### Fixed
+- Fixed mobile navigation positioning
+- Fixed smooth scrolling offset calculations
+- Fixed portfolio filter button styling
+- Fixed responsive grid layouts
+- Fixed form input styling on mobile devices
+
+## [1.1.0] - 2024-12-15
+
+### Added
+- Portfolio filtering system (All, Web Design, Mobile App, UI/UX)
+- Interactive portfolio cards with hover effects
+- Contact form with validation
+- Smooth scroll animations
+- Mobile hamburger menu
+- Back-to-top button functionality
+- Skill bars with animated progress
+- Social media links integration
+
+### Changed
+- Redesigned hero section with floating elements
+- Updated about section with statistics
+- Improved contact section layout
+- Enhanced footer with social links
+- Updated navigation with smooth transitions
+
+### Fixed
+- Fixed responsive design issues
+- Fixed cross-browser compatibility
+- Fixed mobile touch interactions
+- Fixed form submission handling
+
+## [1.0.0] - 2024-12-10
+
+### Added
+- Initial release of Folio Portfolio Template
+- Responsive design for all devices
+- Modern UI/UX with clean design
+- HTML5 semantic structure
+- CSS3 animations and transitions
+- JavaScript functionality
+- Font Awesome icons integration
+- Google Fonts typography
+- SEO optimization
+- Cross-browser compatibility
+
+### Features
+- Hero section with animated title
+- About section with personal information
+- Skills section with progress bars
+- Portfolio section with project showcase
+- Contact section with working form
+- Responsive navigation
+- Smooth scrolling
+- Modern color scheme
+- Professional typography
+- Mobile-first design approach
+
+## [Unreleased]
+
+### Planned Features
+- Dark mode toggle
+- Multi-language support
+- Blog section integration
+- Advanced animations
+- More color schemes
+- Additional portfolio layouts
+- Contact form backend integration
+- Performance monitoring
+- Analytics integration
+
+---
+
+## Version History Summary
+
+| Version | Date | Major Changes |
+|---------|------|---------------|
+| 1.3.0 | 2024-12-21 | Added dark/light mode toggle, Open Graph tags, enhanced theme system |
+| 1.2.0 | 2024-12-20 | Enhanced responsiveness, new color scheme, improved mobile UX |
+| 1.1.0 | 2024-12-15 | Added portfolio filtering, contact form, mobile menu |
+| 1.0.0 | 2024-12-10 | Initial release with core features |
+
+## Support
+
+For questions about updates or to report bugs:
+- Email: support@folio-template.com
+- GitHub Issues: [Create an issue](https://github.com/your-repo/issues)
+- Documentation: [View full docs](https://folio-template.com/docs)
+
+## Upgrade Instructions
+
+### From v1.1.0 to v1.2.0
+1. Backup your current files
+2. Replace `style.css` with the new version
+3. Replace `script.js` with the new version
+4. Update any custom CSS to match new color scheme
+5. Test responsive design on all devices
+
+### From v1.0.0 to v1.1.0
+1. Backup your current files
+2. Replace all files with new versions
+3. Update your content in `index.html`
+4. Test all functionality
+5. Verify responsive design
+
+---
+
+**Note**: Always backup your customized files before updating to a new version.
