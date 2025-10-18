@@ -305,11 +305,11 @@ function submitForm(form) {
         submitBtn.html(originalText).prop('disabled', false);
         
         // Show success message
-        showNotification('Registration successful! Please check your email for verification.', 'success');
+        showNotification('Login successful! Welcome to your ancestry dashboard.', 'success');
         
-        // Redirect based on user type
+        // Redirect to ancestry overview page
         setTimeout(() => {
-            window.location.href = 'login.html';
+            window.location.href = 'ancestry-overview.html';
         }, 2000);
         
     }, 2000);
@@ -396,3 +396,4 @@ window.AuthUtils = {
     formatPhoneNumber,
     formatSSN
 };
+

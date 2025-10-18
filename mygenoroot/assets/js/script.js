@@ -31,6 +31,128 @@ jQuery(".partner-slider").owlCarousel({
     }
   }
 });
+
+// Language Dropdown Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize language dropdown
+  initLanguageDropdown();
+  
+  // Set current language from localStorage or default to English
+  const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+  updateLanguageDisplay(currentLang);
+});
+
+function initLanguageDropdown() {
+  const dropdownToggle = document.querySelector('.language-dropdown-toggle');
+  const dropdownMenu = document.querySelector('.language-dropdown-menu');
+  
+  if (!dropdownToggle || !dropdownMenu) return;
+  
+  // Toggle dropdown on click
+  dropdownToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const isActive = dropdownToggle.classList.contains('active');
+    
+    // Close all other dropdowns
+    document.querySelectorAll('.language-dropdown-toggle').forEach(toggle => {
+      toggle.classList.remove('active');
+    });
+    document.querySelectorAll('.language-dropdown-menu').forEach(menu => {
+      menu.classList.remove('show');
+    });
+    
+    // Toggle current dropdown
+    if (!isActive) {
+      dropdownToggle.classList.add('active');
+      dropdownMenu.classList.add('show');
+    }
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownToggle.classList.remove('active');
+      dropdownMenu.classList.remove('show');
+    }
+  });
+  
+  // Handle language selection
+  const languageItems = dropdownMenu.querySelectorAll('.language-dropdown-item');
+  languageItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const selectedLang = this.getAttribute('data-lang');
+      const selectedText = this.textContent.trim();
+      
+      // Update localStorage
+      localStorage.setItem('selectedLanguage', selectedLang);
+      
+      // Update display
+      updateLanguageDisplay(selectedLang);
+      
+      // Close dropdown
+      dropdownToggle.classList.remove('active');
+      dropdownMenu.classList.remove('show');
+      
+      // Trigger language change event
+      triggerLanguageChange(selectedLang);
+    });
+  });
+}
+
+function updateLanguageDisplay(lang) {
+  const dropdownToggle = document.querySelector('.language-dropdown-toggle');
+  if (!dropdownToggle) return;
+  
+  const languageNames = {
+    'en': 'English',
+    'es': 'Español',
+    'fr': 'Français',
+    'de': 'Deutsch',
+    'it': 'Italiano',
+    'pt': 'Português',
+    'ru': 'Русский',
+    'zh': '中文',
+    'ja': '日本語',
+    'ko': '한국어',
+    'ar': 'العربية',
+    'hi': 'हिन्दी'
+  };
+  
+  const currentText = dropdownToggle.querySelector('.current-language');
+  if (currentText) {
+    currentText.textContent = languageNames[lang] || 'English';
+  }
+  
+  // Update active state in dropdown menu
+  const dropdownMenu = document.querySelector('.language-dropdown-menu');
+  if (dropdownMenu) {
+    const languageItems = dropdownMenu.querySelectorAll('.language-dropdown-item');
+    languageItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('data-lang') === lang) {
+        item.classList.add('active');
+      }
+    });
+  }
+}
+
+function triggerLanguageChange(lang) {
+  // Dispatch custom event for language change
+  const event = new CustomEvent('languageChanged', {
+    detail: { language: lang }
+  });
+  document.dispatchEvent(event);
+  
+  // You can add more language-specific functionality here
+  console.log('Language changed to:', lang);
+  
+  // Example: Update page content based on language
+  // This would typically involve loading translation files
+  // For now, we'll just log the change
+}
 jQuery(".review-slider").owlCarousel({
   autoplay: true,
   rewind: true, 

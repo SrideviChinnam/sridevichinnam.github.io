@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Letters Chat - My Geno Root</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="assets/images/logo.svg">
+    <link rel="icon" href="assets/images/logo.svg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <!-- Main Layout Container -->
+    <div class="main-layout">
+      <!-- ChatGPT-like Interface -->
+      <div class="chat-container">
+        <!-- Left Sidebar -->
+        <div class="chat-sidebar" id="chatSidebar">
+          <div class="sidebar-header">
+            <button class="btn btn-primary w-100 mb-3" id="newChatBtn">
+              <i class="fas fa-plus"></i> New Letter
+            </button>
+            <div class="search-container">
+              <input type="text" id="chatSearchInput" class="form-control" placeholder="Search letters...">
+            </div>
+          </div>
+          
+          <div class="chat-history" id="chatHistory">
+            <!-- Dynamic list of letters/conversations -->
+          </div>
+          
+          <div class="sidebar-footer">
+            <div class="user-info">
+              <i class="fas fa-user-circle"></i>
+              <span>My Letters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+          <div class="chat-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <h3 id="currentChatTitle">Select a letter or start new</h3>
+              <div class="chat-actions">
+                <button class="btn btn-sm btn-outline-secondary" id="editChatBtn" style="display: none;" title="Edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" id="deleteChatBtn" style="display: none;" title="Delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+              <div class="welcome-content">
+                <i class="fas fa-envelope-open-text"></i>
+                <h4>Welcome to Letters Chat</h4>
+                <p>Start a new letter or select an existing one from the sidebar to begin.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-input">
+            <form id="letterChatForm">
+              <div class="input-group">
+                <textarea class="form-control" id="letterInput" placeholder="Write your letter..." rows="3"></textarea>
+                <button type="submit" class="btn btn-primary" id="sendBtn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <div class="input-footer">
+                <div class="letter-metadata">
+                  <input type="text" id="letterFrom" class="form-control form-control-sm" placeholder="From" style="display: none;">
+                  <input type="text" id="letterTo" class="form-control form-control-sm" placeholder="To" style="display: none;">
+                  <input type="text" id="letterSubject" class="form-control form-control-sm" placeholder="Subject" style="display: none;">
+                </div>
+                <div class="input-actions">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" id="toggleMetadataBtn">
+                    <i class="fas fa-cog"></i> Options
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" id="saveDraftBtn">
+                    <i class="fas fa-save"></i> Save Draft
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar Navigation -->
+      <div class="nav-sidebar">
+        <div class="nav-items">
+          <a href="letters-chat.html" class="nav-item active" title="Letters">
+            <iconify-icon icon="mynaui:envelope" width="24" height="24"></iconify-icon>
+          </a>
+          <a href="notes.html" class="nav-item" title="Notes">
+            <iconify-icon icon="mynaui:file-text" width="24" height="24"></iconify-icon>
+          </a>
+          <a href="diaries.html" class="nav-item" title="Diary">
+            <iconify-icon icon="mynaui:album" width="24" height="24"></iconify-icon>
+          </a>
+          <a href="quotes.html" class="nav-item" title="Quotes">
+            <iconify-icon icon="mynaui:message-dots" width="24" height="24"></iconify-icon>
+          </a>
+          <a href="thoughts.html" class="nav-item" title="Thoughts">
+            <iconify-icon icon="mynaui:user-waves" width="24" height="24"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Letter Preview Modal -->
+    <div class="modal fade" id="letterModal" tabindex="-1" aria-labelledby="letterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="letterModalLabel">Letter Preview</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="letterContent" class="letter-preview"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-primary" id="editLetterBtn">Edit</button>
+            <button type="button" class="btn btn-outline-danger" id="deleteLetterBtn">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/chat.js"></script>
+  </body>
+</html>
