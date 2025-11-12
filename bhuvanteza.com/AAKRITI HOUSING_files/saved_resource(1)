@@ -1,0 +1,131 @@
+
+
+
+
+var protocalType  = (window.location.protocol.indexOf("https") != -1 ? 'https' : 'http') 
+
+
+function livsrvgetCookie(cookiename)
+{
+	var cookiestring=""+document.cookie;
+	var index1=cookiestring.indexOf(cookiename);
+	if (index1==-1 || cookiename=="") return "";
+	var index2=cookiestring.indexOf(';',index1);
+	if (index2==-1) index2=cookiestring.length;
+	return unescape(cookiestring.substring(index1+cookiename.length+1,index2));
+}
+
+//---------------retriv the queryString parameter----------
+function getParameter( parameterName ) {
+	var queryString = "";
+	try
+	{
+	   queryString = window.top.location.search.substring(1);
+	}catch(e){}
+ 
+  var parameters = new Array();
+  parameters = queryString.split('&');
+  for(var i = 0; i < parameters.length; i++) {
+    if (parameters[i].indexOf(parameterName)>=0) {
+      var parameterValue = new Array();
+      parameterValue = parameters[i].split('=');
+      return parameterValue[1];
+    }
+  }
+  return 0;
+}
+
+var ls_chatsess_s = escape(livsrvgetCookie("ls_chatsess12456"));
+var ls_chatbox_s  = escape(livsrvgetCookie("ls_chatbox12456"));
+var ls_brodet_s	  = escape(livsrvgetCookie("ls_brodet12456"));
+
+var tls_tempcs_id = livsrvgetCookie("ls_tempcs_id12456");
+var tls_serverip = livsrvgetCookie("ls_serverip12456");
+var pInitSess = livsrvgetCookie("ls_initsess12456");
+
+if (tls_tempcs_id == "")
+{
+	tls_tempcs_id =  "NA";
+	tls_serverip = "NA";
+}
+if(pInitSess == "")
+{
+	pInitSess = "NA";
+}
+
+var ls_nexturl = "";
+var did = "12456";
+
+var pageUrl = "NA";
+
+var lschatWinLoadStatus = getParameter("ls_cs");
+
+try{
+pageUrl = escape(window.top.location.href);
+}
+catch(e){}
+
+
+
+var testpageUrl = "";
+try
+{
+    testpageUrl = window.location.search.substring(1);
+}
+catch(e)
+{}
+
+if(pageUrl.indexOf("livserv_cs_id")>=0 || testpageUrl.indexOf("test_cs_id") != -1)
+{
+	ls_chatsess_s = "";
+}
+
+ var livpropSessionId = "";
+
+try{
+	livpropSessionId = document.getElementById("UserSessionID").value;
+}
+catch(e){
+}
+
+var ls_chat_url = "";
+if (ls_chatsess_s == "")
+{
+	ls_nexturl = '<script src="' + protocalType + '://main.livserv.in/livserv/livservtemp3/index.jsp?did=12456&pid=1&gtm=null' + '&count=' + new Date().getTime() + '"></script>';
+	ls_chat_url = protocalType + '://main.livserv.in/livserv/livservtemp3/index.jsp?did=12456&pid=1&gtm=null' + '&count=' + new Date().getTime();
+}
+else
+{
+	ls_nexturl = '<script src="' + protocalType + '://main.livserv.in/livserv/livservtemp3/GetLivservWindow.jsp?did=12456&pid=1&exParam=null&browserUrl=' +  pageUrl + '&ls_chatsess=' + ls_chatsess_s + '&ls_chatbox=' + ls_chatbox_s + '&ls_brodet=' + ls_brodet_s + '&pCsid=' + tls_tempcs_id + '&pSrvid=' + tls_serverip + '&pInitSess=' + pInitSess + '&livpropSessionId=' + livpropSessionId +  '&count=' + new Date().getTime() + '" ></script>';
+	ls_chat_url = protocalType + '://main.livserv.in/livserv/livservtemp3/GetLivservWindow.jsp?did=12456&pid=1&exParam=null&browserUrl=' +  pageUrl + '&ls_chatsess=' + ls_chatsess_s + '&ls_chatbox=' + ls_chatbox_s + '&ls_brodet=' + ls_brodet_s + '&pCsid=' + tls_tempcs_id + '&pSrvid=' + tls_serverip + '&pInitSess=' + pInitSess + '&livpropSessionId=' + livpropSessionId +  '&count=' + new Date().getTime();
+}
+
+if(12456 == 508 || 12456 =="15102" || 12456 =="12981" || 12456 =="13108" || 12456 =="20177" || 12456 =="18990" || 12456 =="19690" || 12456 =="9650" || 12456 =="20185"  || 12456 =="9657" || 12456 =="918" || 12456 == 19045  ||  12456 == 19205 ||  12456 == 9527 || 12456 == 4456 ||  12456 == 2546 || 12456 == 16869 || 12456 == 20488 || 12456 == 7596 || 12456 == "8228" || 12456 == "1983" || 12456 ==  "8907" || 12456 ==  "12108" || 12456 == "11912" || 12456 == "12196" || 12456 == "17015" || 12456 == "14218" || 12456 == "17339" || 12456 == "4331" || 12456 == "18185" || 12456 == "15144" || 12456 == "17552"  || 12456 == "10975" || 12456 == "6202" || 12456 == "18637" || 12456 == "18492" || 12456 == "16353" || 12456 == "16345" || 12456 == "8228"  || 12456 == "8623" || 12456 == "14373" || 12456 == "16661"  || 12456 == "6808"  || 12456 == "5054"  || 12456 == "16394"  || 12456 == "6171"  || 12456 == "16378"  ||  12456 =="18990" || 12456 =="8502" || 12456 == "16386")
+{
+	loadLsChat();
+}
+else if(12456 == 7980){
+	if(pageUrl.indexOf("feedback_form.php")== -1)
+	{
+		loadLsChat();
+	}	
+}
+else if( 12456 == 508 ){
+    if(lschatWinLoadStatus != "no"){
+        loadLsChat();
+    }
+}
+else{
+    document.write(ls_nexturl);
+}
+
+function loadLsChat(){
+
+	(function(){
+		var s = document.createElement('script');
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = ls_chat_url;
+		document.body.appendChild(s);
+	})();
+}

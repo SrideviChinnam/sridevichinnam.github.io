@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blog1.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+        @media{
+            .blog-img {
+    transform: translate(2%, 12%) scaleY(0.8);
+}
+        }
+        @media(max-width: 768px){
+    .blog-cnt {
+    margin: 2% 8%;
+}
+.blog-img {
+    transform: translate(0%, 82%);
+    right: 0;
+}
+.text{
+   padding: 3em 2em !important;
+   transform: translate(0%, 41%) !important;
+}
+}
+@media(max-width: 1024px){
+    .text {
+    transform: translate(2%, 41%);
+    padding: 2em 2em;
+}
+ .blog-img {
+    transform: translate(2%, 12%) scaleY(0.8);
+}
+}
+       
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+        });
+    </script>
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative" style="background:#fff">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr6.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Who we are</font>
+                                            <h3>
+                                                <span>About</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Areas of expertise</font>
+                                            <h3>
+                                                <span>Services</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Strategies</font>
+                                            <h3>
+                                                <span>Blog</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Case studies</font>
+                                            <h3>
+                                                <span>Work</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Start a project</font>
+                                            <h3>
+                                                <span>Contact</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr6.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1">
+
+           <div class="row pading">
+               <div class="col-md-6 pading">
+                   <h1 class="text">
+                      Rethinking your SEO Strategy
+                   </h1>
+               </div>
+               <div class="col-md-6 pading">
+                   <img class="img-responsive blog-img" src="image/Blog5/cnt.jpg" alt="" />
+               </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <div class="container-fluid pading service-cnt relative mrg-res" style="background:#fff;">
+        <div class="blog-cnt">
+            <p class="blog-sub-cnt">
+                Taking a good look at the success of your SEO efforts may be an upright idea to make things better. This helps drive more high-converting visitors to your website. Here are a few SEO tips that can highlight places where such tactics could yield results.
+            </p>
+            <p class="blog-sub-cnt">
+               <b>Polish Technical SEO Components-</b> Many polished websites neglect basic SEO techniques. In an ocean of SEO changes, don't emphasize on keywords by using outdated keyword-stuffing techniques. Optimal keyword placement and appropriate headers remain vital for SEO. Focusing on keywords throughout the content in a way that makes sense. Target multiple, related keywords by optimizing their placement in the headings. Unnatural stuffing of keywords into pages is unnecessary and may even findawkward to target customers.
+            </p>           
+            <p class="blog-sub-cnt">
+               Meta description is another SEO component some marketers fail to take care of. Optimizing meta descriptions is quick and an easy way to help drive more clicks to your website. This, in turn, improves your search engine rankings. Drafting compelling meta descriptions that will help your business stand out to prospective customers will immensely be useful.Don’t just depend on Google, but draft compelling meta descriptionswill help your business stand out to potential customers.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog5/2.png" alt=""></center>
+            <p class="blog-sub-cnt">
+               <b>Improve Tracking Across Pages-</b> Tracking tools assist marketers to make SEO related improvements.They identify issues and suggest changes that, when implementedproperly, willhavea significant impact on your ranking. Installing Google Analytics across the entire website and linking it up to your account with Google Search Console is a good way to start. This will give you invaluable insights into SEO efforts.
+            </p>
+            <p class="blog-sub-cnt">
+                <b>Upgrade Content-</b> You must be familiar with the phrase “Content is King”. To this day, that stands true to any digital marketing effort.Content providesthe best search results and helps businesses to compete in SEO. The content across all platforms such as websites and social media has to be consistent. From time to time, reviewing your businesses’ content and the content that ranks well on search engines will help in the long run. Your content should be targeted to your customer base to develop loyalty towards the brand.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog5/1.png" alt=""></center>
+            <p class="blog-sub-cnt">
+               The right time to work on your SEO strategy and achieve your business goals is now. Review the basics first and ensure you've optimized your website correctly for target keywords that relate to your business. Subsequently, review your content and compare it to what's already ranking well on Google. Ask the team if they can compete and create superior content for your target customers?. Finally, donot forget about tracking. You musthave SEO tools in place to improve your ranking.
+            </p>
+            <p class="blog-sub-cnt">
+                Our SEO team at webroas is well versed in SEO and PPC. Visit <a class="webroas-link" href="https://www.webroas.com/">www.webroas.com</a> or shoot us an email at <a class="webroas-link" href="">hello@webroas.com</a> for further info.
+            </p>
+        </div>
+        <div class="container-fluid pading">
+            <div class="row pading more-blog-cnt">
+                    <h2>More Blogs</h2>
+                    <a href="technicalSEO-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog8/1.jpg">
+                        <h6>08 – October 19</h6>
+                        <p>Introduce yourself to Python for technical SEO</p>
+                    </div>
+                    </a>
+                    <a href="web-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/blog2/164609.jpg">
+                        <h6>02 – Sep 19</h6>
+                        <p>Your catchy web design & development</p>
+                    </div>
+                    </a>
+                    <a href="voicesearch-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog7/1.jpg">
+                        <h6>07 – October 19</h6>
+                        <p>Voice Search is more popular with consumers than marketers</p>
+                    </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <button type="submit" class="btn btn-get">Get In Touch </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="#">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

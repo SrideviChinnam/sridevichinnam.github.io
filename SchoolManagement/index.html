@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/js.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+
+            'use strict';
+
+            var aside = $('.side-nav'),
+                showAsideBtn = $('.show-side-btn'),
+                contents = $('#contents'),
+                _window = $(window)
+
+            showAsideBtn.on("click", function () {
+                $("#" + $(this).data('show')).toggleClass('show-side-nav');
+                contents.toggleClass('margin');
+            });
+
+            if (_window.width() <= 767) {
+                aside.addClass('show-side-nav');
+            }
+
+            _window.on('resize', function () {
+                if ($(window).width() > 767) {
+                    aside.removeClass('show-side-nav');
+                }
+            });
+
+            // dropdown menu in the side nav
+            var slideNavDropdown = $('.side-nav-dropdown');
+
+            $('.side-nav .categories li').on('click', function () {
+                // $("#show-side-navigation1").toggleClass('show-side-nav')
+                var $this = $(this)
+
+                $this.toggleClass('opend').siblings().removeClass('opend');
+
+                if ($this.hasClass('opend')) {
+                    $this.find('.side-nav-dropdown').slideToggle('fast');
+                    $this.siblings().find('.side-nav-dropdown').slideUp('fast');
+                } else {
+                    $this.find('.side-nav-dropdown').slid
+
+                    eUp('fast');
+                }
+            });
+
+            $('.side-nav .close-aside').on('click', function () {
+                $('#' + $(this).data('close')).addClass('show-side-nav');
+                contents.removeClass('margin');
+            });
+            $('.side-nav .categories li ul li a').on('click', function () {
+                var $this = $(this);
+                $("#show-side-navigation1").toggleClass('show-side-nav');
+                $('#contents').toggleClass('margin');
+                var id = $($this).attr("href");
+                $(id).removeClass("none");
+                $(id).addClass("block");
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#datepicker").datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date());
+        });
+
+    </script>
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <i class="fa fa-align-right"></i>
+                    </button>
+                    <a class="navbar-brand" href="#">Smart <span class="main-color"> School Application </span></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Admin Name</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sign-out"></i> Log out</a>
+                        </li>
+                        <li>
+                            <a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <aside class="side-nav" id="show-side-navigation1">
+        <div class="heading">
+
+        </div>
+        <ul class="categories">
+            <li>
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <a href="#"> STUDENT MANAGEMENT</a>
+                <ul class="side-nav-dropdown">
+                    <li>
+                        <a href="#addStudent"><i class="fa fa-user-plus"></i> Add Students</a>
+                    </li>
+                    <li>
+                        <a href="#studentProfile"><i class="fa fa-id-card-o"></i> Student Profile</a>
+                    </li>
+                    <li>
+                        <a href="#updateProfile"><i class="fa fa-user-edit"></i>Update Profiles</a>
+                    </li>
+                    <li>
+                        <a href="#studentDetails"><i class="fa fa-users"></i> Student Details</a>
+                    </li>
+                    <li>
+                        <a href="#messageParents"><i class="fa fa-envelope-o"></i> Message to Parents</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa fa-support fa-fw"></i>
+                <a href="#"> STAFF MANAGEMENT</a>
+                <ul class="side-nav-dropdown">
+                    <li>
+                        <a href="#addStaff">Add Staff Member</a>
+                    </li>
+                    <li>
+                        <a href="#staffProfile">Staff Profile</a>
+                    </li>
+                    <li>
+                        <a href="messageStaff">Message to Staff</a>
+                    </li>
+                    <li>
+                        <a href="#generatePayslip">Generate Payslip</a>
+                    </li>
+                    <li>
+                        <a href="#RevisePay">Revise Pay</a>
+                    </li>
+                    <li>
+                        <a href="#">Attendance</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa fa-rupee"></i>
+                <a href="#"> Fee Management</a>
+                <ul class="side-nav-dropdown">
+                    <li>
+                        <a href="#">Generate Fee Dues</a>
+                    </li>
+                    <li>
+                        <a href="#">Update fee</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa fa-bus"></i>
+                <a href="#"> Transport Management</a>
+                <ul class="side-nav-dropdown">
+                    <li>
+                        <a href="#">Bus Routes</a>
+                    </li>
+                    <li>
+                        <a href="#">Registrations</a>
+                    </li>
+                    <li>
+                        <a href="#">Fare details</a>
+                    </li>
+                    <li>
+                        <a href="#">Vehicle & Driver details</a>
+                    </li>
+                    <li>
+                        <a href="#">Tours & Picnics</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa fa-bolt fa-fw"></i>
+                <a href="#"> Parent Management</a>
+                <ul class="side-nav-dropdown">
+                    <li>
+                        <a href="#"><i class="fa fa-share"></i> Create login</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-envelope-o"></i> Complaint box</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-reply"></i> Reset login</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <section id="contents">
+        <div id="addStudent" class="none">
+            <div class="wrapper">
+                <center>
+                    <nav class="menu-tabs">
+                        <ul class="filter-links">
+                            <li class="is-active">
+                                <a href="#hot">Individual Registration </a>
+                            </li>
+                            <li>
+                                <a href="#fresh">
+                                    Multiple Registrations
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </center>
+                <section id="games" data-cat="hot">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="Name">Student Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="Application-ID">Application ID</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="AFather/GuardianName">Father/Guardian Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">Address</label>
+                                <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">
+                                    Date of Birth
+                                </label>
+                                <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                    <input class="form-control" type="text" readonly />
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Class">Class & Section</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Class</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <select class="form-control" id="sel2">
+                                    <option>Section</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="AFather/GuardianName">Upload Image</label>
+                                <div class="btn btn-file">
+                                    Browse
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-default btn-submit">Submit</button>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="games" data-cat="fresh" style="display: none;">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="AFather/GuardianName">Upload Image</label>
+                                <div class="btn btn-file">
+                                    Browse
+                                    <input type="file">
+                                </div>
+                            </div>
+                            <label class="label--checkbox">
+                                <input type="checkbox" class="checkbox">
+                                Include Student History
+                            </label>
+                            <button type="submit" class="btn btn-default btn-submit">Submit</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div id="studentProfile" class="none">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="Application-ID">Application ID</label>
+                    <input type="text" class="form-control">
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="Name">Student Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group" style="float:right;">
+                    <label for="Class">Class & Section</label>
+                    <select class="form-control" id="sel1">
+                        <option>Class</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <select class="form-control" id="sel2">
+                        <option>Section</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Personal Details</th>
+                            <th>Academic Details</th>
+                            <th>Other Information </th>
+                            <th>Student History</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Student Name</td>
+                            <td>Class & Section</td>
+                            <td>Accomodation</td>
+                            <td>Previous School Name</td>
+                        </tr>
+                        <tr>
+                            <td>Application ID</td>
+                            <td>Attendance </td>
+                            <td>Transport</td>
+                            <td>Previous academic profile</td>
+                        </tr>
+                        <tr>
+                            <td>Father's Name</td>
+                            <td>Performance</td>
+                            <td>Accolades</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Mother's Name</td>
+                            <td>Class Teacher Comments</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Guardian's Name if Applicable</td>
+                            <td>Extra-Curricular Information</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Native Place</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Caste</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Religion</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Physically Handicapped
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-default btn-submit">Submit</button>
+            </form>
+        </div>
+        <div id="addStaff" class="none">
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label for="Name"> Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Application-ID">Application ID</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="AFather/GuardianName">Father/Guardian Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">Address</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="Address">
+                            Date of Birth
+                        </label>
+                        <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                            <input class="form-control" type="text" readonly />
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="AFather/GuardianName">Qualification</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Class">Gender</label>
+                        <select class="form-control" id="sel1">
+                            <option>Class</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="AFather/GuardianName">Upload Image</label>
+                        <div class="btn btn-file">
+                            Browse
+                            <input type="file">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default btn-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div id="staffProfile" class="none">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="Application-ID">Application ID</label>
+                    <input type="text" class="form-control">
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="Name">Student Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group" style="float:right;">
+                    <label for="Class">Class & Section</label>
+                    <select class="form-control" id="sel1">
+                        <option>Class</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <select class="form-control" id="sel2">
+                        <option>Section</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Personal Details</th>
+                            <th>Academic Details</th>
+                            <th>Other Information </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Student Name</td>
+                            <td>Class & Section</td>
+                            <td>Accomodation</td>
+                        </tr>
+                        <tr>
+                            <td>Application ID</td>
+                            <td>Attendance </td>
+                            <td>Transport</td>
+                        </tr>
+                        <tr>
+                            <td>Father's Name</td>
+                            <td>Performance</td>
+                            <td>Accolades</td>
+                        </tr>
+                        <tr>
+                            <td>Mother's Name</td>
+                            <td>Class Teacher Comments</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Guardian's Name if Applicable</td>
+                            <td>Extra-Curricular Information</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>DOB</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Native Place</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Caste</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-default btn-submit">Submit</button>
+            </form>
+        </div>
+        <div id="generatePayslip" class="none">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-7">
+                      <form class="frm">
+                          <div class="form-group">
+                              <label for="Application-ID">Faculty ID</label>
+                              <input type="text" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <label for="Name">Faculty Name</label>
+                              <input type="text" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <label for="Class">Month & Year</label>
+                              <select class="form-control" id="sel1">
+                                  <option>Month</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                              </select>
+                              <select class="form-control" id="sel2">
+                                  <option>Year</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <button type="submit" class="btn btn-default btn-submit pay">Generate Pay slip</button>
+                              </div>
+                      </form>
+                  </div>
+                  <div class="col-sm-5">
+                      <div class="print">
+                          <h2>Pay Slip</h2>
+                          <center>
+                              <button type="submit" class="btn btn-default btn-submit print-btn">Revise</button>
+                              <button type="submit" class="btn btn-default btn-submit print-btn">Print</button>
+                              <button type="submit" class="btn btn-default btn-submit print-btn">
+                                  Send mail
+                              </button>
+                          </center>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div> 
+    </section>    
+</body>
+</html>

@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+         a.target {
+    color: #fff;
+    font-size: 1.3em;
+    transform: translate(50%, 50%);
+    position: absolute;
+    top: 85%;
+    left: 50%;
+}
+
+        .menu-button-line {
+            background-color: #fff;
+        }
+          .border{
+                border-bottom: 2px solid #45e245;
+                padding-bottom: .5em;
+        }
+        .container1 {
+            width: 100%;
+            margin: 0;
+            height: 100vh;
+            background: url(image/img1.png);
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            position: absolute;
+            top: 0px;
+        }
+         @font-face {
+            font-family: 'Dynalight';
+            src: url('font/Dynalight-Regular.ttf') format('truetype');
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: -25%;
+            transform: translate(-50%, -125%);
+            text-align: center;
+            color: #fff;
+            font-size: 4.1em;
+            font-weight: 700;
+            letter-spacing:1px;
+            animation: top 1.5s forwards;
+            animation-delay: .3s;
+            font-family: 'Raleway', sans-serif !important;
+        }
+        .sub{
+             position: absolute;
+            left: 50%;
+            top: -25%;
+            transform: translate(-50%, 85%);
+            text-align: center;
+            color: #fff;
+             font-size: 1.2em;
+            letter-spacing:1px;
+            animation: top 1.5s forwards;
+            animation-delay: 1s;
+            font-family: 'Raleway', sans-serif !important;
+        }
+
+        .border {
+            border-bottom: 2px solid #45e245;
+            padding-bottom: .5em;
+        }
+
+        @keyframes top {
+            0% {
+                top: 85%;
+                opacity: 0;
+            }
+
+            100% {
+                top: 45%;
+                opacity: 1;
+            }
+        }
+        .business-cnt {
+            padding: 3% 23%;
+            background: url(image/img2.png) no-repeat center center fixed;
+            background-size: 100% 100%;
+        }
+            .business-cnt > p {
+                margin: 0 2%;
+                line-height: 1.4;
+                font-size: 1.2em;
+                color: rgba(0, 0, 0, 0.5);
+                text-align: justify;
+                margin: 0 0 14px;
+            }
+            .business-cnt > h3 {
+                font-weight: 600;
+                margin: 0 2%;
+                font-size: 3rem;
+                color: #757575;
+                margin: 3% 0 2% 0;
+            }
+         @media(max-width:767px){
+            .business-cnt {
+                padding: 3%;
+                margin-top: 100vh;
+            }
+            .text{
+            font-size: 1.5em;
+            transform: translate(-50%, -260%);
+          }
+          .border{
+            border:  none;
+          }
+          .sub {
+   position: absolute;
+    left: 50%;
+    top: -25%;
+    transform: translate(-50%, -26%);
+    text-align: center;
+    color: #fff;
+    font-size: 0.8em;
+    width: 100%;
+    padding: 2%;
+}
+         }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+        });
+    </script>
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative" style="background:#fff;">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr5.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Who we are</font>
+                                            <h3>
+                                                <span>About</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Areas of expertise</font>
+                                            <h3>
+                                                <span>Services</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Strategies</font>
+                                            <h3>
+                                                <span>Blog</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Case studies</font>
+                                            <h3>
+                                                <span>Work</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Start a project</font>
+                                            <h3>
+                                                <span>Contact</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+         <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1">
+
+            <h1 class="text">
+                Strate<font class="border">gies that </font>deliver
+</h1>
+            <p class="sub">
+                Our holistic perspective captures value across boundaries to enrich ventures of all sizes. Be it strategy, organization, marketing, operations, technology, advanced analytics, digital transformation, corporate finance, mergers, acquisitions and sustainability, our proficiency approves the mettle.
+            </p>
+            <a href="#target" class="target"><i class="fa fa-chevron-down"></i></a>
+        </div>
+    </div>
+    <div class="container-fluid pading relative">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <div class="business-cnt">
+                    <h3>
+                        We make businesses perform better
+                    </h3>
+                    <p>
+                        Business consulting is all about being able to look at a problem dynamically. And every business is unique; There is nothing like ‘one-size-fits-all’. There is a cause for everything and identifying the cause is what keeps the ball rolling. Your business is the ultimate investment portfolio and you would want it to be worthy.  Webroas Business Consulting focus on the most critical issues and opportunities concerning your business. Working across all industries, business models, and geographies, we bring deep, functional expertise at your doorstep.
+                    </p>
+                    <p>
+                        Our proven multiplier effect has benefited several businesses across the globe. Solutions we offer are based upon meaningful, experienced, and well-documented understanding of the issue. We help you outperform competition and redefine business. Our tailored and integrated approach in a vibrant ecosystem enables deliver better and faster outcomes.
+                    </p>
+                    <p>
+                        We measure our success by your success. We can leverage and streamline business processes with a curated ecosystem of leading innovators. Critical areas we address include marketing strategy, competitive advantage, business model and other drivers. We make it a point to first understand the macro problem of the businesses and also the nuances before rolling out solutions.
+                    </p>
+                    <h3>
+                        Welcome to Webroas Consulting
+                    </h3>
+                    <p>
+                        We bring forth a fresh perspective to every client relationship alongside mutual trust and infectious energy. Webroas Business Consulting can advise and direct you to take better actions and make better decisions that will produce successful outcomes for the time and money you spend. A great business consultant is also a masterful thinking partner!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <button type="submit" class="btn btn-get">Get In Touch </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="#">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

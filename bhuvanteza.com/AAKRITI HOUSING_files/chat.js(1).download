@@ -1,0 +1,35 @@
+ 
+
+if(1){  
+setTimeout(function() {
+
+    alertFunc();
+    document.getElementById('livprop_popup1').style.opacity = 0;
+    document.getElementById('livprop_popup1').style.visibility = 'visible';
+    document.getElementById('livprop_popup1').style.display = 'block';
+    document.getElementById('chat').style.display = 'none';
+    document.getElementById('chat_window').style.display = 'block'; 
+    document.getElementById('livprop_modal-header').style.display = 'block';
+    document.getElementById('livchat_close').style.backgroundColor = '#'+allText.headerbgcolor;
+
+    
+
+    }, 1000);
+}
+
+function alertFunc() {
+    setTimeout(function() { //live-button
+
+    document.getElementById('livprop_popup1').style.opacity = 1; 
+    document.getElementById('livprop_popup1').style.visibility = 'visible';
+    document.getElementById('livprop_popup1').style.display = 'block';
+    
+    document.getElementById('live-button').style.visibility = 'visible';     
+    document.getElementById('live-button').style.opacity = 1;
+    document.getElementById('live-button').style.display = 'none';
+    document.getElementById('livchat_close').style.backgroundColor = '#'+allText.headerbgcolor;
+
+    }, 10000);
+}
+ 
+ 

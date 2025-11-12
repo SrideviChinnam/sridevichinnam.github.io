@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+
+        .menu-button-line {
+            background-color: #fff;
+        }
+
+        .container1 {
+            width: 100%;
+            margin: 0;
+            height: 65vh;
+            background: url(image/img1.png);
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            position: absolute;
+            top: 0px;
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: -25%;
+            transform: translate(-50%, -100%);
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: top 1.5s forwards;
+            animation-delay: .3s;
+            font-family: 'Raleway', sans-serif !important;
+        }
+
+        .sub {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            text-align: center;
+            color: #fff;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            animation: top 1.5s forwards;
+            animation-delay: 1s;
+            font-family: 'Raleway', sans-serif !important;
+        }
+
+        .border {
+            border-bottom: 2px solid #45e245;
+            padding-bottom: .5em;
+        }
+
+        @keyframes top {
+            0% {
+                top: 85%;
+                opacity: 0;
+            }
+
+            100% {
+                top: 45%;
+                opacity: 1;
+            }
+        }
+          a.target {
+    color: #fff;
+    font-size: 1.3em;
+    transform: translate(50%, 50%);
+    position: absolute;
+    top: 85%;
+    left: 50%;
+}
+          .brand{
+              z-index:-1;             
+          }
+          .brand>img{
+               margin-top:-30%;
+                 z-index:-1;   
+          }
+          .brand1{
+              width: 53%;
+    transform: translate(30%, 30%);
+          }
+          
+          
+          .brnd>img{
+              max-width: 125%;
+    transform: rotate(6deg) translate(-10%, 0);
+          }
+          .brnd1{
+                  transform: translate(30%, 86%);
+                   width: 53%;
+          }
+          .brand2{
+                  width: 53%;
+    transform: translate(50%, 100%);
+          }
+         
+          .logo>a>img{
+              top:0.5%;
+          }
+           .underline {
+  text-decoration: none;
+  position: relative;
+}
+.underline:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+/* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -10px;
+/****** 
+       optional values below 
+       ******/
+/* center - (optional) use with adjusting width   */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #45e245;
+/* optional animation */
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/* optional hover classes used with anmiation */
+.underline:hover:after {
+  width: 100%;
+  background: #45e245;
+}
+.brnd2{
+    transform: translate(32%, 100%);
+    width:53%;
+}
+@media(max-width: 768px){
+     .brand1, .brnd1, .brnd2, .brand2 {
+    width: 80%;
+     transform: translate(0); 
+     margin-left: 3%;
+}
+
+}
+@media(max-width:1024px){
+    .underline{
+    display: none;;
+}
+}
+@media (max-width: 767px){
+    html{
+        overflow-x: hidden !important; //horizontal
+        width: 100% !important;
+    }
+     body{
+        overflow-x: hidden !important; //horizontal
+         width: 100% !important;
+    }
+.service-cnt {
+    margin-top: 100vh !important;
+}
+.brand{
+         background: #fff !important;
+}
+  .brnd>img{
+              max-width: 100% !important;
+    transform: rotate(6deg) translate(0, 0) !important;
+          }
+          .brand>img{
+              max-width: 100% !important;
+          }
+          .brand1, .brnd1, .brnd2, .brand2 {
+    width: 95%;
+     transform: translate(0); 
+}
+.brand1>p, .brnd1>p, .brnd2>p, .brand2>p{
+    font-size: 1em;
+}
+          .text{
+            font-size: 1.5em;
+            transform: translate(-50%, -100%);
+          }
+          .underline{
+            display: none;;
+          }
+          .sub {
+    position: absolute;
+    left: 50%;
+    top: -25%;
+    transform: translate(-50%, 35%);
+    text-align: center;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+}
+          </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+        });
+    </script>
+</head>
+<body id="body-element" style="margin: 0; ">
+    <div class="container-fluid pading relative" style="background:#fff;">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr5.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Who we are</font>
+                                            <h3><span>About</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Areas of expertise</font>
+                                            <h3><span>Services</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Strategies</font>
+                                            <h3><span>Blog</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Case studies</font>
+                                            <h3><span>Work</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Start a project</font>
+                                            <h3><span>Contact</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                     $(".brand>img").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                     $(".brand>img").css("margin-top", "-30%");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1">
+
+            <h1 class="text">Branding is the character of your brand.<font class="underline"> Make it </font>powerful.  <!--<font class="border">t Servic</font>e Suite--></h1>
+            <p class="sub">
+                Branding is the highest form of telling your story. Our collaborative approach to combine your story with the user’s experience generates creative solutions.
+            </p>
+            <a href="#target" class="target"><i class="fa fa-chevron-down"></i></a>
+        </div>
+    
+    </div>
+    <div class="container-fluid pading service-cnt relative" style="background:#fff">
+        <div class="row pading" style="z-index:-1">
+            <div class="col-sm-6 pading" style="z-index:-1">
+                <div class="brand">
+                    <img class="img-responsive" src="image/branding/haveli.png" alt="image" />
+                </div>
+            </div>
+            <div class="col-sm-6 pading" style="z-index:-1">
+                <div class="brand1">
+                    <h3>
+                        Brand Strategy
+                    </h3>
+                    <p>
+                        Awareness of the brand is the most important of the success of any brand. A strong understanding of the brand’s message and an in-depth analysis of the brand’s current positioning in the market are required to prepare the right strategy. Without a strong “why”, it can be a directionless journey which could lead you no-where.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row pading" style="z-index:-1">
+            <div class="col-sm-6 pading col-sm-push-6" style="z-index:-1">
+                <div class="brnd">
+                    <img class="img-responsive" src="image/branding/campus-bears1.png" alt="image" />
+                </div>
+            </div>
+            <div class="col-sm-6 pading col-sm-pull-6" style="z-index:-1">
+                <div class="brnd1">
+                    <h3>
+                        Expression
+                    </h3>
+                    <p>
+                        It takes only a glance to make an impression on your brand. Brand consistency can create a personality for your brand. Brand consistency is all about always communicating with a theme like color, logo, type otherwise known as brand identifiers. It helps brands build an emotional connection and which inturn helps consumer buying decisions quicker.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row pading">
+            <div class="col-sm-6 pading">
+                <div class="brnd">
+                    <img class="img-responsive" src="image/branding/stationery-4.png" alt="image" style="transform: rotate(0) translate(-10%, 0);" />
+                </div>
+            </div>
+            <div class="col-sm-6 pading">
+                <div class="brnd2">
+                    <h3>
+                        Brand Identity
+                    </h3>
+                    <p>
+                        Choosing the right colors could increase your brand recognition by 75%. Two elements that define brand perception are how emotional audiences are connected to your brand and how consistently the brand’s message is delivered. Inconsistency in the message could create a disconnect with the audience. Giving the right content in the right way at the right time is the key to any brand.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row pading" style="background: #f9f9f9;">
+            <div class="col-sm-6 col-sm-push-6 pading">
+                <div class="brand">
+                    <img class="img-responsive" src="image/branding/pack.png" alt="image" style="margin-top:0;" />
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-pull-6 pading">
+                <div class="brand2">
+                    <h3>
+                        Packaging
+                    </h3>
+                    <p>
+                        A stand out packaging design can ensure 20% more sales at retail stores. Packaging should personify the values of the brand. Our team at webroas, considers everything from a brand perspective, logo colors, target audience, product type, material type, the cost implication of each design we deliver.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <a href="contact.html"> <button type="submit" class="btn btn-get">Get In Touch </button></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="about.html">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="work.html">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="service.html">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="blog.html">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+        </html >

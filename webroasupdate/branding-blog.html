@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blog1.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+       
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+        });
+    </script>
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative" style="background:#fff">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr6.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Who we are</font>
+                                            <h3>
+                                                <span>About</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Areas of expertise</font>
+                                            <h3>
+                                                <span>Services</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Strategies</font>
+                                            <h3>
+                                                <span>Blog</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Case studies</font>
+                                            <h3>
+                                                <span>Work</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Start a project</font>
+                                            <h3>
+                                                <span>Contact</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr6.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1">
+
+           <div class="row pading">
+               <div class="col-md-6 pading">
+                   <h1 class="text">
+                       How to build your brand?
+                   </h1>
+               </div>
+               <div class="col-md-6 pading">
+                   <img class="img-responsive blog-img" src="image/Blog1/buildingbrand.jpg" alt="" />
+               </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <div class="container-fluid pading service-cnt relative mrg-res" style="background:#fff;">
+        <div class="blog-cnt">
+            <p class="blog-sub-cnt">
+                Building a brand is one of the most significant facets of any business strategy. A successful brand building process enables your brand to outshine and stand out from the competition. Your businesses’ brand image plays a very crucial part in creating loyal customers, achieving goals and generating higher revenues.
+            </p>
+            <h3 class="blog-sub-heading">
+                Core concepts that help build your brand:
+            </h3>
+            <p class="blog-sub-cnt">
+                <b>Brand message-</b> Always be clear about the message your brand is sending out to your customers. Take it affirmatively because there is a deeper purpose to this than you think. Having a deeper motivation can help your customers rally around you and enhance your base at the same time. This is not about measuring the ROI you can generate or increasing your conversion rate. The fact is that defining your actionable content will define your message. This is the real takeaway when you are building your brand. No matter what your message is, make sure that it shines. You will be glad to hear what your customers have to say about your products and brand.
+            </p>
+            <center><img class="img-responsive blog-sub-img" src="image/Blog1/BrandMessage.jpg" alt=""></center>
+            <p class="blog-sub-cnt">
+                <b>Provide actionable solutions-</b> What would be actionable about your business? Actionable solutions are direct, meaningful actions derived from any type of raw data that your consumer would use to make decisions from it. It could be data analytics that provides data for businesses to make a well-informed decision or a simple blog post stating what steps to follow, a guide or just a few tips. This procedure solves your customer’s most pressing problems. Customers would love and appreciate your actionable content that helps solve the most pressing problems they encounter. Your brand would leave a lasting impression on them and will make them keep coming back each time they face a problem.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog1/Actionablesolutions.jpg" alt=""></center>
+            <p class="blog-sub-cnt">
+                <b>Stay abreast of your industry-</b> You must be knowledgeable about what you are doing. A businessman should know about the industry and the customers they would be engaging with. Just in case you do not have enough knowledge about the business you are dealing with, it is better to go to a business consultant to get the required knowledge. This is your best bet when you are unaware of how to move forward and not know a whole lot about it. With a little brand recognition, you could also learn from your competitors and how they have promoted their brand. There is also a possibility that you might be more knowledgeable about a topic than that another brand. It could turn out that you end up appealing to a whole new customer base by presenting yourself and standing out from the competition.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog1/stayaheadin-industry.jpg" alt=""></center>
+            <p class="blog-sub-cnt">
+                <b>Tune your brand-</b> The tone and voice of your brand should be consistent to give a better experience. Most people come to your brand to get that specific experience imparted. Your brand tone across all channels you work on should be consistent. In other words, your social media posts, blog posts and even your ads should convey a similar message. Building a unique brand is all about people coming to know your specific way of performance. Branding typically means developing a style. People who specially buy your products are people who will seek your products out from all the other faceless, nameless companies out there.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog1/tunebrand.jpg" alt=""></center>
+            <p class="blog-sub-cnt">
+                <b>Choose measurement metrics-</b> Finally,we come to measuring Return on Investment (ROI). This measuring metric has gone through all the trouble of setting goals. This is where you need to know whether we have achieved what we were seeking or failed and falling short. This is a positive way we can gauge whether we are going right, or we should take a step back and come up with another plan to be successful. You might want to target audiences that are in the final stage of the buying cycle in case your goal is mere conversions. They would then search for knowledge, look out for reviews and compare with other similar products as well. Nevertheless, this is no cause for worry as you can create content specifically to target these variables.
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog1/ChooseROI.jpg" alt=""></center>
+            <p class="blog-sub-cnt">
+                Our team at webroas is highly skilled in building brands that get recognized. Shoot us an email to
+                <a class="webroas-link" href="">hello@webroas.com</a> or look up <a class="webroas-link" href="https://www.webroas.com/">www.webroas.com</a> if you need to learn more.
+            </p>
+        </div>
+        <div class="container-fluid pading">
+            <div class="row pading more-blog-cnt">
+                    <h2>More Blogs</h2>
+                    <a href="technicalSEO-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog8/1.jpg">
+                        <h6>08 – October 19</h6>
+                        <p>Introduce yourself to Python for technical SEO</p>
+                    </div>
+                    </a>
+                    <a href="digital-marketing.html.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog4/digital-marketing.jpg">
+                        <h6>04 – Sep 19</h6>
+                        <p>Stepping into the new era of digital marketing</p>
+                    </div>
+                    </a>
+                     <a href="seo-blog.html.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog5/SEO-1.jpg">
+                        <h6>08 – October 19</h6>
+                        <p>Rethinking your SEO Strategy</p>
+                    </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <button type="submit" class="btn btn-get">Get In Touch </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="#">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

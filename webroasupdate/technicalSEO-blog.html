@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blog1.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+       @media (min-width: 1500px){
+.blog-img {
+    transform: translate(2%, 25%);
+    width: 100%;
+    right: 5%;    
+}
+.text {
+    position: absolute;
+    transform: translate(2%, 45%);
+}
+}
+.media-body, .media-left{
+        letter-spacing: 1px;
+    font-size: 16px !important;
+    line-height: 27px;
+    margin-top: 10px;
+    text-align: justify !important;
+    color: rgba(0, 0, 0, 0.7)!important;
+    margin: 2% 0%;
+}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+        });
+    </script>
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative" style="background:#fff">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr6.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Who we are</font>
+                                            <h3>
+                                                <span>About</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Areas of expertise</font>
+                                            <h3>
+                                                <span>Services</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Strategies</font>
+                                            <h3>
+                                                <span>Blog</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Case studies</font>
+                                            <h3>
+                                                <span>Work</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Start a project</font>
+                                            <h3>
+                                                <span>Contact</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr6.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1">
+
+           <div class="row pading">
+               <div class="col-md-6 pading">
+                   <h1 class="text">
+                       Introduce yourself to Python for technical SEO
+                   </h1>
+               </div>
+               <div class="col-md-6 pading">
+                   <img class="img-responsive blog-img" src="image/Blog8/python.jpg" alt="" />
+               </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <div class="container-fluid pading service-cnt relative mrg-res" style="background:#fff;">
+        <div class="blog-cnt">
+            <p class="blog-sub-cnt">
+               In this digital age, every business needs to be present on the web to reach out to their customers. As web usage increases day by day, your website's SEO can no longer rely only on traditional methods like keyword-stuffing, backlink buying, and content marketing. Along with traditional methods, SEO needs to use data-driven and UX focused content to improve searchability and stand out in this cutting edge competitive world. With this in mind, Python for technical SEO has garnered special attention from the SEO community. Python is easy to use and helps automate repetitive SEO tasks.Having a brief understanding of languages like HTML, CSS, and JavaScript can help in learning python much faster.
+            </p>
+            <h3 class="blog-sub-heading">
+                Python overview
+            </h3>
+            <p class="blog-sub-cnt">
+                Python is an object-oriented scripted language that is very powerful, fast and open-source. It is a general-purpose language that is used by many major organizations like Google, Netflix, YouTube, NASA, Spotify, and IBM as an important part of their growth. Python is widely used in areas where complex algorithms are needed such as data extraction, preparation and analysis, scientific computing, natural language processing, machine learning, deep learning, and artificial intelligence.
+            </p>
+             <h3 class="blog-sub-heading">
+                Some of the factors that led to a growth in the popularity of Python in SEO are:
+            </h3>
+            <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        Ability to understand data better.
+                                    </div>
+                                </div>
+            </p>
+            <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        Allows us to make data-driven decisions simpler and superior.
+                                    </div>
+                                </div>
+            </p>
+            <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            Provides concrete insights on further improvements.
+                                    </div>
+                                </div>
+            </p>
+            
+            <p class="blog-sub-cnt">
+                These will, in turn, generate more confidence amongst clients to implement recommendations.
+            </p>
+              <center><img class="img-responsive blog-sub-img" src="image/Blog8/Python-SEO.png" alt=""></center>
+               <h3 class="blog-sub-heading">
+                How python is useful for technical SEO
+            </h3>
+            <p class="blog-sub-cnt">
+                SEO is all about understanding and analysing the right metrics to increase both organic and inorganic traffic toyour website. Core concepts of SEO are data extraction, preparation, analysis and visualization of the website traffic, keywords, meta tags, broken links and missing descriptions. Python just not enables to automate repetitive tasks but also helps with extracting and analysing large data sets. It effectively solves many complex problems in a short period.
+            </p>  
+             <h3 class="blog-sub-heading">
+                Python automation
+            </h3>           
+            <p class="blog-sub-cnt">
+                Python is an amazing programming language that helps develop tools for SEO. Some of the applications that use Python for SEO are:
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>Python SEO analyser-</b> SEO Analyzer analyses the structure of a website from homepage to XML sitemapby crawling and reports general SEO related issues. It displays data including word count, page titles, and meta descriptions as well as warnings for missing titles, meta descriptions and alt text.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> Broken link checker-</b> This plugin goes through the website and reports all the broken links. Thisis helpful for websites built on third party sites like WordPress, Wix, Shopify etc.,
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> Calculate keyword growth using google trends and python-</b> Provides API for bulk keyword search using Google trends. Saves a lot of time in identifying the appropriate keywords.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Google webmaster tools data with python-</b> Google Webmaster Tools reports search queries that are important with the ominous mask hiding 25%-40% of referred keyword traffic in Google Analytics. WMT data is made available by google through an open-source Python library, making it easy to transfer data to your desktop or google drive.
+                                    </div>
+                                </div>
+            </p>
+            
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>  Mozscape-</b> Mozscape deals with important metrics like domain authority and page authority which will improve SEO rank. This application grabs data from the Mozscape API.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Google page speed insights-</b> More number of URLs may considerably increase the running time of your website. Going through each and every URL available is very time-consuming. This plugin goes through all the pages of the website and plugs them directly in to the Google page insights which relatively saves a lot of time for SEO Professional.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Python web scrapper-</b> This tool parses through the page, locate SEO contributing content factors (metadata, &lt;p&gt; tag content, images, title tags) and formats them onto either an Excel spreadsheet or text document in a matter of minutes.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>Image optimizer-</b> The website’s load time has a direct impact on site performance and SEO rankings. The image optimizer reduces the size of the file and in turn, reduces the storage space of the page. Additionally, this reduces storage space taking lesser bandwidths which can also reduce hosting prices.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> Pythia image captioning-</b> Pythia is the first script which is a modular deep learning framework created by Facebook. It generates a caption for an image URL. This caption can be used for images currently missing important alt tags for accessibility and image search. The script is easy since it can be run straight from Google Collab drive and requires no direct coding. It will automatically complete all of the steps that would typically need to be manually undertaken.
+                                    </div>
+                                </div>
+            </p>
+             <center><img class="img-responsive blog-sub-img" src="image/Blog8/python-library-1.jpg" alt=""></center>
+              <h3 class="blog-sub-heading">
+               Python libraries
+            </h3>           
+            <p class="blog-sub-cnt">
+                Python has a wide range of libraries making a developer’s job much easier as all the complex functionalities are pre-programmed. Here are few such libraries which could be helpful in the SEO domain:
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> Tensor flow-</b> Dataflow and differentiable programming across a range of tasks.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> Pandas-</b> Data manipulation and analysis.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> SciKit learn-</b> Machine learning.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> SciPy-</b> Data manipulation and analysis.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     NumPy-</b> Multi-dimensional arrays and matrices for high-level mathematical functions.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b> SpaCy-</b> Advanced natural language processing.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Requests-</b> Makes HTTP requests simpler and more human-friendly.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>         Selenium-requests-</b> Cookie and request header handling.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     BeautifulSoup-</b> Parsing HTML and XML documents.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Time-</b> Time-related functions.
+                                    </div>
+                                </div>
+            </p>
+                <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     urllib-</b> Package of modules working with URLs.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     Re-</b> Regular expression operations.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     matplotlib-</b> API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK+.
+                                    </div>
+                                </div>
+            </p>
+               <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>     minidom-</b> Document object model implementation.
+                                    </div>
+                                </div>
+            </p>
+               <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            <b>    nltk-</b> Natural language tool kit.
+                                    </div>
+                                </div>
+            </p>
+             <h3 class="blog-sub-heading">
+            Utilise various other possibilities as well
+            </h3>           
+            <p class="blog-sub-cnt">
+                This is justscratching the surface. Python scripts have several other automation and optimization possibilities. Some of them are listed here:
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            Log file analysis.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            Internal linking analysis.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            Keyword growth calculation.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                       Hreflang validation.
+                                    </div>
+                                </div>
+            </p>
+             <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                            Performing competitor analysis.
+                                    </div>
+                                </div>
+            </p>
+              <p class="blog-sub-cnt">
+               <div class="media">
+                                    <div class="media-left">
+                                        <i class="fa fa-hand-o-right"></i>
+                                    </div>
+                                    <div class="media-body">
+                                           Collecting GSC data.
+                                    </div>
+                                </div>
+            </p>
+              <p class="blog-sub-cnt">
+              Scripts from Python can be utilised to automate a large number of tasks that are time-consuming. Python powers scripts for training data sets before visualizing and summarizing. Possibilities of using python in the SEO domain are endless with such powerful and most general programming language.This will help analyse complex data in order to increase efficiency.
+            </p>
+            <p class="blog-sub-cnt">
+               Our SEO team at webroas is well versed in SEO and PPC. Visit <a class="webroas-link" href="https://www.webroas.com/">www.webroas.com</a> or shoot us an email at
+                <a class="webroas-link" href="">hello@webroas.com</a> for further info.
+            </p>
+        </div>
+        <div class="container-fluid pading">
+            <div class="row pading more-blog-cnt">
+                    <h2>More Blogs</h2>
+                    <a href="voicesearch-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog7/1.jpg">
+                        <h6>07 – October 19</h6>
+                        <p>Voice Search is more popular with consumers than marketers</p>
+                    </div>
+                    </a>
+                     <a href="web-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/blog2/164609.jpg">
+                        <h6>02 – Sep 19</h6>
+                        <p>Your catchy web design & development</p>
+                    </div>
+                    </a>
+                   
+                     <a href="advertising-blog.html">
+                        <div class="col-sm-4 pading">
+                        <img class="img-responsive blog-sub-img" src="image/Blog3/advertising.jpg">
+                        <h6>04 – Sep 19</h6>
+                        <p>Advertising is a boon for your business!</p>
+                    </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <button type="submit" class="btn btn-get">Get In Touch </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="#">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="#">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

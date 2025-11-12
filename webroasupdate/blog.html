@@ -1,0 +1,573 @@
+﻿
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!--font-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+        <link rel="icon" type="image/png" href="image/wr6.png">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/blog.css" />
+        <link rel="stylesheet" href="css/footer.css" />
+        <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+        <style>
+             @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+            body {
+    font-family: 'Raleway', sans-serif !important;
+}
+            .underline {
+  text-decoration: none;
+  position: relative;
+}
+.underline:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+/* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+  bottom: -10px;
+/****** 
+       optional values below 
+       ******/
+/* center - (optional) use with adjusting width   */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #45e245;
+/* optional animation */
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+/* optional hover classes used with anmiation */
+.underline:hover:after {
+  width: 100%;
+  background: #45e245;
+}
+            .container1 {
+                width: 100%;
+                height: 500px;
+                margin: 0;
+                background: url(image/img1.png);
+                overflow: hidden;
+                position: relative;
+                z-index: -1;
+	            position: absolute;
+	            top: 0px;
+            }
+
+            .text {
+                position: absolute;
+                left: 50%;
+                top: -25%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #fff;
+                font-size: 3em;
+                font-weight: 700;
+                animation: top 1.5s forwards; 
+                animation-delay: .3s;
+                 font-family: 'Raleway', sans-serif !important;
+            }
+            @keyframes top {
+                0% {
+                    top: 0;
+                }
+
+                100% {
+                    top: 45%;
+                }
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .menu-button-line {
+                background-color: #fff;
+            }
+
+            .bounce-up {
+                opacity: 0;
+                -moz-transition: all 700ms ease-out;
+                -webkit-transition: all 700ms ease-out;
+                -o-transition: all 700ms ease-out;
+                transition: all 700ms ease-out;
+                -moz-transform: translate3d(0px, 200px, 0px);
+                -webkit-transform: translate3d(0px, 200px, 0px);
+                -o-transform: translate(0px, 200px);
+                -ms-transform: translate(0px, 200px);
+                s transform: translate3d(0px, 200, 0px);
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                backface-visibility: hidden;
+                z-index: -1;
+            }
+
+.in-view{
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+@media(max-width:767px){
+    .text{
+            font-size: 1em !important;
+    }
+    .container1{
+        position:relative !important;
+        height: 100vh !important;
+    }
+    .mrg{
+        margin-top: 14px !important;
+    }
+}
+@media(max-width:1280px){
+    .container1{
+        height:400px;
+    }
+}
+@media(max-width:1024px){
+    .container1{
+        height:75vh;
+    }
+}
+         </style>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var b = $("#footer-element").height();
+                $("#body-element").css("padding-bottom", b);
+                var $animation_elements = $('.animation-element');
+                var $window = $(window);
+
+                function check_if_in_view() {
+                    var window_height = $window.height();
+                    var window_top_position = $window.scrollTop();
+                    var window_bottom_position = (window_top_position + window_height);
+
+                    $.each($animation_elements, function () {
+                        var $element = $(this);
+                        var element_height = $element.outerHeight();
+                        var element_top_position = $element.offset().top;
+                        var element_bottom_position = (element_top_position + element_height);
+
+                        //check to see if this current container is within viewport
+                        if ((element_bottom_position >= window_top_position) &&
+                            (element_top_position <= window_bottom_position)) {
+                            $element.addClass('in-view');
+                        } else {
+                            $element.removeClass('in-view');
+                        }
+
+                    });
+                }
+
+                $window.on('scroll resize', check_if_in_view);
+                $window.trigger('scroll');
+
+            });
+        </script>
+    </head>
+    <body id="body-element" style="margin:0;">
+        <div class="container-fluid pading relative" style="background:#fff;">
+            <header>
+                <div class="logo">
+                    <a href="index.html">
+                        <img id="logo-img" src="image/wr5.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="menu-button">
+                    <div class="menu-button-line"></div>
+                    <div class="menu-button-line"></div>
+                    <div class="menu-button-line"></div>
+                </div>
+                <nav class="menu">
+                    <div class="menu-branding"></div>
+                    <ul class="menu-nav">
+                        <div class="jumbotron">
+                            <div class="row">
+                                <div class="col-sm-4 pd">
+                                    <a href="about.html">
+                                        <div class="div1 btn-3 hvr" id="frst">
+
+                                            <div class="brd">
+                                                <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Who we are</font>
+                                                <h3><span>About</span></h3>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                    <br>
+                                    <a href="service.html">
+                                        <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                            <div class="brd">
+                                                <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Areas of expertise</font>
+                                                <h3><span>Services</span></h3>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4 pd">
+                                    <a href="blog.html">
+                                        <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                            <div class="brd">
+                                                <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Strategies</font>
+                                                <h3><span>Blog</span></h3>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-4 pd">
+                                    <a href="work.html">
+                                        <div class="div3 btn-3 hvr" id="frst3">
+
+                                            <div class="brd">
+                                                <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Case studies</font>
+                                                <h3><span>Work</span></h3>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                    <br>
+                                    <a href="contact.html">
+                                        <div class="div1 btn-3 div5 hvr" id="frst4">
+                                            <div class="brd">
+                                                <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Start a project</font>
+                                                <h3><span>Contact</span></h3>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ul>
+                </nav>
+            </header>
+            <script>
+                const menuButton = document.querySelector(".menu-button");
+                const menu = document.querySelector(".menu");
+                const menuBranding = document.querySelector(".menu-branding");
+                const menuNav = document.querySelector(".menu-nav");
+                const navItem = document.querySelectorAll(".nav-item");
+
+                let showMenu = false;
+
+                //initiAL SETUP
+
+                //ADD CLASS
+                menuButton.addEventListener("click", toggolmenu);
+
+                function toggolmenu() {
+                    if (!showMenu) {
+                        menuButton.classList.add("close");
+                        menu.classList.add("show");
+                        menuBranding.classList.add("show");
+                        menuNav.classList.add("show");
+                        navItem.forEach(item => item.classList.add("show"));
+
+                        showMenu = true;
+                        $("#logo-img").attr("src", "image/wr5.png");
+                        $("#frst,#frst3").addClass("top-view");
+                        $("#frst1").addClass("left-view");
+                        $("#frst4").addClass("right-view");
+                        $("#frst2").addClass("bottom-view");
+                        $("#particles-js").css("z-index", "-1");
+                        $(".contact-container").addClass("z-indexx");
+                        $(".trnss").addClass("trns");
+                        $(".blg-cnt").css("margin-top", "0");
+                    } else {
+                        menuButton.classList.remove("close");
+                        menu.classList.remove("show");
+                        menuBranding.classList.remove("show");
+                        menuNav.classList.remove("show");
+                        navItem.forEach(item => item.classList.remove("show"));
+
+                        showMenu = false;
+                        $(".contact-container").css("z-index", "");
+                        $("#logo-img").attr("src", "image/wr5.png");
+                        $("#frst,#frst3").removeClass("top-view");
+                        $("#frst1").removeClass("left-view");
+                        $("#frst4").removeClass("right-view");
+                        $("#frst2").removeClass("bottom-view");
+                        $(".contact-container").removeClass("z-indexx");
+                        $(".trnss").removeClass("trns");
+                        $(".blg-cnt").css("margin-top", "-13em");
+                        //$("#particles-js").css("z-index","");
+                    }
+                }
+            </script>
+            <div class="container1">
+
+                <h1 class="text">Digital solutions<br />  designed to better engage<br /> yo<font class="underline">ur audien</font>ce.</h1>
+            </div>
+        </div>
+        <div class="relative" style="background:#fff;">
+            <div class="container">
+
+                <div class="blog-cnt">
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <a href="branding-blog.html">
+                                <div class="blg-cnt animation-element bounce-up1 mrg">
+                                    <img class="img-responsive" src="image/blog/buildingbrand1.png" alt="Core concepts that help build your brand | Webroas Branding" />
+                                    <p>01 – Sep 19</p>
+                                    <h2>How to build your brand?</h2>
+                                    <h5>Branding</h5>
+                                    <p class="blg-sub-cnt">
+                                        Building a brand is one of the most significant facets of any business strategy. A successful brand building process enables your brand to outshine and stand out from the competition. Your businesses’ brand image plays a very crucial part in creating loyal customers, achieving goals and generating higher revenues.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="advertising-blog.html">
+                                <div class="blg-cnt animation-element bounce-up2 mrg">
+                                    <img class="img-responsive" src="image/blog/advertising11.jpg" alt="Advertising benefits to small business - Webroas" />
+                                    <p>03 – Sep 19</p>
+                                    <h2>Advertising is a boon for your business!</h2>
+                                    <h5>Advertising</h5>
+                                    <p class="blg-sub-cnt">
+                                        Advertising is necessary to let customers know about your businesses, products and services. Your ads differentiate your brand from various other brands out there to achieve your goals. The benefits of business advertising include attracting and helping you to sell more products and services to increase revenue generation and gain new customers.
+
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <a href="seo-blog.html">
+                                <div class="blg-cnt animation-element bounce-up">
+                                    <img class="img-responsive" src="image/blog/SEO11.jpg" alt="How to develop Technical SEO Strategy 2020?" />
+                                    <p>05 – October 19</p>
+                                    <h2>Rethinking your SEO strategy</h2>
+                                    <h5>SEO </h5>
+                                    <p class="blg-sub-cnt">
+                                        Taking a good look at the success of your SEO efforts may be an upright idea to make things better. This helps drive more high-converting visitors to your website. Here are a few SEO tips that can highlight places where such tactics could yield results.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="voicesearch-blog.html">
+                                <div class="blg-cnt animation-element bounce-up">
+                                    <img class="img-responsive" src="image/blog/VoiceSearch11.jpg" alt="Importance of Voice Search Optimisation in 2020" />
+                                    <p>07 – October 19</p>
+                                    <h2>Voice Search is more popular</h2>
+                                    <h5>SEO</h5>
+                                    <p class="blg-sub-cnt">
+                                        With advancements in machine learning and artificial intelligence, life has become much easier with voice search applications for consumers, be it Google voice search or Apple's Siri, Microsoft's Cortana or Amazon's Alexa.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <a href="technicalSEO-blog.html">
+                                <div class="blg-cnt animation-element bounce-up1">
+                                    <img class="img-responsive" src="image/blog/PythonforSEO1.png" alt="How Python Makes the World of SEO Better - Webroas" />
+                                    <p>08 – October 19</p>
+                                    <h2>Introduce yourself to Python for technical SEO</h2>
+                                    <h5>SEO</h5>
+                                    <p class="blg-sub-cnt">
+                                        In this digital age, every business needs to be present on the web to reach out to their customers. As web usage increases day by day, your website's SEO can no longer rely only on traditional methods like keyword-stuffing, backlink buying, and content marketing.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="digital-marketing.html">
+                                <div class="blg-cnt animation-element bounce-up2">
+                                    <img class="img-responsive" src="image/blog/digitalmarketing1.jpg" alt="How Digital Marketing helps for a Businesses and Consumers | Webroas" />
+                                    <p>04 – Sep 19</p>
+                                    <h2>Stepping into the new era of digital marketing</h2>
+                                    <h5>Digital Marketing</h5>
+                                    <p class="blg-sub-cnt">
+                                        Access to the internet is so common today and the number of people doing so is increasing by the day. The way people buy and shop has changed drastically, making offline marketing ineffective slowly and consistently.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <a href="web-blog.html">
+                                <div class="blg-cnt animation-element bounce-up">
+                                    <img class="img-responsive" src="image/blog/web-blog.jpg" alt="Why Mobile application Development is important? How it helps?" />
+                                    <p>02 – Sep 19</p>
+                                    <h2>Your catchy web design & development</h2>
+                                    <h5>Web Development</h5>
+                                    <p class="blg-sub-cnt">
+                                        Learning is an essential part of any journey. For this, we need to explore constantly and discover opportunities to develop. It does not matter whether you are a newcomer to web development or have been here for a long time, this blog lists basic information about web design, development, and e-commerce solutions.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="analyze-blog.html">
+                                <div class="blg-cnt animation-element bounce-up">
+                                    <img class="img-responsive" src="image/blog/11.jpg" alt="5 reasons to know about Backlinks | Analyze your Website Backlinks" />
+                                    <p>06 – October 19</p>
+                                    <h2>Spend time to analyze your backlinks</h2>
+                                    <h5>SEO</h5>
+                                    <p class="blg-sub-cnt">
+                                        You can always spy on your competitors to find links. But are they worth the effort? Most often not. Just ranking higher in Google does not mean that their backlinks are good. Some of them may be good and worth replicating but not all of them. Not all backlinks may be of good quality.
+                                    </p>
+                                    <button class="btn read-blog">
+                                        Read this post
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid pading">
+            <div class="row pading">
+                <div class="col-sm-12 pading">
+                    <footer class="footer" id="footer-element">
+                        <div class="desktop-footer">
+                            <div class="row pading">
+                                <div class="col-sm-6">
+                                    <div>
+                                        <h2 class="footer-heading">
+                                            Want to work with<br /> us? Lets get a<br /> project started!
+                                        </h2>
+                                        <a href="contact.html"> <button type="submit" class="btn btn-get">Get In Touch </button></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="foot-ad">
+                                        <h2 class="footer-address">
+                                            Hyderabad
+                                        </h2>
+                                        <p> +91 912 141 5669</p>
+                                        <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                        <h2 class="footer-address">
+                                            Virginia Beach
+                                        </h2>
+                                        <p> +1 757 387 3875</p>
+                                        <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                        <h2><a href="#">hello@webroas.com</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="down-footer">
+                                            <hr />
+                                            <div class="row pading">
+                                                <div class="col-sm-5 pading">
+                                                    <span class="foot-menu">
+                                                        <a href="about.html">About</a>
+                                                    </span>
+                                                    <span class="foot-menu">
+                                                        <a href="work.html">Work</a>
+                                                    </span>
+                                                    <span class="foot-menu">
+                                                        <a href="service.html">Services</a>
+                                                    </span>
+                                                    <span class="foot-menu">
+                                                        <a href="blog.html">Blog</a>
+                                                    </span>
+                                                    <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                                </div>
+                                                <div class="col-sm-2 pading" style="text-align:center;">
+                                                    <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                    <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                    <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                    <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                                </div>
+                                                <div class="col-sm-5 pading">
+                                                    <div class="terms">
+                                                        <span class="foot-menu1">
+                                                            <a href="#">Terms and Conditions</a>
+                                                        </span>
+                                                        <span class="foot-menu1">
+                                                            <a href="#">Privacy</a>
+                                                        </span>
+                                                        <span class="foot-menu1">
+                                                            <a href="#">Sitemap</a>
+                                                        </span>
+                                                        <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-footer">
+                            <img class="foot-logo" src="image/wr5.png" />
+                            <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                            <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                            <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                            <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

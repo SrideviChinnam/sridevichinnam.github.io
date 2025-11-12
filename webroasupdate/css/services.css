@@ -1,0 +1,7 @@
+body {
+    font-family: 'Raleway', sans-serif !important;
+}
+.service-cnt {
+    background: url(image/img1.png) center center no-repeat fixed;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/p5.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+        body {
+            font-family: 'Raleway', sans-serif !important;
+        }
+         body{
+        overflow-x: visible !important;
+      }
+      @media(max-width:767px){
+          body{
+        overflow-x: hidden !important;
+        padding-bottom: 100vh !important;
+      }
+      }
+         .container1 {
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+                position: relative;
+                z-index: -1;
+	            position: absolute;
+	            top: 0px;
+            }
+         a:focus, a:hover {
+    text-decoration: none;
+}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+             $("#scrollDownLocation").css("margin-bottom", b);
+            var $animation_elements = $('.animation-element');
+            var $window = $(window);
+
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position = (window_top_position + window_height);
+
+                $.each($animation_elements, function () {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position = (element_top_position + element_height);
+
+                    //check to see if this current container is within viewport
+                    if ((element_bottom_position >= window_top_position) &&
+                        (element_top_position <= window_bottom_position)) {
+                        $element.addClass('in-view');
+                    } else {
+                        $element.removeClass('in-view');
+                    }
+
+                });
+            }
+
+            $window.on('scroll resize', check_if_in_view);
+            $window.trigger('scroll');
+
+        });
+    </script>
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative" style="background:#fff;">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img id="logo-img" src="image/wr6.png" alt="logo" />
+                </a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Who we are</font>
+                                            <h3><span>About</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Areas of expertise</font>
+                                            <h3><span>Services</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Strategies</font>
+                                            <h3><span>Blog</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Case studies</font>
+                                            <h3><span>Work</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i><font class="abt-txt">Start a project</font>
+                                            <h3><span>Contact</span></h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                    $(".contact-container").addClass("z-indexx");
+                    $(".trnss").addClass("trns");
+                    $(".blg-cnt").css("margin-top", "0");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $(".contact-container").css("z-index", "");
+                    $("#logo-img").attr("src", "image/wr6.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    $(".contact-container").removeClass("z-indexx");
+                    $(".trnss").removeClass("trns");
+                    $(".blg-cnt").css("margin-top", "-13em");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div class="container1" id="scrollDownLocation">
+            <div class="js-app relative" style="background:#fff;">
+                <div>
+                    <div id="mainContent">
+                        <div>
+                            <section class="style__pageHeaderContainer___3P3V2 _divider__dividerWhite___2nqlq _divider__divider___2bjqZ">
+                                <div class="style__upperContainer___2dAbI">
+                                    <div class="style__screenReaderText___2jb_Z _accessibility__visuallyHidden___3OA9q">Cyclic diagram of doing the right thing through innovation and delivery</div>
+                                    <h1 class="style__headingWrapper___211rc">
+                                        <div class="style__alignLeft___2db6b" role="presentation">
+                                            <div class="style__flexibleUpper___3ljlx">
+                                                <div class="style__pageHeaderUpper___11J7i _fonts__serif___1u07k _fonts__fontXL___3uRrp">
+                                                    Do the
+                                                    <br>right thing
+                                                </div>
+                                                <img class="style__arrowDown___259ix style__arrow___3wtn3" sizes="(min-width: 980px) 183px, (min-width: 690px) 140px, 60px" src="image/arrow-2jOUY.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="style__alignRight___2neE5" role="presentation">
+                                            <div class="style__flexibleLower___3SDvA">
+                                                <img class="style__arrowUp___137I4 style__arrow___3wtn3" sizes="(min-width: 980px) 183px, (min-width: 690px) 140px, 60px" src="image/arrow-2jOUY.png" alt="">
+                                                <div class="style__pageHeaderLower___1kO4W _fonts__serif___1u07k _fonts__fontXL___3uRrp">
+                                                    Do the
+                                                    <br>thing right
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </h1>
+                                </div>
+                                <div class="style__lowerContainer___1ISKW">
+                                    <p class="style__subtitle___YkkWM _fonts__fontXS___2mdTk _fonts__boldSansSerif___1G6P5 _fonts__fontS___cxjoe">We help you bring innovative products and services to market through nimble and robust ways of working.</p>
+                                </div>
+                            </section>
+                            <section class="styles__crossFunctionalSlice___Nedkz">
+                                <div class="styles__photoContainer___1A-sL">
+                                    <img alt="Red Badger employees working in a cross functional team" class="styles__image___1vqVG" src="./image/cross-functional-badgers-3wlzp.jpg" sizes="(min-width: 1200px) 1200px, 100vw">
+                                </div>
+                                <section class="styles__outerHeadingContainer___3CY4O">
+                                    <div class="styles__headingContainer___2Okhs">
+                                        <h2 class="styles__heading___3cIE3 styles__widthContainer___J2HeX _fonts__serif___1u07k _fonts__fontL___349eg">Working in cross functional teams</h2>
+                                    </div>
+                                </section>
+                                <div class="styles__sliceBody___1JZE2">
+                                    <section>
+                                        <div class="styles__imageContainer___2-bAM">
+                                            <p>
+                                                Webroas is a glocal digital marketing agency based out of Hyderabad, India. Our name, derived from a marketing metric – ROAS, is short for “Return On Advertising Spend”. We use ROAS to evaluate the overall effectiveness of an advertising campaign. ROAS answers that one marketing question every business has, “If I put [X amount of money] into this marketing channel, what benefits do I get?”
+
+                                                Webroas offers local businesses a wide range of services from design to delivery, copywriting to creative solutions, advertising campaigns, branding & beyond. We measure our success on the impact we create and the number of happy customers. Our USP is to produce high-quality emotional branding that is innovative and creative.
+                                            </p>
+                                        </div>
+                                    </section>
+                                </div>
+                            </section>
+                            <section class="style__LeanAgileSlice___26Nol">
+                                <h2 class="style__leanAgileHeader___1uPun _fonts__fontM___2uO71 _fonts__serif___1u07k">Our flexible lean and agile process</h2>
+                                <div class="style__steps___3TcyE">
+                                    <div class="style__loopContainer___3sSNk">
+                                        <svg viewBox="0 0 298 127" xmlns="http://www.w3.org/2000/svg" class="style__smallLoopImage___3BC7c"><g fill="none" stroke="#39006a" stroke-width="5"><path d="M148.692 63.01l-42.733-42.787c-23.601-23.63-61.865-23.63-85.466 0C8.59 32.142 2.69 47.978 2.793 63.598m145.899-.588l42.732 42.789c23.601 23.63 61.866 23.63 85.466 0 11.957-11.973 17.856-27.685 17.697-43.376"></path><path stroke-dasharray="17.5,10.5,17.5,17.5" d="M148.692 63.01l-42.733 42.79c-23.601 23.63-61.865 23.63-85.466 0C8.59 93.88 2.69 78.044 2.793 62.423"></path><path stroke-dasharray="17.5,10.5,17.5,10.5" d="M148.692 63.01l42.732-42.787c23.601-23.63 61.866-23.63 85.466 0 11.957 11.973 17.856 27.684 17.697 43.375"></path></g></svg>
+                                        <svg viewBox="0 0 422 1004" xmlns="http://www.w3.org/2000/svg" class="style__largeLoopImage___ZM_sS"><g fill="none" stroke="#39006a" stroke-width="10"><path d="M211 502l145.664-145.57c80.448-80.395 80.448-210.742 0-291.136C316.09 24.744 262.178 4.647 209 4.996M211 502L65.336 647.566c-80.448 80.398-80.448 210.744 0 291.138 40.758 40.731 94.246 60.826 147.664 60.285"></path><path stroke-dasharray="25,15,25,25" d="M211 502L65.336 356.43c-80.448-80.395-80.448-210.742 0-291.136C105.91 24.744 159.822 4.647 213 4.996"></path><path stroke-dasharray="25,15,25,15" d="M211 502l145.664 145.566c80.448 80.398 80.448 210.744 0 291.138-40.758 40.731-94.246 60.826-147.664 60.285"></path></g></svg>
+                                        <div class="style__wordLeft___dtJ_G style__word___2UxHf _fonts__fontS___cxjoe _fonts__serif___1u07k">Innovation</div>
+                                        <div class="style__wordRight___3tEQH style__word___2UxHf _fonts__fontS___cxjoe _fonts__serif___1u07k">Delivery</div>
+                                    </div>
+                                    <div>
+                                        <h3 class="style__stepInnovationHeader___AmEq1 style__stepHeader___3go3K _fonts__fontM2___3sSED _fonts__serif___1u07k">Innovation</h3>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Understand</h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">We’ll understand your business and your target audience</p>
+                                            </div>
+                                        </div>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Research<!-- Ideate --></h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">Together we’ll define the problem to be solved and develop a range of possible solutions</p>
+                                            </div>
+                                        </div>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Propose Possible Solutions</h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">Let’s learn fast and discard unfeasible solutions</p>
+                                            </div>
+                                        </div>
+                                        <h3 class="style__stepDeliveryHeader___2hREG style__stepHeader___3go3K _fonts__fontM2___3sSED _fonts__serif___1u07k">Delivery</h3>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Objectives</h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">Together we’ll prioritise and validate solutions as concrete initiatives</p>
+                                            </div>
+                                        </div>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Launch</h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">We constantly measure and learn to look out for new opportunities and improvements</p>
+                                            </div>
+                                        </div>
+                                        <div class="style__step___mOp3C">
+                                            <div class="style__marker___1KFhU"></div>
+                                            <div class="style__stepContent___3Ah85">
+                                                <h4 class="style__stepSubHeader___1VOm_ _fonts__fontS___cxjoe _fonts__boldSansSerif___1G6P5">Execute</h4>
+                                                <p class="style__stepDescription___2tJm6 _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">We’ll deliver great quality products and services with speed</p>
+                                            </div>
+                                        </div>
+                                        <div class="style__stepPaddingBottom___19c-m"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <div>
+                                <div class="style__headerContainer___O_o_X _divider__dividerBlack___21t8_ _divider__divider___2bjqZ">
+                                    <h2 class="style__mainHeader___1acXW _fonts__fontL___349eg _fonts__serif___1u07k">The proof is in the pudding.</h2>
+                                    <div class="style__subHeader___B3kNH _fonts__fontS___cxjoe _fonts__serif___1u07k">Read some of our case studies.</div>
+                                </div>
+                                <div class="style__caseStudyContainer___efP1X">
+                                    <a class="style__caseStudyContent___13jG7" href="work.html">
+                                        <div class="style__imageWrapper___oum5w">
+                                            <img alt="" src="./image/fortnum-2yQBD.png">
+                                        </div>
+                                        <div class="style__caseStudyTextContainer___2L7rU">
+                                            <div class="style__caseStudyCompany___1Yhnv _fonts__fontXS___2mdTk _fonts__boldSansSerif___1G6P5 style__caseStudyCompany--onBlack___17hPE">E-commerce Solutions</div>
+                                            <div class="style__caseStudyTitleContainer___pL3vY">
+                                                <h3 class="style__caseStudyTitle___1UxSq _fonts__fontM___2uO71 _fonts__serif___1u07k">College spirit gear</h3>
+                                            </div>
+                                            <div class="style__caseStudyDescription___34ivf _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">An e-Commerce platform designed for college students in association with institutes. campusbears aims at developing improving the culture of ownness and pride towards their college. campusbears also looks forward to developing inter-college relations by acting as a medium to make a positive difference to the Indian education system.</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="style__caseStudyContainer___efP1X style__inverse___2RXwJ">
+                                    <a class="style__caseStudyContent___13jG7" href="work.html">
+                                        <div class="style__imageWrapper___oum5w bank">
+                                            <img alt="An iPad with the F&amp;M site open, with a jar of F&amp;M branded tea to the left hand side" src="./image/stationery-4.png">
+                                        </div>
+                                        <div class="style__caseStudyTextContainer___2L7rU">
+                                            <div class="style__caseStudyCompany___1Yhnv _fonts__fontXS___2mdTk _fonts__boldSansSerif___1G6P5">Branding</div>
+                                            <div class="style__caseStudyTitleContainer___pL3vY">
+                                                <h3 class="style__caseStudyTitle___1UxSq _fonts__fontM___2uO71 _fonts__serif___1u07k">Life is too short for non-wow projects</h3>
+                                            </div>
+                                            <p class="style__caseStudyDescription___34ivf _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">EVK Projects Pvt Ltd is a construction company offering a wide spectrum of services from housing ventures to MW scale solar projects in the states of Telangana & Andhra Pradesh.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="style__caseStudyContainer___efP1X">
+                                    <a class="style__caseStudyContent___13jG7" href="blog.html">
+                                        <div class="style__imageWrapper___oum5w">
+                                            <img alt="A pair of hands holding an Ipad with the Financial Times page open" src="./image/blog/advertising11.jpg">
+                                        </div>
+                                        <div class="style__caseStudyTextContainer___2L7rU">
+                                            <div class="style__caseStudyCompany___1Yhnv _fonts__fontXS___2mdTk _fonts__boldSansSerif___1G6P5 style__caseStudyCompany--onBlack___17hPE">BLOG</div>
+                                            <div class="style__caseStudyTitleContainer___pL3vY">
+                                                <h3 class="style__caseStudyTitle___1UxSq _fonts__fontM___2uO71 _fonts__serif___1u07k">Advertising is a boon for your business!</h3>
+                                            </div>
+                                            <div class="style__caseStudyDescription___34ivf _fonts__fontXS___2mdTk _fonts__sansSerif___3iE3M">
+                             Advertising is necessary to let customers know about your businesses, products and services. Your ads differentiate your brand from various other brands out there to achieve your goals. 
+
+  </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="style__buttonContainer___17fD4">
+                                    <a class="style__button___3Yymu _links__primaryButton___263PM _fonts__boldSansSerif___1G6P5" href="#">See more of our work</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                    <div class="desktop-footer">
+                        <div class="row pading">
+                            <div class="col-sm-6">
+                                <div>
+                                    <h2 class="footer-heading">
+                                        Want to work with<br /> us? Lets get a<br /> project started!
+                                    </h2>
+                                    <a href="contact.html"> <button type="submit" class="btn btn-get">Get In Touch </button></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="foot-ad">
+                                    <h2 class="footer-address">
+                                        Hyderabad
+                                    </h2>
+                                    <p> +91 912 141 5669</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                    <h2 class="footer-address">
+                                        Virginia Beach
+                                    </h2>
+                                    <p> +1 757 387 3875</p>
+                                    <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                    <h2><a href="#">hello@webroas.com</a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="down-footer">
+                                        <hr />
+                                        <div class="row pading">
+                                            <div class="col-sm-5 pading">
+                                                <span class="foot-menu">
+                                                    <a href="about.html">About</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="work.html">Work</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="service.html">Services</a>
+                                                </span>
+                                                <span class="foot-menu">
+                                                    <a href="blog.html">Blog</a>
+                                                </span>
+                                                <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                            </div>
+                                            <div class="col-sm-2 pading" style="text-align:center;">
+                                                <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                                <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                                <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                                <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                            </div>
+                                            <div class="col-sm-5 pading">
+                                                <div class="terms">
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Terms and Conditions</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Privacy</a>
+                                                    </span>
+                                                    <span class="foot-menu1">
+                                                        <a href="#">Sitemap</a>
+                                                    </span>
+                                                    <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

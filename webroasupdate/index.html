@@ -1,0 +1,886 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Muli|Poppins|Prompt&display=swap" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="icon" type="image/png" href="image/wr6.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/overlay.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <title>Webroas | Branding and Advertising Agency in Hyderabad</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Raleway:300,700,900');
+        @font-face {
+            font-family: 'FuriousStyles-Demo';
+            src: url('../font/FuriousStyles-Demo.ttf') format('truetype');
+        }
+    </style>
+    <script>
+        $(function () {
+            var b = $("#footer-element").height();
+            $("#body-element").css("padding-bottom", b);
+   $(window).scroll(function() {
+   var hT = $('.our-clnt-img').offset().top,
+       hH = $('.our-clnt-img').outerHeight(),
+       wH = $(window).height(),
+       wS = $(this).scrollTop();
+   if (wS > (hT+hH-wH)){
+            $(".our-clnt-img").addClass('flow');
+        } else {
+           $(".our-clnt-img").removeClass('flow');
+        }
+    });
+})
+    </script>
+    <script>
+        $(document).ready(function () {
+            /* ---- particles.js config ---- */
+
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 100,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#808080"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#808080",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+
+            /* ---- stats.js config ---- */
+
+            var count_particles, stats, update;
+            stats = new Stats;
+            stats.setMode(0);
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+            document.body.appendChild(stats.domElement);
+            count_particles = document.querySelector('.js-count-particles');
+            update = function () {
+                stats.begin();
+                stats.end();
+                if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                }
+                requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+
+        });
+    </script> 
+   
+</head>
+<body id="body-element" style="margin:0;">
+    <div class="container-fluid pading relative">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img id="logo-img" src="image/wr6.png" alt="logo" /></a>
+            </div>
+            <div class="menu-button">
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+                <div class="menu-button-line"></div>
+            </div>
+            <nav class="menu">
+                <div class="menu-branding"></div>
+                <ul class="menu-nav">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-sm-4 pd">
+                                <a href="about.html">
+                                    <div class="div1 btn-3 hvr" id="frst">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Who we are</font>
+                                            <h3>
+                                                <span>About</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="service.html">
+                                    <div class="div3 btn-3 hvr" id="frst1" style="background: url(image/services.png);">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Areas of expertise</font>
+                                            <h3>
+                                                <span>Services</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="blog.html">
+                                    <div class="div1 div2 btn-3 hvr" id="frst2">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Strategies</font>
+                                            <h3>
+                                                <span>Blog</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-4 pd">
+                                <a href="work.html">
+                                    <div class="div3 btn-3 hvr" id="frst3">
+
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Case studies</font>
+                                            <h3>
+                                                <span>Work</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                                <br>
+                                <a href="contact.html">
+                                    <div class="div1 btn-3 div5 hvr" id="frst4">
+                                        <div class="brd">
+                                            <i class="fa fa-long-arrow-right arrw"></i>
+                                            <font class="abt-txt">Start a project</font>
+                                            <h3>
+                                                <span>Contact</span>
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+            </nav>
+        </header>
+        <script>
+            const menuButton = document.querySelector(".menu-button");
+            const menu = document.querySelector(".menu");
+            const menuBranding = document.querySelector(".menu-branding");
+            const menuNav = document.querySelector(".menu-nav");
+            const navItem = document.querySelectorAll(".nav-item");
+
+            let showMenu = false;
+
+            //initiAL SETUP
+
+            //ADD CLASS
+            menuButton.addEventListener("click", toggolmenu);
+
+            function toggolmenu() {
+                if (!showMenu) {
+                    menuButton.classList.add("close");
+                    menu.classList.add("show");
+                    menuBranding.classList.add("show");
+                    menuNav.classList.add("show");
+                    navItem.forEach(item => item.classList.add("show"));
+
+                    showMenu = true;
+                    $("#logo-img").attr("src", "image/wr5.png");
+                    $("#frst,#frst3").addClass("top-view");
+                    $("#frst1").addClass("left-view");
+                    $("#frst4").addClass("right-view");
+                    $("#frst2").addClass("bottom-view");
+                    $("#particles-js").css("z-index", "-1");
+                } else {
+                    menuButton.classList.remove("close");
+                    menu.classList.remove("show");
+                    menuBranding.classList.remove("show");
+                    menuNav.classList.remove("show");
+                    navItem.forEach(item => item.classList.remove("show"));
+
+                    showMenu = false;
+                    $("#logo-img").attr("src", "image/wr6.png");
+                    $("#frst,#frst3").removeClass("top-view");
+                    $("#frst1").removeClass("left-view");
+                    $("#frst4").removeClass("right-view");
+                    $("#frst2").removeClass("bottom-view");
+                    //$("#particles-js").css("z-index","");
+                }
+            }
+        </script>
+        <div id="particles-js">
+            <h2 id="type1">
+                Hello, we are
+            </h2>
+            <h1 style="font-family: 'FuriousStyles-Demo' !important;">WEBROAS</h1>
+            <h2 id="type">
+                Get Noticed.
+                <font id="type-dl"> Be Remembered</font>
+            </h2>
+
+        </div>
+
+
+    </div>
+    <div class="contact-container pading margin-top-100vh relative">
+        <div class="" style="background:url(image/img1.png) center center fixed; background-size:100% 100%;">
+            <div class="row pading">
+                <div class="col-sm-12 pading">
+                    <div class="help-brand">
+                        <div class="row pading">
+                            <script>
+                            </script>
+                            <div class="col-sm-12">
+                                <div class="">
+                                    <h2 class="heading" style="font-size: 2.5em; font-weight: 700; margin-bottom: 0 !important;">
+                                        Our Projects
+                                    </h2>
+                                    <div class="row blog-hover">
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser bg">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="branding-blog.html">
+                                                            <img src="image/fortnum-2yQBD.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                        <i class="fa fa-circle"></i> Branding &nbsp; <i class="fa fa-circle"></i> E-commerce
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="branding-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                           College spirit gear
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser bg">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="seo-blog.html">
+                                                            <img src="image/ipad1.png" alt="image">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                         <i class="fa fa-circle"></i> Branding &nbsp;<i class="fa fa-circle"></i>  Website
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="seo-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                        Life is too short for non-wow projects
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                   
+                                    <div class="view-more">
+                                        <a href="#"><button class="btn btn-default transparent-button" style="">View more</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row pading">
+            <div class="col-sm-12 pading">
+                <div class="help-brand">
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <img src="image/wr6.png" class="img-responsive" alt="" />
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="help-brand-cnt">
+                                <h2>We help brands</h2>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Matter more through data-driven marketing & optimized UI/UX
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Create story-driven ideas that ignite new business lines and revenue streams
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Deliver great quality products & services, fast
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Fuse creativity, innovation, strategy, and craft
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Be more customer centric
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Improve efficiency with lean practices
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Tell your story to the world, one customer at a time
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="view-more">
+                                    <a href="#"><button class="btn btn-default transparent-button" style="color:#39006a;">Get in touch</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+            <br />
+            <br />
+        </div>
+        <div class="" style="background:url(image/img2.png) center center fixed; background-size:100% 100%;">
+            <div class="row pading">
+                <div class="col-sm-12 pading">
+                    <div class="help-brand">
+                        <div class="row pading">
+                            <script>
+                            </script>
+                            <div class="col-sm-12">
+                                <div class="">
+                                    <h2 class="heading" style="color:#39006a; font-size: 2.5em; font-weight: 700; margin-bottom: 0 !important;">
+                                        Blogs
+                                    </h2>
+                                    <div class="row blog-hover">
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="branding-blog.html">
+                                                            <img src="image/blog/buildingbrand1.png" alt="image">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                        Branding
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="branding-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                            How to build your brand?
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="seo-blog.html">
+                                                            <img src="image/blog/advertising11.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                        Advertising
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="seo-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                            Advertising is necessary
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row blog-hover">
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="seo-blog.html">
+                                                            <img src="image/blog/PythonforSEO1.png" alt="image">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                        SEO
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="seo-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                            Rethinking your SEO strategy
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="node node--type-case-study node--view-mode-teaser">
+                                                <div class="node__content">
+
+                                                    <div class="field field--name-field-teaser-image field--type-image field--label-hidden field__item">
+                                                        <a href="web-blog.html">
+                                                            <img src="image/blog/web-blog.jpg" alt="image">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="field field--name-field-case-study-industry field--type-entity-reference field--label-hidden field__item">
+                                                        Web Development
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="red-bar"></div>
+                                                <h3>
+                                                    <a href="web-blog.html">
+                                                        <span class="field field--name-title field--type-string field--label-hidden">
+                                                            Web design & development
+                                                        </span>
+                                                    </a>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="view-more">
+                                        <a href="blog.html"><button class="btn btn-default transparent-button" style="color:#39006a;">View more</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row pading">
+            <div class="col-sm-12 pading">
+                <div class="help-brand">
+                    <div class="row pading">
+                        <div class="col-sm-6">
+                            <img src="image/wr6.png" class="img-responsive" alt="" />
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="help-brand-cnt">
+                                <h2>We help brands</h2>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Matter more through data-driven marketing & optimized UI/UX
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Create story-driven ideas that ignite new business lines and revenue streams
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Deliver great quality products & services, fast
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Fuse creativity, innovation, strategy, and craft
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Be more customer centric
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Improve efficiency with lean practices
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="image/check.png" class="media-object">
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Tell your story to the world, one customer at a time
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="view-more">
+                                    <a href="#"><button class="btn btn-default transparent-button" style="color:#39006a;">Get in touch</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+            <br />
+            <br />
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <div class="our-clients" style="z-index: 2; position:relative;">
+                    <div class="container-fluid">
+                        <h2 class="heading">
+                            Our Clients
+                        </h2>
+                        <div class="row">
+
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo" alt="Haveli Bistro" src="image/logos/logo2.png" />
+                            </div>
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo1" alt="Haveli Bistro" style="width: 60%;" src="image/logos/logo1.png" />
+                            </div>
+
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo2" alt="Haveli Bistro" style="width: 60%;" src="image/logos/logo5.png" />
+                            </div>
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo3" alt="Haveli Bistro" style="width: 55%;  margin-top: 11px;" src="image/logos/logo7.png" />
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo" alt="Haveli Bistro" style="width: 60%;" src="image/logos/logo3.png" />
+                            </div>
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo1" alt="Haveli Bistro" style="width: 75%; margin-top: -16px;" src="image/logos/logo4.png" />
+                            </div>
+
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo2" style="margin-top: -9px;" alt="Haveli Bistro" src="image/logos/logo6.png" />
+                            </div>
+
+                            <div class="col-sm-3 client-logo-div">
+                                <img class="our-clnt-img client-logo3" alt="Haveli Bistro" style="width: 55%;  margin-top: 2px;" src="image/logos/logo8.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more">
+                        <a href="work.html"><button class="btn btn-default transparent-button">View our work</button></a>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pading">
+        <div class="row pading">
+            <div class="col-sm-12 pading">
+                <footer class="footer" id="footer-element">
+                   <div class="desktop-footer">
+                       <div class="row pading">
+                           <div class="col-sm-6">
+                               <div>
+                                   <h2 class="footer-heading">
+                                       Want to work with<br /> us? Lets get a<br /> project started!
+                                   </h2>
+                                   <a href="contact.html"> <button type="submit" class="btn btn-get">Get In Touch </button></a>
+                               </div>
+                           </div>
+                           <div class="col-sm-2">
+
+                           </div>
+                           <div class="col-sm-4">
+                               <div class="foot-ad">
+                                   <h2 class="footer-address">
+                                       Hyderabad
+                                   </h2>
+                                   <p> +91 912 141 5669</p>
+                                   <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+
+                                   <h2 class="footer-address">
+                                       Virginia Beach
+                                   </h2>
+                                   <p> +1 757 387 3875</p>
+                                   <h3><a href="https://www.google.com/maps/dir/17.45623,78.40303/webroas/@17.4750022,78.3713627,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb9164c5bce4e1:0xe4488329ad74e5f3!2m2!1d78.3882305!2d17.4865235" target="_blank">View Map</a></h3>
+                                   <h2><a href="#">hello@webroas.com</a></h2>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="container-fluid">
+                           <div class="row">
+                               <div class="col-sm-12">
+                                   <div class="down-footer">
+                                       <hr />
+                                       <div class="row pading">
+                                           <div class="col-sm-5 pading">
+                                               <span class="foot-menu">
+                                                   <a href="about.html">About</a>
+                                               </span>
+                                               <span class="foot-menu">
+                                                   <a href="work.html">Work</a>
+                                               </span>
+                                               <span class="foot-menu">
+                                                   <a href="service.html">Services</a>
+                                               </span>
+                                               <span class="foot-menu">
+                                                   <a href="blog.html">Blog</a>
+                                               </span>
+                                               <p><i class="fa fa-copyright"></i> 2019 Webroas. All rights reserved.</p>
+                                           </div>
+                                           <div class="col-sm-2 pading" style="text-align:center;">
+                                               <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                                               <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                                               <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                                               <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+
+                                           </div>
+                                           <div class="col-sm-5 pading">
+                                               <div class="terms">
+                                                   <span class="foot-menu1">
+                                                       <a href="#">Terms and Conditions</a>
+                                                   </span>
+                                                   <span class="foot-menu1">
+                                                       <a href="#">Privacy</a>
+                                                   </span>
+                                                   <span class="foot-menu1">
+                                                       <a href="#">Sitemap</a>
+                                                   </span>
+                                                   <p>Made with <i class="fa fa-heart" style="color:red;"></i> in Hyderabad</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                    <div class="mobile-footer">
+                        <img class="foot-logo" src="image/wr5.png" />
+                        <a href="https://www.facebook.com/webroas09/"><div class="btn social-btn fa fa-facebook" style="padding: 6px 16px;"></div></a>
+                        <a href="https://www.linkedin.com/company/webroas/"><div class="btn social-btn fa fa-linkedin" style="padding: 6px 13px;"></div></a>
+                        <a href="#"><div class="btn social-btn fa fa-behance" style="padding: 6px 10px;"></div></a>
+                        <a href="https://www.instagram.com/webroas/"> <div class="btn social-btn fa fa-instagram" style="padding: 6px 13px;"></div></a>
+                    </div>
+                </footer>                
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

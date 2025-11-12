@@ -1,0 +1,135 @@
+.section-padding {
+    padding: 60px 0px;
+}
+.contact-us-header {
+    /*margin-bottom: 20px;*/
+}
+.contact-us {
+    border: 1px solid #aaabaf;
+    padding: 20px;
+    border-radius: 8px;
+}
+ul.contact_add {
+    padding: 5px;
+    margin-bottom: 0px;
+}
+.contact-us li {
+    list-style: none;
+    border-bottom: 1px solid #aaabaf;
+    margin-bottom: 6px;
+    padding-top: 16px;
+}
+li.cont_map{
+    border: none;
+}
+i.fa.map_1 {
+    top: 10px;
+}
+i.fa.call {
+    top: 10px;
+}
+i.fa.mail {
+    top: 10px;
+}
+.contact-us li i {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: #1675aa;
+    font-size: 18px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input[type='text'], input[type='email'], input[type='password'], input[type='tel'], textarea {
+    -webkit-appearance: none;
+    background: white;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #EEE;
+    padding: 5px 10px;
+    width: 100%;
+    transition: all 0.2s;
+    font-size: 13px;
+    min-height: 35px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+.form-control {
+    height: 50px !important;
+    color: #aba8a8 !important;
+    background-image: none !important;
+    border-radius: 8px !important;
+    border: 1px solid #aaabaf !important;
+    line-height: 33px;
+}
+.confirm button {
+    border-radius: 8px;
+}
+button.submit {
+    background: rgba(119,119,119,1);
+    color: white;
+    border: none;
+    width: 100%;
+    height: 42px;
+    letter-spacing: 1px;
+}
+section.map-area {
+    padding-bottom: 15px;
+}
+.media.cont_px {
+    border-bottom: 1px solid #adb5bd;
+}
+.contact-us-header {
+    text-align: center;
+    padding-bottom: 38px;
+}
+ul.our_project_filter li {
+    /*display: inline;*/
+    text-align: center;
+    padding-left: 13px;
+    /*border: 1px solid black;*/
+    text-align: center;
+    padding-right: 13px;
+    /* margin-bottom: 13px; */
+    font-size: 16px;
+    font-weight: 600;
+        margin-right: 21px;
+
+}
+.our_project_details {
+    margin-top: 35px;
+}
+.project_item.interior.isolation.plumbing{
+    position: absolute;
+    left: 0px;
+    /*top: 291px !important;*/
+}
+.project_item.interior.design.tiling{
+   position: absolute;
+    left: 0px;
+    /*top: 291px !important; */
+}
+.project_item.design.plumbing.tiling{
+    position: absolute;
+    left: 0px;
+    /*top: 291px !important; */
+}
+.main_menu_area .navbar.navbar-default .nav.navbar-nav.navbar-right li a {
+    padding: 0px;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #31353d;
+    line-height: 83px !important;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    transition: all 400ms linear 0s;
+    background: transparent;
+}
+.counter_area {
+    background: #31353d;
+    padding: 22px 0px !important;
+}
+
