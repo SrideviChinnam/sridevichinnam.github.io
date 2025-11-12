@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+      <title>Millet Farms</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+        .bg-dark {
+            background-color: rgb(0, 0, 0) !important;
+        }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.background{
+    background:url(images/2.jpg) no-repeat center center fixed;
+    background-size:100% 100%;
+}
+
+.displaybox {
+    width: 100%;
+    padding: 30px;
+    /* margin: 100px auto; */
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.dis{
+  height: 300px;
+  width: 280px;
+  margin: 40px 0 60px 0;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 100;
+}
+
+.dis1{
+  background: url("images/pg1.png") no-repeat center center;
+ background-size: 60%;
+ background-color: white;
+}
+
+.dis2{
+  background: url("images/mayy1.png") no-repeat center center;
+ background-size: 40%;
+ background-color: white;
+}
+
+.dis3{
+  background: url("images/pg1.png") no-repeat center center;
+ background-size: 60%;
+ background-color: white;
+}
+
+.dis4{
+ background: url("images/mayy1.png") no-repeat center center;
+ background-size: 40%;
+ background-color: white;
+}
+
+.dis5{
+  background: url("images/pg1.png") no-repeat center center;
+ background-size: 60%;
+ background-color: white;
+}
+
+.dis6{
+ background: url("images/mayy1.png") no-repeat center center;
+ background-size: 40%;
+ background-color: white;
+}
+
+
+.dislogo{
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  margin-left: 15px;
+  border-radius: 100%;
+  border: solid 3px white;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,0.15), 1px 1px 3px rgba(0,0,0,0.15);
+  z-index: 500;
+  transition: all ease 0.5s;
+  float: left;
+}
+
+.dislogo1{
+  background: url("images/logo.png") no-repeat center center;
+  background-size: 100%;
+  background-color: black;
+}
+
+.disdis{
+  float: left;
+  font-size: 13px;
+  margin-left: 10px;
+  opacity: 1;
+  transition: all ease 0.5s;
+  margin-top: 20px;  
+  z-index: 20;
+  position: relative;
+}
+
+.distopwrap{
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  transition: all ease 0.5s;
+  z-index: 20;
+}
+
+.disprice{
+  position: absolute;
+  /*bottom: 36%;
+  right: 0;*/
+  bottom: 2%;
+    right: 13px;
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px;
+  background-color: rgba(20,20,20,0.7);
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  opacity: 1;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  transition: all ease 0.5s;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+.disbut{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px;
+     background-color: #ffc107;
+    color: rgba(0,0,0,.9);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  border: none;
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+  transition: all ease 0.5s;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.05), 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+.faspace{
+  margin-right: 10px;
+}
+
+.roll:hover .distopwrap{
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+  transition: all ease 0.5s;
+} 
+
+.roll:hover .disdis{
+  opacity: 1;
+  transition: all ease 0.5s;
+  margin-top: 10px;
+}
+
+.roll:hover .disprice{
+     background-color: rgb(255, 86, 86);
+  opacity: 1;
+  transition: all ease 0.5s;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+
+.roll:hover .disbut{
+     background-color: rgb(255, 86, 86);
+  opacity: 1;
+  transition: all ease 0.5s;
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+}
+
+.disbut:hover{
+  background-color: rgb(255, 86, 86);
+  transition: all ease 0.5s;
+}
+.banner-img{
+    width:100%;
+    z-index:-1;
+    position:absolute;
+    top:-65px;
+}
+@media (max-width:767px){
+    .displaybox{
+        width:100%;
+    }
+}
+        
+   
+    </style>
+ 
+</head>
+<body>
+    <div><!--class="background"-->
+        <!--NavBar Section Start-->
+   <div class="container-fluid padding">
+       <div class="row padding">
+           <div class="col-sm-12 padding">
+               <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                       <div class="navbar-header">
+                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                           </button>
+                           <a class="navbar-brand" href="#"><img src="images/logo.png" class="logo">
+                           </a>
+                       </div>
+                       <div class="collapse navbar-collapse" id="myNavbar">
+                           <ul class="nav navbar-nav">
+                               <li class=""><a href="#">Home</a></li>
+                               <li><a href="#">About Us</a></li>
+                               <li><a href="products.html">Products</a></li>
+                               <li><a href="#">Blog</a></li>
+                               <li><a href="#">Contact Us</a></li>
+                           </ul>
+                           <ul class="nav navbar-nav navbar-right">
+                               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                               <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Cart</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </nav>
+           </div>
+       </div>
+   </div>
+     <!--NavBar Section End-->
+        <!--Product Section Start-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12">
+           <div class="displaybox">
+
+               <div class="roll">
+                   <div class="dis dis1">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+               <div class="roll">
+                   <div class="dis dis2">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+               <div class="roll">
+                   <div class="dis dis3">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+               <div class="roll">
+                   <div class="dis dis4">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+               <div class="roll">
+                   <div class="dis dis5">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+               <div class="roll">
+                   <div class="dis dis6">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+               <div class="roll">
+                   <div class="dis dis5">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+               <div class="roll">
+                   <div class="dis dis6">
+                       <div class="distopwrap">
+                           <!--<div class="dislogo dislogo1">
+                           </div>-->
+                           <div class="disdis">
+                               <strong>Product Name</strong> Sub Text
+                           </div>
+                       </div>
+                       <!--<div class="disprice">
+                           250 gms&nbsp; - <i class="fa fa-inr"> </i> 500
+                       </div>-->
+                       <a href="product-desc.html"><button class="disbut"><i class="fa fa-shopping-cart faspace"></i> Buy </button></a> 
+                   </div>
+               </div>
+
+           </div>
+       </div>
+
+        </div>
+    </div>
+ 
+        <!--Product Section End-->
+    </div>
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding footer">
+        <div class="row padding">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <div class="row padding">
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">Home</a></p>
+                      <p><a href="products.html">Products</a></p>
+                      <p><a href="#">Store</a></p>
+                  </div>
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">About Us</a></p>
+                      <p><a href="#">Services</a></p>
+                      <p><a href="#">Contact Us</a></p>
+                  </div>
+                  <div class="col-sm-2">
+                      <center><img src="images/logo.png" alt="footer logo" style="width:80%;" /></center>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!--Footer Section End-->
+</body>
+</html>

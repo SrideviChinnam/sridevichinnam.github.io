@@ -1,0 +1,70 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+/*multiselect drop down*/
+select#sel1 {
+    width: 100%;
+}
+/*multiselect drop down*/
+
+
+h1.user_nme {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 11px;
+}
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.fa-behance.twt {
+    padding: 3px 5px;
+    font-size: 20px;
+}
+.fa-twitter.twt{
+  padding: 3px 5px;
+    font-size: 20px;
+}
+.fa-linkedin.twt{
+  padding: 3px 5px;
+    font-size: 20px;
+}
+.fa-facebook.twt{
+   padding: 3px 5px;
+    font-size: 20px;
+}
+.profile_card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /*max-width: 300px;*/
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 63px;
+}
+form.form-horizontal.form1 {
+    /* margin-top: 24px; */
+    /* padding: 15px; */
+    padding-top: 22px;
+}
+.form-control.info_profile{
+  border-radius: 6px;
+}
+button.btn.btn-danger.profile_info {
+    margin-bottom: 25px;
+}
+
+ button.btn.btn-danger.profile_info {
+    /* width: 117px; */
+    min-width: 172px;
+    border-radius: 10px;
+    background: #337ab7;
+    border: 1px solid #337ab7;
+}

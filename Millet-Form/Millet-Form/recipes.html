@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Millet Farms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
+    <style>
+        .modal-content{
+            background:rgba(255, 255, 255, 0.62);
+            border-radius:0;
+        }
+        .modal-header {
+    padding: 15px;
+    border-bottom: none;
+    background: #545454;
+    color: #f5f5f5;
+}
+        .close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #f5f5f5;
+    text-shadow: none;
+    filter: alpha(opacity=20);
+    opacity: 1;
+}
+        .modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: none;
+}
+        .recipe {
+    background: #fff;
+    padding: 30px;
+}
+    </style>
+</head>
+<body>
+    <!--NavBar Section Strat-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="images/logo.png" class="logo">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class=""><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="products.html">Products</a></li>
+                                <li><a href="recipes.html">Recipes</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--NavBar Section End--> 
+    <!--Recipes Section Start-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <div class="natural">
+                    <div class="row padding" style="display:flex;">
+                        <div class="col-sm-3">
+                         <a href="recipes-desc.html">
+                             <div class="prd-grid1">
+                                 <img class="img-responsive" src="images/recipes/millet-green-salad.jpg" alt="images" />
+                                 <div class="prd-text1">
+                                     <h3> Millet Green Salad</h3>
+                                     <p>Small Text</p>
+                                     <button class="btn btn-primary"> More </button>
+                                 </div>
+                             </div>
+                         </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc1.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/2.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millet Dosa</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                                </a>
+</div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc2.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/millet-sweet-pongal.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3>Millet Sweet Pongal</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                                </a>
+</div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc3.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/millet-samosa.png" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millet Samosa</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                                </a>
+</div>
+                    </div>
+                    <div class="row padding" style="display:flex;">
+                        <div class="col-sm-3">
+                            <a href="recipes-desc4.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/millet-laddu.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millet Laddu</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"> More </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc7.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/millet-patties.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millet Kaja</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc5.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/kaja.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millets Ponganalu</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                                </a>
+</div>
+                        <div class="col-sm-3">
+                            <a href="recipes-desc6.html">
+                                <div class="prd-grid1">
+                                    <img class="img-responsive" src="images/recipes/ponganalu.jpg" alt="images" />
+                                    <div class="prd-text1">
+                                        <h3> Millet Patties</h3>
+                                        <p>Small Text</p>
+                                        <button class="btn btn-primary"> More </button>
+                                    </div>
+                                </div>
+                                </a>
+</div>
+             
+                    </div>
+                </div>
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog" style="width: 70%;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <!--<div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Recipe Name</h4>
+                            </div>-->
+                            <div class="modal-body">
+                              <div class="row padding" style="background:#fff;">
+                                  <div class="col-sm-6 padding">
+                                      <img class="img-responsive" src="images/recipes/millet-sweet-pongal.jpg" alt="image" />
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <h3>Ingredients</h3>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                      <p>Lorem ipsum : dolor sit amet </p>
+                                  </div>
+                              </div>
+                                <div class="recipe">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                 </div>
+                               
+                            </div>
+                          
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Recipes Section End-->
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding footer">
+        <div class="row padding">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row padding">
+                    <div class="col-sm-5">
+                        <h3><span>Quick Links</span></h3>
+                        <p><a href="#">Home</a></p>
+                        <p><a href="products.html">Products</a></p>
+                        <p><a href="#">Store</a></p>
+                    </div>
+                    <div class="col-sm-5">
+                        <h3><span>Quick Links</span></h3>
+                        <p><a href="#">About Us</a></p>
+                        <p><a href="#">Services</a></p>
+                        <p><a href="#">Contact Us</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <center><img src="images/logo.png" alt="footer logo" style="width:80%;" /></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+
+    <!--Footer Section End-->
+</body>
+</html>

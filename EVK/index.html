@@ -1,0 +1,758 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>EVK constructions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700|Bigshot+One|Roboto+Mono:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/fav.png">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+    <style>   
+        .fnt{
+            font-family:'Lato' !important;
+            font-weight:400;
+        }
+        .abt-cnt-span{
+                margin-top: 16px !important;
+                    margin-bottom: 0em;
+        }
+        .carousel-inner>.item>img{
+            height:100%;
+        }
+        .carouselinner{
+            height:93vh;
+        }
+        @media(max-width:767px){
+              .carouselinner{
+            height:auto !important;
+        }
+              .carouselinner>.item>img {
+    height: auto !important;
+}
+        }
+        
+         .hvr>.carousel-control{
+             opacity:0;
+         }
+        .hvr>.carousel-control:hover{
+             opacity:1;
+         }
+         .hvr>.carousel-control .glyphicon-menu-left,  .hvr>.carousel-control .glyphicon-menu-right,  .hvr>.carousel-control .icon-next,  .hvr>.carousel-control .icon-prev{
+            top:50%
+        }
+        /*.txt-rotate{
+                position: absolute;
+    top: 32%;
+    color: #1c4370;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    width: 36%;
+    font-size: 1.5em;
+    border: none;
+    text-align: left;
+        }*/  
+        /*#ig{
+            opacity:1;
+        }*/
+        /*.trns{
+            transition:0.5s;
+            opacity:0.5;
+        }*/ 
+    </style>
+    <script>
+        $(document).ready(function () {
+            var b = $("#hgt2").height();
+            var c = $(".navbar-inverse").height();
+            $("#hgt3").height(b);
+            $(window).scroll(function () {
+                if (Array.prototype.some.call($('.colr'), function (element) {
+                  scrollPosition = $(window).scrollTop();
+                  elementTop = $(element).offset().top;
+                  elementBottom = $(element).outerHeight() + elementTop;
+                  if (scrollPosition > elementTop && scrollPosition < elementBottom) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+                })) {
+                    $('.navbar-inverse').css({'box-shadow': '0 4px 2px -2px rgba(0,0,0,.2)', 'background-color': '#eee'});
+                } else {
+                    $('.navbar-inverse').css({'box-shadow': '0 4px 2px -2px rgba(0,0,0,0)', 'background-color': 'rgba(204, 204, 204, 0.32)' });
+                }
+
+            });
+            //var TxtRotate = function (el, toRotate, period) {
+            //    this.toRotate = toRotate;
+            //    this.el = el;
+            //    this.loopNum = 0;
+            //    this.period = parseInt(period, 10) || 100;
+            //    this.txt = '';
+            //    this.tick();
+            //    this.isDeleting = false;
+            //};
+
+            //TxtRotate.prototype.tick = function () {
+            //    var i = this.loopNum % this.toRotate.length;
+            //    var fullTxt = this.toRotate[i];
+
+            //    if (this.isDeleting) {
+            //        this.txt = fullTxt.substring(0, this.txt.length - 1);
+            //    } else {
+            //        this.txt = fullTxt.substring(0, this.txt.length + 1);
+            //    }
+
+            //    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            //    var that = this;
+            //    var delta = 300 - Math.random() * 100;
+
+            //    if (this.isDeleting) { delta /= 2; }
+
+            //    if (!this.isDeleting && this.txt === fullTxt) {
+            //        delta = this.period;
+            //        this.isDeleting = true;
+            //        $("#ig").removeClass("trns");
+            //    } else if (this.isDeleting && this.txt === '') {
+            //        this.isDeleting = false;
+            //        this.loopNum++;
+            //        delta = 400;
+            //        $("#ig").addClass("trns");
+            //    }
+
+            //    setTimeout(function () {
+            //        that.tick();
+            //    }, delta);
+            //};
+
+            //window.onload = function () {
+            //    var elements = document.getElementsByClassName('txt-rotate');
+            //    for (var i = 0; i < elements.length; i++) {
+            //        var toRotate = elements[i].getAttribute('data-rotate');
+            //        var period = elements[i].getAttribute('data-period');
+            //        if (toRotate) {
+            //            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            //        }
+            //    }
+            //    // INJECT CSS
+            //    var css = document.createElement("style");
+            //    css.type = "text/css";
+            //    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1c4370 }";
+            //    document.body.appendChild(css);
+            //};
+        });
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!--Header Section Start-->
+  
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="images/evk-logo.png" alt="evk logo" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="active">
+                                    <a href="#"><span>Home</span></a>
+                                </li>
+                                <li>
+                                    <a href="#about"><span>About</span></a>
+                                </li>
+                                <li>
+                                    <a href="#projects"><span>Projects</span></a>
+                                </li>
+                                <li>
+                                    <a href="#gallery"><span>Gallery</span></a>
+                                </li>  
+                                <li>
+                                    <a href="#contact"><span>Contact</span></a>
+                                </li>
+                                                             
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--Header Section End-->
+
+    <!--Banner Section Start-->
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <div id="myCarousel" class="carousel slide colr hvr" data-ride="carousel" style="margin-top:65px;">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner carouselinner">
+
+                        <div class="item active">
+                            <img src="images/index-bnr.png" alt="image" class="img-responsive">
+                        </div>
+
+                        <div class="item">
+                            <img src="images/index-bnr1.png" alt="image" class="img-responsive">
+                        </div>
+
+                        <div class="item">
+                            <img src="images/index-bnr2.png" alt="image" class="img-responsive">
+                        </div>
+
+                    </div>
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-menu-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!--<img class="img-responsive sld trns colr" src="images/new/Apartment-Wallpapers-HD-For-Computer.jpg" alt="bulding-slider1" id="ig" />-->
+                <!--<h1>
+        <span class="txt-rotate"
+              data-period="10"
+              data-rotate='[ " WE BUILD A BETTER WORLD!!"]'></span>
+    </h1>-->
+            </div>
+        </div>
+    </div>
+
+    <!--Banner Section End-->
+
+    <!--About Us Section Start-->
+
+    <div class="container-fluid padding colr" id="about">
+               <div class="about">
+                   <!--<br />
+                   <br />
+                   <br />-->
+                   <div class="jumbotron top1">
+                       <br />
+                       <br />
+                       <div class="row padding">
+                           <div class="col-md-6 padding">
+                               <div class="abt-img" id="hgt2">
+                                   <img src="images/new/myhome-vihanga-gachibowli-hyderabad-builders-sqwl7e0mra.jpg" alt="image" class="img-responsive" />
+                               </div>
+                           </div>
+                           <div class="col-md-6 padding">
+                               <div class="abt-cnt" id="hgt3">
+                                   <br />
+                                   <h1 class="abt-cnt-span"><span>About</span></h1>
+                                   <p style="margin-bottom:0px; padding-bottom:8px;">
+                                       Committed to quality, we at EVK, progressively embrace innovation
+                                       within the construction industry. We deliver distinction through creativity
+                                       and expertise to provide multi-dimensional construction solutions. Right
+                                       from plan to approval and handover, your dream home invariably is our
+                                       responsibility.
+                                   </p>
+                                   <p style="margin-bottom:0px; padding-bottom:8px; padding-top:8px;">
+                                       We build assets for you that are grounded in sustainability as social
+                                       responsibility is our guiding principle. Our quality performance is based
+                                       upon developing local communities that are embedded in providing both,
+                                       client and design team satisfaction. We
+                                       identify value creation opportunities so as to build and nurture world-
+                                       class assets for you. Underlining our pursuit of excellence is a manifestation of achieving
+customer delight.
+                                   </p>
+                                   <br />
+                                   <br />
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   </div>
+               </div>
+
+    <!--About Us Section End-->
+
+    <!--Projects Section Start-->
+
+    <div class="container-fluid padding colr" id="projects">
+        <br />
+        <br />
+        <div class="jumbotron projects top">
+            <h2><span>Our Projects</span></h2>
+            <div class="row">               
+                <div class="col-sm-2">
+                    <!--<div class="project-parent">
+                        <img class="img-responsive" src="images/new/Apartment-Wallpapers-HD-For-Computer.jpg" />
+                        <a href="projects.html" target="_blank"><button class="btn btn-primary">EVK Eterna </button></a>
+                        <h3>
+                            Gachibowli, Hyderabad
+                        </h3>
+                    </div>-->                  
+                </div>
+                <div class="col-sm-4">
+                    <div class="project-parent">
+                        <img class="img-responsive" src="images/waterfront1.jpg" />
+                        <a href="waterfront.html" target="_blank"><button class="btn btn-primary">EVK Waterfront</button></a>
+                        <h3>
+                            Tadepalli, Vijayawada
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="project-parent">
+                        <img class="img-responsive" src="images/IMG_26611.jpg" />
+                        <a href="skyview.html" target="_blank"><button class="btn btn-primary">EVK Skyview </button></a>
+                        <h3>
+                            Kollur
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <!--<div class="project-parent">
+                        <img class="img-responsive" src="images/new/myhome-vihanga-gachibowli-hyderabad-builders-sqwl7e0mra.jpg" />
+                        <a href="projects.html" target="_blank"><button class="btn btn-primary">EVK Eterna </button></a>
+                        <h3>
+                            Gachibowli, Hyderabad
+                        </h3>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Projects Section End-->
+
+
+
+
+    <!--Testimonial Section Start-->
+   
+    <div class="container-fluid padding colr" id="testimonials">
+        <br />
+        <br />
+        <div class="row padding">
+            <div class="col-sm-12 padding-left-right">
+                <div class="top jumbotron tst">
+                   <div class="testimonial-parent gallery pd">
+                       <h2><span>Testimonials</span></h2>
+                       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                           <!-- Wrapper for slides -->
+                           <div class="carousel-inner">
+
+                               <div class="item active">
+                                  <center>
+                                      <div class="testimonial-child">
+                                          <blockquote>
+                                              <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                              <p>
+                                                
+                                                 <span class="fnt">
+                                                     Great location, alongside perfect blend of amenities and modern
+                                                     living. A landmark project from EVK that is changing the Vijayawada
+                                                     skyline. The locality is superb and the project is turning up to be very
+                                                     beautiful.
+                                                     <br />
+                                                     <br />
+                                                 </span>
+                                                
+                                              </p>
+                                              <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                              <footer>Aadhitya Reddy</footer>
+                                          </blockquote>
+                                      </div>
+                                  </center>
+                               </div>
+                               <div class="item">
+                                   <center>
+                                       <div class="testimonial-child">
+                                           <blockquote>
+                                               <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                               <p>
+
+                                                   <span class="fnt">
+                                                       Booked an apartment with EVK Constructions. Never thought I
+                                                       would get such a wonderful deal in Vijayawada. The way construction is
+                                                       turning, I am feeling very happy to be a part of this project. The area
+                                                       they chose to construct the project is very nearer to main road, hospitals
+                                                       and other necessities of life.
+                                                   </span>
+
+                                               </p>
+                                               <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                               <footer>Daisy Vara</footer>
+                                           </blockquote>
+                                       </div>
+                                   </center>
+                               </div>
+                               <div class="item">
+                                   <center>
+                                       <div class="testimonial-child">
+                                           <blockquote>
+                                               <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                               <p>
+
+                                                   <span class="fnt">
+                                                       They value commitments with systematic planning. Good response
+                                                       from the staff and MD as well. EVK has a sympathetic ear to listen to our
+                                                       problems.
+                                                       <br />
+                                                       <br />
+                                                       <br />
+                                                   </span>
+
+                                               </p>
+                                               <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                               <footer>Ramesh Rao</footer>
+                                           </blockquote>
+                                       </div>
+                                   </center>
+                               </div>
+                               <div class="item">
+                                   <center>
+                                       <div class="testimonial-child">
+                                           <blockquote>
+                                               <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                               <p>
+
+                                                   <span class="fnt">
+                                                       I thank EVK constructions for their support and expertise in providing
+                                                       me an apartment in Vijayawada. Being a first-time buyer, they not only
+                                                       helped me find a right house, but also assisted me with all legal
+                                                       paperwork.
+                                                       <br />
+                                                       <br />
+                                                   </span>
+
+                                               </p>
+                                               <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                               <footer>Raj Francis</footer>
+                                           </blockquote>
+                                       </div>
+                                   </center>
+                               </div>
+                               <div class="item">
+                                   <center>
+                                       <div class="testimonial-child">
+                                           <blockquote>
+                                               <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                               <p>
+
+                                                   <span class="fnt">
+                                                       EVK construction executives are very good at their job. They met us
+                                                       twice within a week and helped us finalize the deal. They are quite
+
+                                                       knowledgeable & efficient. The process was quite fast. We are very
+                                                       happy to be a part of the community they are building up. 
+                                                       <br />
+                                                       <br />
+                                                   </span>
+
+                                               </p>
+                                               <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                               <footer>Bandhura Dasari</footer>
+                                           </blockquote>
+                                       </div>
+                                   </center>
+                               </div>
+                               <div class="item">
+                                   <center>
+                                       <div class="testimonial-child">
+                                           <blockquote>
+                                               <img class="quote-img" src="images/evk-quote.png" alt="evk test" />
+                                               <p>
+
+                                                   <span class="fnt">
+                                                       Really appreciate the pro-active efforts by the EVK team in
+                                                       supporting us throughout the home buying procedure. They have a
+                                                       cordial staff assisting us at every step.
+                                                       <br />
+                                                       <br />
+                                                       <br />
+                                                   </span>
+
+                                               </p>
+                                               <img class="quote-revers-img" src="images/evk-quote.png" alt="evk test" />
+                                               <footer>Pramod Narhari</footer>
+                                           </blockquote>
+                                       </div>
+                                   </center>
+                               </div>
+
+                           </div>
+
+                           <!-- Left and right controls -->
+                           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                               <span class="glyphicon glyphicon-menu-left"></span>
+                               <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                               <span class="glyphicon glyphicon-menu-right"></span>
+                               <span class="sr-only">Next</span>
+                           </a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Testimonial Section End-->
+
+
+
+    <!--Gallery Section Start-->
+
+    <div class="container-fluid padding colr" id="gallery">
+        <br />
+        <br />
+        <div class="row padding">
+            <div class="col-sm-12">
+               <center>
+                   <div class="testimonial-parent top gallery">
+                       <h2><span>Gallery</span></h2>
+                       <center>
+                           <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+                               <!-- Wrapper for slides -->
+                               <div class="carousel-inner" style="        width: 90%;
+        padding-right: 20px;
+        padding-left: 20px;">
+
+                                   <div class="item active">
+                                       <center>
+                                           <div class="row padding">
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/215428231.jpg" />
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/IMG_3279.jpg" />
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/1390226742-4803-1364189936.jpg" />
+                                               </div>
+                                           </div>
+                                       </center>
+                                   </div>
+                                   <div class="item">
+                                       <center>
+                                           <div class="row padding">
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/img-3-1.jpg" />
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/Starlit-Suites-Cochin-Swimming-Pool-by-Night.jpg" />
+                                               </div>
+                                               <div class="col-sm-4">
+                                                   <img class="img-responsive" src="images/new/DJI_0013_3e03a5c40214f110542186e1d30120bd.jpg" />
+                                               </div>
+                                           </div>
+                                       </center>
+                                   </div>
+                               </div>
+
+                               <!-- Left and right controls -->
+                               <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+                                   <span class="glyphicon glyphicon-menu-left"></span>
+                                   <span class="sr-only">Previous</span>
+                               </a>
+                               <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+                                   <span class="glyphicon glyphicon-menu-right"></span>
+                                   <span class="sr-only">Next</span>
+                               </a>
+                           </div>
+                           <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                               <!-- Wrapper for slides -->
+                               <div class="carousel-inner" style="width: 90%; padding-right: 20px; padding-left: 20px; ">
+
+                                   <div class="item active">
+                                       <center>
+                                           <img class="img-responsive" src="images/new/215428231.jpg" />
+                                       </center>
+                                   </div>
+                                   <div class="item">
+                                       <center>
+                                           <img class="img-responsive" src="images/new/IMG_3279.jpg" />                                         
+                                       </center>
+                                   </div>
+                                   <div class="item">
+                                       <center>
+                                           <img class="img-responsive" src="images/new/1390226742-4803-1364189936.jpg" />
+                                       </center>
+                                   </div>
+                               </div>
+
+                               <!-- Left and right controls -->
+                               <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+                                   <span class="glyphicon glyphicon-menu-left"></span>
+                                   <span class="sr-only">Previous</span>
+                               </a>
+                               <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+                                   <span class="glyphicon glyphicon-menu-right"></span>
+                                   <span class="sr-only">Next</span>
+                               </a>
+                           </div>
+                       </center>
+                      
+                   </div>
+               </center>
+            </div>
+        </div>
+    </div>
+
+    <!--Gallery Section End-->
+
+    <!--Contact Section Start-->
+
+    <div class="container-fluid padding" id="contact">
+        <div class="enquire-form">
+            <div class="row padding">
+                <br />
+                <br />
+                <div class="col-sm-5 padding" id="hgt">
+                    <div class="enquire"  style="background: rgba(204, 204, 204, 0.32)
+">
+                        <h2><span class="hd" style="color: #1c4370;">Enquire Now</span></h2>
+                        <form>
+                            <center>
+                                <input type="text" required="" class="form-control contact-input" placeholder="Name" style="background: #fff !important;">
+                                <input type="email" required="" class="form-control contact-input" placeholder="Email" style="background: #fff !important;">
+                                <input type="tel" required="" class="form-control contact-input" placeholder="Phone Number" style="background: #fff !important;">
+                                <textarea class="big-textarea form-control contact-input" style="background: #fff !important;" rows="3" maxlength="1000" placeholder="Message *" required="" id="message" name="message"></textarea>
+                            </center>
+
+                            <center>      <button class="btn btn-primary download-btn">Submit</button></center>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-7 padding" id="hgt1">
+                    <iframe id="mp" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.8846207394117!2d78.40309481487678!3d17.417323888060643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91dccab58cd5%3A0x30a5dfafa0cedc30!2sEVK%20Projects%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1579674275346!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Contact Section End-->
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding colr" id="desktop-footer">
+       <div class="footer-background">
+           <div class="row padding">
+              
+               <div class="col-sm-2">
+                       <img class="img-responsive footer-logo" src="images/EVK-footer-logo.png" />
+                   <div class="social">
+                       <a href="https://www.facebook.com/evkgroup" target="_blank"><span class="social-btn fa fa-facebook"></span></a>
+                       <a href="https://web.whatsapp.com/" target="_blank"> <span class="social-btn fa fa-whatsapp"></span></a>
+                       <a href="https://www.instagram.com/evkprojects/?igshid=w97slo3271c1" target="_blank"> <span class="social-btn fa fa-instagram"></span></a>
+                       <a href="https://in.linkedin.com/company/evk-india-pvt-ltd.?trk=public_profile_topcard_current_company" target="_blank"> <span class="social-btn fa fa-linkedin"></span></a>
+                   </div>
+               </div>
+               <div class="col-sm-4">
+                   <h2 class="footer-h2">Creating a  better <br /> <font class="tmr">tomorrow!</font></h2>
+               </div>
+               <div class="col-sm-2">
+                   <h3>
+                       <span> Useful Links </span>
+                   </h3>
+                   <p><a href="#projects"> Ongoing Projects</a></p>
+                   <p><a href="#projects"> Upcoming Projects</a></p>
+
+               </div>
+               <div class="col-sm-2">
+                   <h3>
+                       <span style="margin-left: 22px;"> Contact</span>
+                   </h3>
+                   <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp; 9848480000</a></p>
+                   <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></p>
+
+               </div>
+               <div class="col-sm-2">
+
+                   <h3>
+                       <span> Quick Links </span>
+                   </h3>
+                   <p><a href="#"> Home</a></p>
+                   <p><a href="index.html#about"> About</a></p>
+                   <p><a href="index.html#projects"> Projects</a></p>
+               </div>
+               <!--<div class="col-sm-3">
+                   <h3>
+                       <span> Quick Links </span>
+                   </h3>
+                   <p><a href="#"> Home</a></p>
+                   <p><a href="index.html#about"> About</a></p>
+                   <p><a href="index.html#projects"> Projects</a></p>
+                   <p><a href="index.html#testimonials"> Testimonials</a></p>
+               </div>
+               <div class="col-sm-3">
+                   <h3>
+                       <span> Useful Links </span>
+                   </h3>
+                   <p><a href="projects.html"> Ongoing Projects</a></p>
+                   <p><a href="projects.html"> Upcoming Projects</a></p>
+               </div>
+               <div class="col-sm-3">
+                   <h3>
+                       <span> Reach us now </span>
+                   </h3>
+                   <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp; 9848480000</a></p>
+                   <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></p>
+               </div>
+               <div class="col-sm-3">
+                   <h3>
+                       <span> Get Social </span>                      
+                   </h3>
+                   <div class="social">
+                       <a href="https://www.facebook.com/evkgroup" target="_blank"><span class="social-btn fa fa-facebook"></span></a>
+                       <a href="https://web.whatsapp.com/" target="_blank"> <span class="social-btn fa fa-whatsapp"></span></a>
+                       <a href="https://www.instagram.com/evkprojects/?igshid=w97slo3271c1" target="_blank"> <span class="social-btn fa fa-instagram"></span></a>
+                       <a href="https://in.linkedin.com/company/evk-india-pvt-ltd.?trk=public_profile_topcard_current_company" target="_blank"> <span class="social-btn fa fa-linkedin"></span></a>
+                   </div>
+               </div>-->
+           </div>  
+              
+       </div>
+       <div class="foot-bg">
+
+           <span class="terms"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></span>
+
+           <span class="terms" style="float:right;">Designed by<a href="https://www.webroas.com/"> Webroas</a></span>
+       </div>
+    </div>
+
+    <div class="container-fluid padding colr" id="mobile-footer">
+        <div class="footer-background">
+            <div class="row padding">               
+                <div class="col-sm-12">
+                    <h3>
+                        <span> </span>
+                    </h3>
+                    <span><a href="#" style="color:#fff;"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp;9848480000</a></span>
+                    <span style="float:right;"><a href="#" style="color:#fff;"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></span>
+                </div>           
+            </div>
+
+        </div>
+        <div class="foot-bg">
+
+            <span class="terms"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></span><br />
+            <span class="terms">Designed by<a href="https://www.webroas.com/"> Webroas</a></span>
+        </div>
+    </div>
+    
+    <!--Footer Section End-->
+</body>
+</html>

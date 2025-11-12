@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Millet Farms</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        label{
+                position: absolute;
+        }
+        .card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    /* background-color: rgba(0,0,0,.03); */
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+        .mt-3, .my-3 {
+    margin-top: 2rem!important;
+}
+        .form-control{
+    background-color:transparent;
+        border: none;
+    border-bottom: 1.2px solid #6c757d;
+    border-radius:0;
+    transition:all 1.5s;
+}
+        .card{
+                border: none;
+                    background-color: rgba(255, 255, 255, 0.6);
+                   
+        }
+        .shadow{
+              box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19) !important;
+        }
+        .example-card {
+            transition: transform 0.3s ease-out;
+        }
+
+            .example-card.rotate {
+                transform: rotateY(180deg);
+            }
+
+            .example-card .card-header-pills {
+                transition: transform 0.3s ease-out;
+            }
+
+            .example-card.rotate .card-header-pills {
+                transform: rotateY(180deg);
+            }
+
+        .nav-rotate {
+            transform: rotateY(180deg);
+        }
+
+        .btn-facebook {
+            background-color: #395694 !important;
+            border-color: #395694 !important;
+        }
+
+        .btn-twitter {
+            background-color: #1c9ceb !important;
+            border-color: #1c9ceb !important;
+        }
+
+        .btn-google-plus {
+            background-color: #d64937 !important;
+            border-color: #d64937 !important;
+        }
+        .bg-dark {
+            background-color: #6c757d !important;
+            padding-top: 10px !important;
+        }
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #ffffff;
+    background-color: #ffc107;
+}
+     .form-control:focus {
+     border-bottom: 1.2px solid #ffffff;
+    border-color: #ffffff;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background:transparent;
+}
+           a {
+    color: #a7a7a7;
+    text-decoration: none;
+    background-color: transparent;
+}
+        a:hover{
+             color: #ffffff;
+        }
+        .btn-primary {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+        .w-100 {
+    width: 60%!important;
+    float: left;
+}
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#example-login-tab').on('click', function () {
+                $('#example-card').removeClass('rotate');
+            });
+            $('#example-register-tab').on('click', function () {
+                $('#example-card').addClass('rotate');
+            });
+        }); </script>
+</head>
+<body style="background: #000000 url(images/hd.jpg) no-repeat center center; background-position: 100%;">
+    <div class="container h-100" style="width:100%; max-width:100%;">
+        <div class="row h-100">
+            <div class="col-12">
+                <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                    <div class="card my-3 w-100 shadow example-card" id="example-card">
+                        <div class="card-header bg-dark">
+                            <ul class="nav nav-pills card-header-pills" id="example-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="example-login-tab" data-toggle="pill" href="#example-login" role="tab" aria-controls="example-login" aria-selected="true"> <i class="fa fa-lock"> </i> Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="example-register-tab" data-toggle="pill" href="#example-register" role="tab" aria-controls="example-register" aria-selected="false"> <i class="fa fa-user-plus"> </i> Create an account</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="example-tab-content">
+                                <div class="tab-pane show fade active" id="example-login" role="tabpanel" aria-labelledby="example-login-tab">
+                                    <form>
+                                        <div class="form-group text-center">
+                                            <h3>Login</h3>
+                                            <p> Please enter your login information below</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login_email"> <i class="fa fa-user"> </i> Email address</label>
+                                            <input type="email" class="form-control" id="login_email" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login_password"> <i class="fa fa-lock"> </i> Password</label>
+                                            <input type="password" class="form-control" id="login_password" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>
+                                                <a href="#"> Trouble signing in?</a>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary btn-block"> Sign in</button>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <p>
+                                                <small> Or sign in with</small>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary btn-block btn-facebook"> <i class="fa fa-facebook"> </i> Facebook</button>
+                                            <button type="button" class="btn btn-primary btn-block btn-twitter"> <i class="fa fa-twitter"> </i> Twitter</button>
+                                            <!--<button type="button" class="btn btn-primary btn-block btn-google-plus"> <i class="fa fa-google-plus"> </i> Google Plus</button>-->
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade nav-rotate" id="example-register" role="tabpanel" aria-labelledby="example-register-tab">
+                                    <form>
+                                        <div class="form-group text-center">
+                                            <h3> Register</h3>
+                                            <p> Enter the information below to create an account</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register_email"> <i class="fa fa-user"> </i> Email address</label>
+                                            <input type="email" class="form-control" id="register_email" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register_password"> <i class="fa fa-lock"> </i> Password</label>
+                                            <input type="password" class="form-control" id="register_password" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="register_confirm_password"> <i class="fa fa-lock"> </i> Confirm password</label>
+                                            <input type="password" class="form-control" id="register_confirm_password" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>
+                                                <a href="#"> Terms and conditions</a>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="register_eula">
+                                                <label class="custom-control-label" for="register_eula"> Yes, I agree with the terms and conditions</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary btn-block"> Create my account</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

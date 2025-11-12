@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>EVK constructions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="images/fav.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/waterfront.css" />
+    <script src="js/script.js"></script>
+    <style>
+            .waterfront-baneer {
+    background: url(images/IMG_2661.JPG) no-repeat fixed;
+    background-size: 100% 100%;
+
+        }
+             @media(max-width:767px){
+        .waterfront-baneer > h1{
+            font-size: 1em;
+            width:80%;
+        }
+        .waterfront-baneer {
+    height: 50vh;
+    background-size: 100% 50%;
+}
+    }
+    </style>
+    <script>
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if (Array.prototype.some.call($('.colr'), function (element) {
+                      scrollPosition = $(window).scrollTop();
+                      elementTop = $(element).offset().top;
+                      elementBottom = $(element).outerHeight() + elementTop;
+                      if (scrollPosition > elementTop && scrollPosition < elementBottom) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                    })) {
+                        $('.navbar-inverse').css({ 'background': '#fff', 'box-shadow': '0 4px 2px -2px rgba(0,0,0,.2)' });
+                    } else {
+                        $('.navbar-inverse').css({ 'background': 'rgb(255, 255, 255)', 'box-shadow': '0 4px 2px -2px rgba(0,0,0,0)' });
+                    }
+
+                });
+            });
+
+    </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!--Header Section Start-->
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="images/evk-logo.png" alt="evk logo" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="index.html"><span>Home</span></a>
+                                </li>
+                                <li>
+                                    <a href="#abouteterna"><span>About</span></a>
+                                </li>
+                                <li>
+                                    <a href="#views"><span>Views</span></a>
+                                </li>
+                                <li>
+                                    <a href="#floor"><span>Floor Plans</span></a>
+                                </li>
+                                <li>
+                                    <a href="#amenities"><span>Amenities</span></a>
+                                </li>
+                                <li>
+                                    <a href="#gallery"><span>Gallery</span></a>
+                                </li>
+                                <li>
+                                    <a href="#contact" id="contact-btn"><button class="btn btn-primary cnt-bttn">Enquire Now</button></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--Header Section End-->
+    <!--Banner Section Start-->
+
+    <div class="container-fluid padding colr">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <div class="waterfront-baneer">
+                    <h1>DETAILS ARE COMING UP!!</h1>
+                </div>
+                <!--<img class="img-responsive sld" src="images/new/Apartment-Wallpapers-HD-For-Computer.jpg" alt="bulding-slider1" />-->
+            </div>
+        </div>
+    </div>
+
+    <!--Banner Section End-->
+    <!--Contact Section Start-->
+
+    <div class="container-fluid padding colr">
+        <div class="enquire-form">
+            <div class="row padding">
+                <div class="col-sm-5 padding" id="hgt">
+                    <div class="enquire" id="contact" style="background: #fff;">
+                        <h2><span class="hd" style="color: #1c4370;">Enquire Now</span></h2>
+                        <form>
+                            <center>
+                                <input type="text" required="" class="form-control contact-input" placeholder="Name" style="background: #ddd !important;">
+                                <input type="email" required="" class="form-control contact-input" placeholder="Email" style="background: #ddd !important;">
+                                <input type="tel" required="" class="form-control contact-input" placeholder="Phone Number" style="background: #ddd !important;">
+                                <textarea class="big-textarea form-control contact-input" style="background: #ddd !important;" rows="3" maxlength="1000" placeholder="Message *" required="" id="message" name="message"></textarea>
+                            </center>
+
+                            <center>      <button class="btn btn-primary download-btn">Submit</button></center>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-7 padding" id="hgt1">
+                    <iframe id="mp" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.8846207394117!2d78.40309481487678!3d17.417323888060643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91dccab58cd5%3A0x30a5dfafa0cedc30!2sEVK%20Projects%20Pvt%20Ltd.!5e0!3m2!1sen!2sin!4v1579674275346!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Contact Section End-->
+    <!--Footer Section Start-->
+
+
+    <div class="container-fluid padding colr" id="desktop-footer">
+        <div class="footer-background">
+            <div class="row padding">
+
+                <div class="col-sm-2">
+                    <img class="img-responsive footer-logo" src="images/EVK-footer-logo.png" />
+                    <div class="social">
+                        <a href="https://www.facebook.com/evkgroup" target="_blank"><span class="social-btn fa fa-facebook"></span></a>
+                        <a href="https://web.whatsapp.com/" target="_blank"> <span class="social-btn fa fa-whatsapp"></span></a>
+                        <a href="https://www.instagram.com/evkprojects/?igshid=w97slo3271c1" target="_blank"> <span class="social-btn fa fa-instagram"></span></a>
+                        <a href="https://in.linkedin.com/company/evk-india-pvt-ltd.?trk=public_profile_topcard_current_company" target="_blank"> <span class="social-btn fa fa-linkedin"></span></a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="footer-h2">Creating a  better <br /> <font class="tmr">tomorrow!</font></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h3>
+                        <span> Useful Links </span>
+                    </h3>
+                    <p><a href="#projects"> Ongoing Projects</a></p>
+                    <p><a href="#projects"> Upcoming Projects</a></p>
+
+                </div>
+                <div class="col-sm-2">
+                    <h3>
+                        <span style="margin-left: 22px;"> Contact</span>
+                    </h3>
+                    <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp; 9848480000</a></p>
+                    <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></p>
+
+                </div>
+                <div class="col-sm-2">
+
+                    <h3>
+                        <span> Quick Links </span>
+                    </h3>
+                    <p><a href="#"> Home</a></p>
+                    <p><a href="index.html#about"> About</a></p>
+                    <p><a href="index.html#projects"> Projects</a></p>
+                </div>
+                <!--<div class="col-sm-3">
+                    <h3>
+                        <span> Quick Links </span>
+                    </h3>
+                    <p><a href="#"> Home</a></p>
+                    <p><a href="index.html#about"> About</a></p>
+                    <p><a href="index.html#projects"> Projects</a></p>
+                    <p><a href="index.html#testimonials"> Testimonials</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>
+                        <span> Useful Links </span>
+                    </h3>
+                    <p><a href="projects.html"> Ongoing Projects</a></p>
+                    <p><a href="projects.html"> Upcoming Projects</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>
+                        <span> Reach us now </span>
+                    </h3>
+                    <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp; 9848480000</a></p>
+                    <p><a href="#" class="ln"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>
+                        <span> Get Social </span>
+                    </h3>
+                    <div class="social">
+                        <a href="https://www.facebook.com/evkgroup" target="_blank"><span class="social-btn fa fa-facebook"></span></a>
+                        <a href="https://web.whatsapp.com/" target="_blank"> <span class="social-btn fa fa-whatsapp"></span></a>
+                        <a href="https://www.instagram.com/evkprojects/?igshid=w97slo3271c1" target="_blank"> <span class="social-btn fa fa-instagram"></span></a>
+                        <a href="https://in.linkedin.com/company/evk-india-pvt-ltd.?trk=public_profile_topcard_current_company" target="_blank"> <span class="social-btn fa fa-linkedin"></span></a>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+        <div class="foot-bg">
+
+            <span class="terms"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></span>
+        </div>
+    </div>
+
+    <div class="container-fluid padding colr" id="mobile-footer">
+        <div class="footer-background">
+            <div class="row padding">
+                <div class="col-sm-12">
+                    <h3>
+                        <span> </span>
+                    </h3>
+                    <span><a href="#" style="color:#fff;"> <button class="header-btn"><i class="fa fa-phone"> </i> </button> &nbsp;9848480000</a></span>
+                    <span style="float:right;"><a href="#" style="color:#fff;"> <button class="header-btn"><i class="fa fa-envelope"> </i> </button> &nbsp;info@evk.co.in</a></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="foot-bg">
+
+            <span class="terms"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></span>
+        </div>
+    </div>
+    <!--Footer Section End-->
+
+</body>
+</html>

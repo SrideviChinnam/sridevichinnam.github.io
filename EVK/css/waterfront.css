@@ -1,0 +1,42 @@
+﻿
+.waterfront-baneer {
+       background: url(../images/waterfront.jpg) center center fixed;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+    .waterfront-baneer > h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+    background: #1c4370;
+    margin: 0;
+    padding: 19px;
+    color: #fff;
+        text-align: center;
+        font-size: 3em;
+        /*background-image: linear-gradient(to right top, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f, #20426f);*/
+        font-weight: 700;
+        /*-webkit-text-fill-color:transparent;*/
+        /*-webkit-background-clip: text;*/
+    }    @media(max-width:767px){
+        .waterfront-baneer > h1{
+            font-size: 1em;
+            width:80%;
+        }
+        .waterfront-baneer {
+    background: url(../images/waterfront.jpg) fixed no-repeat;
+    height: 50vh;
+    background-size: 100% 50%;
+}
+       
+    }     @media(max-width:1024px){
+        .waterfront-baneer > h1{
+            font-size: 1em;
+        }
+        .waterfront-baneer {
+    background: url(../images/waterfront.jpg) fixed no-repeat;
+    height: 50vh !important;
+    background-size: 100% 50% !important;
+}
+    }

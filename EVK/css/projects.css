@@ -1,0 +1,276 @@
+﻿.banner{
+    background:url(../images/bld.jpg) no-repeat center center;
+    height:100vh;
+    background-size:100% 100%;
+    padding-top:30px;
+}
+.banner>.jumbotron>p {
+       color: #fff;
+    margin: 20px;
+    padding: 45px;
+    width: 80%;
+        font-size: 16px;
+    font-weight: normal;
+}
+.btn-banner {
+      display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    position: absolute;
+    bottom: 3%;
+    text-align: center;
+    padding: 50px;
+}
+a.btn.btn-btn-banner-sub {
+    padding: 12px;
+    width: 100%;
+    background: #20426f;
+    border-color: rgba(255, 255, 255, 0.11);
+}
+#contact-btn{
+    padding-top: 6px;
+    padding-bottom: 4px;
+}
+.hm{
+    color: #20426f;
+    background-color: #fff;
+        border-color: #1c4370;
+}
+.hm:hover{
+
+}
+.hm:hover a{
+    color:#fff;
+    text-decoration:none;
+}
+.hm>a{
+     color: #070040;
+     font-size: 18px;
+    font-weight: 600;
+}
+.cnt-bttn {
+    background: #C20404;
+    border: 1px solid #C20404;
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+.prj{
+       background: url(../images/new/Apartment-Wallpapers-HD-For-Computer.jpg) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+.prj1{
+       background: url(../images/new/Design-of-modern-apartment-free-desktop-wallpapers-download.jpg) no-repeat fixed;
+    background-size: cover;
+    background-position: bottom;
+}
+.prj2{
+          background: url(../images/new/5458-ISO-Rendering-1024x768-1024x768.jpg) #73787c;
+    background-position: left;
+    background-repeat:no-repeat;
+}
+
+.prj3{
+   background: url(../images/new/pool1.jpg) no-repeat;
+    background-size: cover;
+    background-position: top;
+}  
+#tab2>.row {
+    margin-bottom: 28px;
+}
+.about-eterna>.jumbotron>h1 {
+    margin-bottom: 25px;
+}
+.about-eterna>.jumbotron>h4 {
+    color: #fff;
+    line-height: 35px;
+    margin-top: 50px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+.about-eterna>.jumbotron>p {
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: lighter !important;
+    letter-spacing: 1px;
+}
+.about-eterna>.jumbotron>h1>span{
+font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    border-bottom: 3.2px solid #C20404 ;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+.about-eterna {
+    background: rgba(28, 67, 112, 0.6);
+    padding:30px;
+}
+h2.prj-quote {
+   background: transparent;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 7px;
+    font-size: 22px;
+}
+.prj-quote>.fa{
+    font-size: 10px;
+}
+.prj-quote>.fa-quote-left {
+    vertical-align: text-top;
+}
+.prj-quote>.fa-quote-right {
+    vertical-align: text-bottom;
+}
+.download{
+    background:url(../images/bld4.jpg) no-repeat center center;
+    background-size:100% auto;
+}
+.download-overlay {
+    background: rgba(255, 255, 255, 0.63);
+    padding: 10px;
+    text-align: center;
+}
+
+.plans {
+        background: #eee;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+.plans>h2>span{
+    color: #1c4370;
+}
+.plan-sub {
+    margin: 30px;
+    padding: 30px;
+    margin-top:0;
+}
+     
+.plan-btn{
+        background: transparent;
+    color: #1c4370;
+    border: 1px solid rgb(28, 67, 112);
+    font-size: 16px;
+    border-radius: 0;
+    padding: 8px 45px;
+    transition:all 0.5s;
+    border-radius:4px;
+}
+.plan-btn:hover{
+     background-color: #20426f;
+    border-color: #20426f;
+}
+.plan-btn .active{
+     background: #1c4370;
+    color: #fff;
+}
+#plan-cnt1{
+    display:none;
+}
+#plan-cnt, #plan-cnt1{
+    margin-top:40px;
+}
+#container{
+  background:transparent;
+  width:100%;
+  position:relative;
+}
+
+#container #tabs{
+    width: 100%;
+}
+
+#container #tabs ul{
+    list-style:none;
+    padding-inline-start: 0;
+}
+#container #tabs ul li{
+   display: block;
+    float: left;
+    text-align: center;
+    width: 18%;
+    font-size: 16px;
+    line-height: 50px;
+    background: transparent;    
+    color: #1c4370;
+    border: 0.2px solid rgb(28, 67, 112);
+    margin-right: 10px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+#container ul#content{
+    list-style:none;
+  position:relative;
+      padding-inline-start: 0px;
+}
+
+#container ul#content li[id^="tab"]{
+  width:100%;
+  height:auto;
+  position:relative;
+  display:none;
+  line-height:200px;
+  border:none;
+  overflow:hidden;
+}
+#container #tabs ul li.active {
+       background: #1c4370;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+#content>li.active>center>img {
+    width: 100%;
+}
+#container ul#content li.active{display:block;}
+p.amenities {
+    color: #fff;
+    font-size: 14px;
+}
+@media(max-width:767px){
+    .about-eterna {
+        background: rgba(28, 67, 112, 0.52);
+    }
+    .banner{
+        height:auto;
+    }
+    a.btn.btn-btn-banner-sub{
+        font-size:12px;
+    }
+    .btn-banner{
+        position:relative;
+        padding-top: 0;
+        padding-bottom:10px;
+    }
+    .banner>.jumbotron>p{
+            width: 100%;
+    padding-bottom: 0px;
+        margin: 0px;
+        text-align:justify;
+    }
+    .plans{
+        padding:1px;
+    }
+    .plan-sub{
+            margin: 10px;
+    padding: 20px;
+    }
+    .plan-btn{
+        padding: 8px 12px;
+    }
+    .img-pd{
+        padding:5px;
+    }
+}

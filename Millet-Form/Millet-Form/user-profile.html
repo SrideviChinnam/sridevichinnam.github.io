@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Millet Farms</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/product_desc.js"></script> 
+    <style>
+    .btn-primary {
+    color: #333;
+    background-color: #ffc11a;
+    border: #ffc11a;
+}
+    span.number {
+    font-size: 14px;
+    color: #777;
+    margin-bottom:10px;
+}
+    section{
+    margin-top: 70px;
+}
+    </style>
+</head>
+<body>
+    <!--NavBar Section Start-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="images/logo.png" class="logo">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class=""><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="products.html">Products</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--NavBar Section End-->
+
+    <section class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2 style="text-align:center">User Profile Card</h2>
+                    <br />
+                    <br />
+                    <div class="card">
+                        <img src="images/1.png" alt="John" style="width:50%;">
+                        <h1 class="user_nme">User Name</h1>
+                        <p class="title">User Detaials</p>
+                        <p>Small Description</p>
+                        <div style="margin-bottom: 10px;">
+                            <!--<a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>-->
+                            <a href="#" style="color: #ffc11a; font-size:15px;"><i class="fa fa-phone twt"></i><span class="number"> &nbsp;9812345678</span></a>
+                            <!--<a href="#"><i class="fa fa-linkedin twt"></i></a>
+                            <a href="#"><i class="fa fa-facebook twt"></i></a>-->
+                        </div>
+                       <button class="btn btn-primary" style="margin-bottom:14px;">Contact</button>
+                    </div>
+                </div>
+                <!-- </br> -->
+                <div class="col-md-9 col-sm-6 col-xs-12">
+                    <br />
+                    <br />
+                    <div class="profile_card">
+
+                        <form class="form-horizontal form1" method="post" action="">
+                            <div class="form-group">
+                                <h3 style="text-align: left; color: #ffc11a; padding-left: 40px; color: blue">Personal Details <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true" id="ed1"></i></button> </h3>
+                                <label for="OldPassword" class="col-sm-3 col-xs-6  control-label">First Name </label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control info_profile" id="Name" name="fstname" placeholder="First Name" value="" disabled>
+
+
+                                        <script type="">
+                        $("#ed1").click(function(){
+                          $("#Name, #LName, #email, #prime, #DOB, #gender, #gender1").removeAttr("disabled");
+                        });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="OldPassword" class="col-sm-3 col-xs-6 control-label">Last Name </label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+
+                                        <input type="text" class="form-control info_profile" id="LName" name="lstname" placeholder="Last Name" required="" disabled value="chinnam">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="NewPassword" class="col-sm-3 col-xs-6 control-label">Email</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <input type="email" class="form-control info_profile" id="email" name="email" placeholder="Email" disabled value="chinnam@gmail.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="NewPasswordConfirm" class="col-sm-3 col-xs-6 control-label">Date of Birth</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <input type="date" class="form-control info_profile" id="DOB" name="dateofbrth" placeholder="Password (Confirm)" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="form-group">
+                                <label for="NewPassword" class="col-sm-3 col-xs-6 control-label">Primary College</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control info_profile" id="prime" name="Name" placeholder="" disabled>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="form-group">
+                                <label for="NewPasswordConfirm" class="col-sm-3  col-xs-6 control-label">Gender</label>
+                                <div class="col-sm-4 col-xs-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" disabled id="gender">Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio" checked disabled id="gender1">Female
+                                    </label>
+                                </div>
+                            </div>
+                            <h3 style="text-align: left; padding-left: 40px; color: blue">Manage Address <button class="btn btn-primary"><i class="fa fa-pencil" aria-hidden="true" id="ed2"></i></button> </h3>
+                            <div class="form-group">
+                                <label for="NewPasswordConfirm" class="col-sm-3 col-xs-6 control-label">Address1 :</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <textarea class="form-control" rows="5" id="addr1" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="NewPasswordConfirm" class="col-sm-3 col-xs-6 control-label">Address2 :</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <textarea class="form-control" rows="5" id="addr2" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="form-group">
+                                <label for="NewPasswordConfirm" class="col-sm-3 col-xs-6 control-label">Address3 :</label>
+                                <div class="col-sm-7 col-xs-6">
+                                    <div class="form-line">
+                                        <textarea class="form-control" rows="5" id="addr3" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <script type="">
+                        $("#ed2").click(function(){
+                          $("#addr1, #addr2, #addr3").removeAttr("disabled");
+                        });
+                            </script>
+                           
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-4 col-xs-6">
+                                    <a href="#"><button type="submit" class="btn btn-primary profile_info">Update</button></a>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                        </form>
+                    </div>
+
+                    <br />
+                    <br />
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding footer">
+        <div class="row padding">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row padding">
+                    <div class="col-sm-5">
+                        <h3><span>Quick Links</span></h3>
+                        <p><a href="#">Home</a></p>
+                        <p><a href="products.html">Products</a></p>
+                        <p><a href="#">Store</a></p>
+                    </div>
+                    <div class="col-sm-5">
+                        <h3><span>Quick Links</span></h3>
+                        <p><a href="#">About Us</a></p>
+                        <p><a href="#">Services</a></p>
+                        <p><a href="#">Contact Us</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <center><img src="images/logo.png" alt="footer logo" style="width:80%;" /></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!--Footer Section End-->
+</body>
+</html>

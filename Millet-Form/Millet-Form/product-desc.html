@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Millet Farms</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/product_desc.js"></script> 
+    <style>
+        section.productsdesc {
+    margin-top: 62px;
+}
+    </style>
+
+</head>
+<body>
+
+    <!--NavBar Section Start-->
+   <div class="container-fluid padding">
+       <div class="row padding">
+           <div class="col-sm-12 padding">
+               <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                       <div class="navbar-header">
+                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                           </button>
+                           <a class="navbar-brand" href="#"><img src="images/logo.png" class="logo">
+                           </a>
+                       </div>
+                       <div class="collapse navbar-collapse" id="myNavbar">
+                           <ul class="nav navbar-nav">
+                               <li class=""><a href="#">Home</a></li>
+                               <li><a href="#">About Us</a></li>
+                               <li><a href="products.html">Products</a></li>
+                               <li><a href="#">Blog</a></li>
+                               <li><a href="#">Contact Us</a></li>
+                           </ul>
+                           <ul class="nav navbar-nav navbar-right">
+                               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                               <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Cart</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </nav>
+           </div>
+       </div>
+   </div>
+     <!--NavBar Section End-->
+    <section class="productsdesc">
+        <section class="tee_products">
+            <div class="container">
+                <div class="row">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li><a href="products.html">Products Description</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 " id="show_image">
+                        <div class="wrapper row">
+                            <div class="preview col-md-8">
+
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane active"><img src="images/pack3.png" id="main" /></div>
+                                </div>
+                                <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="images/pack3.png" id="img_1" /></a></li>
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img src="images/pack5.png" id="img_2" /></a></li>
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img src="images/pack4.png" id="img_3" /></a></li>
+                                </ul>
+                                <script type="text/javascript">
+							$("#img_1").click(function(){
+								$("#main").removeAttr("src");
+								$("#main").attr("src", "images/pack3.png");
+							});
+							$("#img_2").click(function(){
+								$("#main").removeAttr("src");
+								$("#main").attr("src", "images/pack5.png");
+								$("#img_3").click(function () {
+								    $("#main").removeAttr("src");
+								    $("#main").attr("src", "images/pack4.png");
+								});
+							});
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="cart_info">
+                            <div class="info_header">
+                                <h2 style="font-size: 25px">Product Name</h2>
+                            </div>
+                            <!-- <div class="info_des">
+                                <p>All products ship worldwide. Fulfillment location is set based on shipping destination, routing preferences and <a href=""> stock availability.</a></p>
+                            </div> -->
+                            <div class="info_size">
+                                <h5 id="size_label"><b>Choose</b></h5>
+                                <ul class="size_chart">
+
+
+                                    <li id="500" class="attr2 active" value="500" size="500">500 gms</li>
+                                    <li id="1000" class="attr2" value="1000" size="1kg">1 kg</li>
+                                    <li id="2000" class="attr2" value="2000" size="2kgs">2 kgs</li>
+                                    <li id="3000" class="attr2 disabled btn" style="border-radius:0;" value="3000" size="2kgs">3 kgs</li>
+
+                                </ul>
+                            </div>
+
+
+
+                            <!-- strat components -->
+                            <!-- Precios -->
+
+                            <h5 class="tee-price"><b>Price</b></h5>
+                            <h3 style="margin-top:0px;" data-price="500" id="show_price"><!--<i class="fa fa-inr" aria-hidden="true"></i>-->500</h3>
+
+
+
+                            <div class="section" style="padding-bottom:20px;">
+                                <h5><b>Choose quantity</b></h5>
+                                <div>
+                                    <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                                    <input type="text" disabled name="qty" id="qty" value="1" />
+                                    <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                                </div>
+                            </div>
+
+
+                            <a href="cart.html"><button class="add-cart add_cart" type="submit"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;&nbsp;Add to cart</button></a>
+
+                            <a href="checkout.html">
+                                <span>
+                                    <button type="submit" class="checkout add-wish">
+                                        Buy Now
+                                    </button>
+                                </span>
+                            </a>
+                            <br />
+                            <br />
+                          <a href="products.html"> &nbsp; Continue Shopping</a>
+                            <!--<a href="#"> <span><button type="submit" class="wishlist add-wish">Wishlist</button></span></a>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                //$(document).ready(function () {
+                //    $('.attr2').click(function () {
+                //       var that = $(this);
+                //       $(this).toggleClass("active");                    
+                //    });
+                //});
+            </script>
+        </section>
+        <section class="tee_description">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                         <div class="well well-lg">
+                             <h1>Description</h1>
+                             
+                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem.</p>
+                           
+                                 <h4 data-toggle="collapse" data-target="#demo" style="cursor:pointer;">More</h4>
+                                 <p id="demo" class="collapse">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem.</p>
+
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="js/cart.js"></script>
+    <script type="text/javascript">
+  $(document).ready(function(){
+  $('.add').click(function () {
+    if ($(this).prev().val() < 6) {
+      $(this).prev().val(+$(this).prev().val() + 1);
+    }
+});
+$('.sub').click(function () {
+    if ($(this).next().val() > 1) {
+      if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+    }
+});
+});
+
+
+    </script>
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding footer">
+        <div class="row padding">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <div class="row padding">
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">Home</a></p>
+                      <p><a href="products.html">Products</a></p>
+                      <p><a href="#">Store</a></p>
+                  </div>
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">About Us</a></p>
+                      <p><a href="#">Services</a></p>
+                      <p><a href="#">Contact Us</a></p>
+                  </div>
+                  <div class="col-sm-2">
+                      <center><img src="images/logo.png" alt="footer logo" style="width:80%;" /></center>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!--Footer Section End-->
+</body>
+</html>

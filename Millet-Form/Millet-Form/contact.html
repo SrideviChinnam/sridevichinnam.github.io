@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Millet Farms</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/script.js"></script>
+    <style>
+        .navbar{
+                margin-left: 0;
+    margin-right: 0;
+        }
+        .prnt-col {
+    display: flex; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.child-col {
+    flex-grow:1;
+    transition: 0.5s;	/* Make elements inside the container behave like table cells */
+}
+.child-col1:hover {
+    color:#fff !important;
+}
+.child-col1:hover p {
+    color:#fff !important;
+}
+.child-1 {
+    padding: 76px;
+    text-align:center;
+}
+.child-1 .fa {
+    font-size: 55px;
+}
+.child-1 p {
+    margin-top: 14px;
+        margin-top: 14px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #545454;
+}
+.map{
+    height:500px;
+}
+.contact-map{
+        padding-bottom: 120px;
+    padding-top: 120px;
+    background: rgba(255, 145, 0, 0.33) url(images/11.jpg) no-repeat center center fixed;
+}
+.form{
+    padding: 30px;
+    height: 100%;
+    background: #555;
+}
+.form label{
+    color:rgba(204, 204, 204, 0.5294117647058824);
+    margin-top: 15px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: rgba(204, 204, 204, 0.5294117647058824);
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('.child-col1').mouseover(function () {
+                $r1 = Math.floor(Math.random() * 255 + 2);
+                $r2 = Math.floor(Math.random() * 255 + 2);
+                $r3 = Math.floor(Math.random() * 255 - 3);
+                $bgcolor = 'rgb(' + $r1 + ',' + $r2 + ',' + $r3 + ')';
+                $(this).css({ 'background-color': $bgcolor });
+
+            });
+            $('.child-col1').mouseout(function () {
+                $(this).css({ 'background-color': '#fff' });
+            });
+        });
+    </script>
+</head>
+<body>
+  <!--NavBar Section Start-->
+   <div class="container-fluid padding">
+       <div class="row padding">
+           <div class="col-sm-12 padding">
+               <nav class="navbar navbar-inverse">
+                   <div class="container-fluid">
+                       <div class="navbar-header">
+                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                           </button>
+                           <a class="navbar-brand" href="#"><img src="images/logo.png" class="logo">
+                           </a>
+                       </div>
+                       <div class="collapse navbar-collapse" id="myNavbar">
+                           <ul class="nav navbar-nav">
+                               <li class=""><a href="#">Home</a></li>
+                               <li><a href="#">About Us</a></li>
+                               <li><a href="products.html">Products</a></li>
+                               <li><a href="#">Blog</a></li>
+                               <li><a href="#">Contact Us</a></li>
+                           </ul>
+                           <ul class="nav navbar-nav navbar-right">
+                               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                               <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Cart</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </nav>
+           </div>
+       </div>
+   </div>
+     <!--NavBar Section End-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-sm-12 padding">
+                <img src="images/9_Sep_Blog.png" class="img-responsive" alt="image"/>
+            </div>
+        </div>
+    </div>
+     <div class="container-fluid padding">
+        <div class="row padding">
+                 <div class="row padding prnt-col">
+                  <div class="col-sm-4 padding child-col child-col1">
+                      <div class="child-1">
+                         <i class="fa fa-map-marker" aria-hidden="true"></i>
+                          <br />
+                         <p> 101, Sriphala Heights, Plot No: 21B, 6th Phase, Kukatpally Housing Board Colony, Hyderabad, Telangana 500072.</p>
+                      </div>
+                  </div>
+                      <div class="col-sm-4 padding child-col child-col1">
+                      <div class="child-1">
+                         <i class="fa fa-envelope" aria-hidden="true"></i>
+
+                          <br />
+                          <p> hello@webroas.com</p>
+                      </div>
+                  </div>
+                      <div class="col-sm-4 padding child-col child-col1">
+                      <div class="child-1">
+                          <i class="fa fa-phone" aria-hidden="true"></i>
+
+                          <br />
+                          <p> 9121415669<br />
+
+9121415669</p>
+                      </div>
+                  </div>
+               </div>
+        </div>
+    </div>
+    <div class="container-fluid padding contact-map">
+
+        <div class="row padding prnt-col">
+            <div class="col-sm-6 child-col">
+                   <form class="form">
+                            <div>
+                                <label>Name <font class="star"><sub>*</sub></font></label>
+                                <input type="text" required class="form-control contact-input" />
+                            </div>
+                            <div>
+                               
+                                      <label>Mobile <font class="star"><sub>*</sub></font></label>
+                                  <input type="text" required class="form-control contact-input mr" />
+                                </div>
+                       
+                           
+                            <div>
+                                <label>Email <font class="star"><sub>*</sub></font></label>
+                                <input type="email" required class="form-control contact-input" />
+                            </div>
+                        <div>
+                                <label>Address <font class="star"><sub>*</sub></font></label>
+                            <textarea maxlength="6" required class="form-control contact-input" /></textarea>
+                            </div>
+                            <div>
+                            
+                                <br />
+                                <div class="row padding">
+                                    <div class="col-sm-12">
+                                        <br />
+                                        <a href="#">
+                                            <center>   <button class="btn btn-primary">Get in touch</button></center>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+             <div class="col-sm-6 child-col">
+                 <div class="map">
+                       <iframe id="mp" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.4393455094423!2d78.38604181440286!3d17.486528604541967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9164c5bce4e1%3A0xe4488329ad74e5f3!2sEmporia!5e0!3m2!1sen!2sin!4v1571046491390!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          
+                 </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Section Start-->
+
+    <div class="container-fluid padding footer">
+        <div class="row padding">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <div class="row padding">
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">Home</a></p>
+                      <p><a href="products.html">Products</a></p>
+                      <p><a href="#">Store</a></p>
+                  </div>
+                  <div class="col-sm-5">
+                      <h3><span>Quick Links</span></h3>
+                      <p><a href="#">About Us</a></p>
+                      <p><a href="#">Services</a></p>
+                      <p><a href="#">Contact Us</a></p>
+                  </div>
+                  <div class="col-sm-2">
+                      <center><img src="images/logo.png" alt="footer logo" style="width:80%;" /></center>
+                  </div>
+              </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <!--Footer Section End-->
+
+</body>
+</html>
