@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium e-commerce template with advanced animations - Trendy online store template">
+    <meta name="keywords" content="ecommerce, online store, shopping, premium template, animations">
+    <meta name="author" content="Your Name">
+    <title>ShopHub Premium - Trendy E-commerce Template</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-shape shape-5"></div>
+        <div class="floating-shape shape-6"></div>
+        <div class="floating-particle particle-1"></div>
+        <div class="floating-particle particle-2"></div>
+        <div class="floating-particle particle-3"></div>
+        <div class="floating-particle particle-4"></div>
+        <div class="floating-particle particle-5"></div>
+        <div class="floating-particle particle-6"></div>
+    </div>
+
+    <!-- Header with Glassmorphism -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">ShopHub <span style="font-size: 0.7em; opacity: 0.8;">Premium</span></a>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <a href="cart.html" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <div class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to ShopHub Premium</h1>
+                <p class="hero-subtitle">Experience the future of online shopping with stunning design and smooth animations</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <a href="shop.html" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <a href="#products" class="btn btn-secondary">
+                        <i class="fas fa-arrow-down"></i> Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="categories fade-in" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <a href="shop.html" class="category-card fade-in">
+                    <div class="category-image">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Fashion</h3>
+                    <p>Latest trends in clothing</p>
+                </a>
+                <a href="shop.html" class="category-card fade-in">
+                    <div class="category-image">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Tech gadgets & devices</p>
+                </a>
+                <a href="shop.html" class="category-card fade-in">
+                    <div class="category-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home & Living</h3>
+                    <p>Furniture & decor</p>
+                </a>
+                <a href="shop.html" class="category-card fade-in">
+                    <div class="category-image">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Sports</h3>
+                    <p>Fitness & outdoor gear</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products fade-in" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Features Section -->
+    <section class="services fade-in">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Free shipping on orders over $50</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure checkout</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Customer support anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">About ShopHub Premium</h2>
+                    <p>Welcome to ShopHub Premium, where cutting-edge design meets exceptional shopping experience. We've crafted a platform that combines stunning visuals with smooth, engaging animations to make your shopping journey delightful.</p>
+                    <p>Our mission is to revolutionize online shopping through innovative design, seamless user experience, and premium quality products. Every interaction is carefully designed to be intuitive and enjoyable.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                </div>
+                <div class="about-image fade-in">
+                    <div class="placeholder-image">
+                        <i class="fas fa-store"></i>
+                        <p>About Us Image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item fade-in">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Shopping Street, City, State 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item fade-in">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item fade-in">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@shophub.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopHub <span class="text-gradient">Premium</span></h3>
+                    <p>Your trusted online shopping destination. Quality products, great prices, exceptional service with premium design.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new products and special offers.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopHub Premium. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/cart-counter.js"></script>
+</body>
+</html>
+
+

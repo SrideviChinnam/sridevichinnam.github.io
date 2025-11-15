@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="RentEarn - Get cashback and rewards for paying rent. Turn your biggest monthly expense into actual rewards.">
+    <meta name="keywords" content="rent rewards, cashback, rent payment, credit building, renter benefits">
+    <meta name="author" content="RentEarn">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RentEarn - Get Rewarded for Paying Rent">
+    <meta property="og:description" content="Transform your biggest monthly expense into cashback, rewards, and credit building opportunities.">
+    <meta property="og:url" content="https://rentearn.app">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RentEarn - Get Rewarded for Paying Rent">
+    <meta name="twitter:description" content="Transform your biggest monthly expense into cashback, rewards, and credit building opportunities.">
+    
+    <title>RentEarn - Get Rewarded for Paying Rent</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#home">RentEarn</a>
+                </div>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="loginBtn">Log In</button>
+                    <button class="btn btn-primary" id="joinWaitlistBtn">Join Waitlist</button>
+                    <div class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Paying rent is inevitable.<br>
+                        <span class="highlight">Getting rewarded for it</span> isn't.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Transform your biggest monthly expense into cashback, rewards, and credit building opportunities. 
+                        Join thousands of renters who are already earning.
+                    </p>
+                    <div class="hero-cta">
+                        <form class="waitlist-form" id="heroWaitlistForm">
+                            <div class="input-group">
+                                <input type="email" id="heroEmail" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-primary btn-large">
+                                    Join Waitlist
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <p class="form-note">Join the waitlist. We're launching soon.</p>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-visual">
+                        <svg viewBox="0 0 400 400" class="hero-svg" role="img" aria-label="Animated illustration showing a building with rotating money and reward icons">
+                            <!-- Animated Background Circle -->
+                            <circle cx="200" cy="200" r="180" fill="url(#gradient1)" opacity="0.1" class="pulse-circle"/>
+                            
+                           
+                            <!-- Main Building/House Illustration (Centered, No Rotation) -->
+                            <g class="building-group" transform="translate(200, 200)">
+                                <g transform="translate(-80, -85)">
+                                    <!-- Building Base -->
+                                    <rect x="120" y="150" width="160" height="120" fill="url(#gradient2)" rx="8" class="building-base"/>
+                                    <!-- Roof -->
+                                    <polygon points="200,100 120,150 280,150" fill="url(#gradient3)" class="roof"/>
+                                    <!-- Windows -->
+                                    <rect x="140" y="170" width="30" height="30" fill="url(#gradient4)" rx="4" class="window"/>
+                                    <rect x="230" y="170" width="30" height="30" fill="url(#gradient4)" rx="4" class="window"/>
+                                    <!-- Door -->
+                                    <rect x="175" y="220" width="50" height="50" fill="url(#gradient5)" rx="4" class="door"/>
+                                </g>
+                            </g>
+                            
+                            <!-- Money/Reward Icons - Individual Rotation Around Circle Lines -->
+                            <g class="coin coin-1" transform="translate(200, 200)">
+                                <g transform="rotate(0)">
+                                    <g transform="translate(0, -150)">
+                                        <circle cx="0" cy="0" r="25" fill="url(#gradient6)"/>
+                                        <text x="0" y="5" text-anchor="middle" fill="white" font-size="20" font-weight="bold" class="coin-text">$</text>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="0 200 200;360 200 200" dur="15s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <g class="coin coin-2" transform="translate(200, 200)">
+                                <g transform="rotate(120)">
+                                    <g transform="translate(0, -150)">
+                                        <circle cx="0" cy="0" r="25" fill="url(#gradient7)"/>
+                                        <text x="0" y="5" text-anchor="middle" fill="white" font-size="20" font-weight="bold" class="coin-text">$</text>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="120 200 200;480 200 200" dur="18s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <g class="coin coin-3" transform="translate(200, 200)">
+                                <g transform="rotate(240)">
+                                    <g transform="translate(0, -150)">
+                                        <circle cx="0" cy="0" r="20" fill="url(#gradient8)"/>
+                                        <text x="0" y="5" text-anchor="middle" fill="white" font-size="16" font-weight="bold" class="coin-text">%</text>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="240 200 200;600 200 200" dur="20s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <!-- Sparkle Effects - Individual Rotation Around Circle Lines -->
+                            <g class="sparkle sparkle-1" transform="translate(200, 200)">
+                                <g transform="rotate(45)">
+                                    <g transform="translate(0, -180)">
+                                        <circle cx="0" cy="0" r="3" fill="url(#gradient9)">
+                                            <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="45 200 200;405 200 200" dur="12s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <g class="sparkle sparkle-2" transform="translate(200, 200)">
+                                <g transform="rotate(135)">
+                                    <g transform="translate(0, -180)">
+                                        <circle cx="0" cy="0" r="2.5" fill="url(#gradient9)">
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="0.3s"/>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="135 200 200;495 200 200" dur="14s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <g class="sparkle sparkle-3" transform="translate(200, 200)">
+                                <g transform="rotate(225)">
+                                    <g transform="translate(0, -180)">
+                                        <circle cx="0" cy="0" r="3" fill="url(#gradient9)">
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" begin="0.6s"/>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="225 200 200;585 200 200" dur="16s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <g class="sparkle sparkle-4" transform="translate(200, 200)">
+                                <g transform="rotate(315)">
+                                    <g transform="translate(0, -180)">
+                                        <circle cx="0" cy="0" r="2.5" fill="url(#gradient9)">
+                                            <animate attributeName="opacity" values="0;1;0" dur="2.8s" repeatCount="indefinite" begin="0.9s"/>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <animateTransform attributeName="transform" type="rotate" values="315 200 200;675 200 200" dur="13s" repeatCount="indefinite"/>
+                            </g>
+                            
+                            <!-- Gradient Definitions -->
+                            <defs>
+                                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#84cc16;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f0fdf4;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#84cc16;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#eab308;stop-opacity:0.3" />
+                                </linearGradient>
+                                <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#84cc16;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#eab308;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="gradient9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="floating-card card-1" role="img" aria-label="1% Cashback reward">
+                            <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                            <span>1% Cashback</span>
+                        </div>
+                        <div class="floating-card card-2" role="img" aria-label="Build Credit feature">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            <span>Build Credit</span>
+                        </div>
+                        <div class="floating-card card-3" role="img" aria-label="Exclusive Rewards">
+                            <i class="fas fa-gift" aria-hidden="true"></i>
+                            <span>Exclusive Rewards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon" aria-hidden="true">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Want Cashback?</h3>
+                    <p>Earn 1% cashback on every on-time rent payment. Your biggest monthly bill now pays you back.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon" aria-hidden="true">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Feeling Rewarded?</h3>
+                    <p>Unlock cashback on brands, dining, and experiences. Turn everyday spending into rewards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon" aria-hidden="true">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Building Credit?</h3>
+                    <p>Every on-time rent payment gets reported to credit bureaus. Build your credit history effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Rewards Platform Built for Renters</h2>
+                <p class="section-subtitle">
+                    Cashback on everyday purchases, including rent, so your biggest monthly bill actually pays you back.
+                </p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Sign Up & Connect</h3>
+                        <p>Create your account and securely connect your rent payment method. Setup takes less than 5 minutes.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Pay Rent On Time</h3>
+                        <p>Make your rent payments through our platform. We handle everything automatically and securely.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Earn & Build</h3>
+                        <p>Get cashback, earn rewards, and watch your credit score improve with every payment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <p class="cta-text">You're going to pay rent anyway. Might as well get rewarded for it.</p>
+                <button class="btn btn-primary btn-large" id="ctaWaitlistBtn">
+                    Reserve Your Spot
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <h2 class="section-title">Points Talk. Cash Shouts.</h2>
+                    <p class="benefits-description">
+                        You pay rent every month – it's essentially a subscription to having a roof over your head. 
+                        Why not get some perks out of it? Turn your biggest monthly expense into actual cash back. 
+                        Whether it's treating yourself to brunch or finally buying those concert tickets, rewards 
+                        hit different when you've actually earned them.
+                    </p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>1% cashback on all rent payments</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Automatic credit reporting</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Exclusive partner rewards</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>No hidden fees or catches</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" id="benefitsWaitlistBtn">
+                        Don't Be Shy - Join Now
+                    </button>
+                </div>
+                <div class="benefits-visual">
+                    <div class="benefits-card">
+                        <div class="card-header">
+                            <span>Monthly Rewards</span>
+                        </div>
+                        <div class="card-amount">$45.00</div>
+                        <div class="card-details">
+                            <div class="detail-item">
+                                <span>Rent Cashback</span>
+                                <span>$30.00</span>
+                            </div>
+                            <div class="detail-item">
+                                <span>Partner Rewards</span>
+                                <span>$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What's the Catch? Besides More Rewards?</h2>
+                <p class="section-subtitle">We know it sounds too good to be true. Here's everything you need to know.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Is there really no catch?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Seriously, no catch. We make money through partnerships with brands and property management companies. You get rewards, we get happy users. It's that simple.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <h3>How does the cashback work?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every time you pay rent on time through our platform, you automatically earn 1% cashback. The cashback is deposited into your account within 48 hours of payment confirmation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Will this affect my credit score?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Only positively! We report your on-time rent payments to major credit bureaus, which helps build your credit history. Late payments are never reported.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <h3>When will RentEarn launch?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're in the final stages of development and testing. Join the waitlist to be among the first to access RentEarn when we launch.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                        <h3>Is my payment information secure?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use bank-level encryption and security measures. Your payment information is never stored on our servers and is processed through secure, PCI-compliant payment processors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Reserve Now, Rewards Later</h2>
+                <p>Join thousands of renters who are ready to turn their rent payments into rewards.</p>
+                <form class="waitlist-form" id="finalWaitlistForm">
+                    <div class="input-group">
+                        <input type="email" id="finalEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Join Waitlist
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+                <p class="form-note">By submitting, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>RentEarn</h3>
+                    </div>
+                    <p>The rewards platform built for renters. Turn your rent into rewards.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@rentearn.app</li>
+                        <li><i class="fas fa-phone"></i> +1 (800) 000-0000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RentEarn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div class="modal" id="waitlistModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <h2>Join the Waitlist</h2>
+                <p>Be among the first to experience RentEarn when we launch.</p>
+                <form class="waitlist-form" id="modalWaitlistForm">
+                    <div class="form-group">
+                        <input type="text" id="modalName" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="modalEmail" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="modalPhone" placeholder="Phone Number (Optional)">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large btn-block">
+                        Join Waitlist
+                    </button>
+                </form>
+                <p class="form-note">By submitting, you agree to our <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <i class="fas fa-check-circle"></i>
+            <p>Thank you! Something amazing is on its way.</p>
+        </div>
+    </div>
+
+    <!-- Theme Settings Button -->
+    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Theme Settings">
+        <i class="fas fa-palette"></i>
+    </button>
+
+    <!-- Theme Settings Panel -->
+    <div class="theme-panel" id="themePanel">
+        <div class="theme-panel-header">
+            <h3>Choose Theme</h3>
+            <button class="close-theme-panel" id="closeThemePanel" aria-label="Close Theme Panel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="theme-options">
+            <div class="theme-option" data-theme="green">
+                <div class="theme-preview green-theme">
+                    <span class="theme-color" style="background: #10b981;"></span>
+                    <span class="theme-color" style="background: #84cc16;"></span>
+                    <span class="theme-color" style="background: #eab308;"></span>
+                </div>
+                <span class="theme-name">Green & Yellow</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="purple">
+                <div class="theme-preview purple-theme">
+                    <span class="theme-color" style="background: #8b5cf6;"></span>
+                    <span class="theme-color" style="background: #ec4899;"></span>
+                    <span class="theme-color" style="background: #f59e0b;"></span>
+                </div>
+                <span class="theme-name">Purple & Pink</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="orange">
+                <div class="theme-preview orange-theme">
+                    <span class="theme-color" style="background: #f97316;"></span>
+                    <span class="theme-color" style="background: #ef4444;"></span>
+                    <span class="theme-color" style="background: #f59e0b;"></span>
+                </div>
+                <span class="theme-name">Orange & Coral</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="teal">
+                <div class="theme-preview teal-theme">
+                    <span class="theme-color" style="background: #14b8a6;"></span>
+                    <span class="theme-color" style="background: #06b6d4;"></span>
+                    <span class="theme-color" style="background: #22c55e;"></span>
+                </div>
+                <span class="theme-name">Teal & Cyan</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="pink">
+                <div class="theme-preview pink-theme">
+                    <span class="theme-color" style="background: #ec4899;"></span>
+                    <span class="theme-color" style="background: #f472b6;"></span>
+                    <span class="theme-color" style="background: #fbbf24;"></span>
+                </div>
+                <span class="theme-name">Pink & Rose</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="amber">
+                <div class="theme-preview amber-theme">
+                    <span class="theme-color" style="background: #f59e0b;"></span>
+                    <span class="theme-color" style="background: #eab308;"></span>
+                    <span class="theme-color" style="background: #84cc16;"></span>
+                </div>
+                <span class="theme-name">Amber & Gold</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="emerald">
+                <div class="theme-preview emerald-theme">
+                    <span class="theme-color" style="background: #059669;"></span>
+                    <span class="theme-color" style="background: #10b981;"></span>
+                    <span class="theme-color" style="background: #34d399;"></span>
+                </div>
+                <span class="theme-name">Emerald & Mint</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="lime">
+                <div class="theme-preview lime-theme">
+                    <span class="theme-color" style="background: #84cc16;"></span>
+                    <span class="theme-color" style="background: #a3e635;"></span>
+                    <span class="theme-color" style="background: #eab308;"></span>
+                </div>
+                <span class="theme-name">Lime & Chartreuse</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="violet">
+                <div class="theme-preview violet-theme">
+                    <span class="theme-color" style="background: #7c3aed;"></span>
+                    <span class="theme-color" style="background: #a855f7;"></span>
+                    <span class="theme-color" style="background: #ec4899;"></span>
+                </div>
+                <span class="theme-name">Violet & Magenta</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="rose">
+                <div class="theme-preview rose-theme">
+                    <span class="theme-color" style="background: #f43f5e;"></span>
+                    <span class="theme-color" style="background: #fb7185;"></span>
+                    <span class="theme-color" style="background: #fbbf24;"></span>
+                </div>
+                <span class="theme-name">Rose & Blush</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="coral">
+                <div class="theme-preview coral-theme">
+                    <span class="theme-color" style="background: #fb7185;"></span>
+                    <span class="theme-color" style="background: #fda4af;"></span>
+                    <span class="theme-color" style="background: #fbbf24;"></span>
+                </div>
+                <span class="theme-name">Coral & Peach</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="lavender">
+                <div class="theme-preview lavender-theme">
+                    <span class="theme-color" style="background: #a78bfa;"></span>
+                    <span class="theme-color" style="background: #c4b5fd;"></span>
+                    <span class="theme-color" style="background: #f472b6;"></span>
+                </div>
+                <span class="theme-name">Lavender & Lilac</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="mint">
+                <div class="theme-preview mint-theme">
+                    <span class="theme-color" style="background: #06b6d4;"></span>
+                    <span class="theme-color" style="background: #22d3ee;"></span>
+                    <span class="theme-color" style="background: #34d399;"></span>
+                </div>
+                <span class="theme-name">Mint & Cyan</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="gold">
+                <div class="theme-preview gold-theme">
+                    <span class="theme-color" style="background: #eab308;"></span>
+                    <span class="theme-color" style="background: #fbbf24;"></span>
+                    <span class="theme-color" style="background: #fcd34d;"></span>
+                </div>
+                <span class="theme-name">Gold & Yellow</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="fuchsia">
+                <div class="theme-preview fuchsia-theme">
+                    <span class="theme-color" style="background: #c026d3;"></span>
+                    <span class="theme-color" style="background: #d946ef;"></span>
+                    <span class="theme-color" style="background: #f472b6;"></span>
+                </div>
+                <span class="theme-name">Fuchsia & Magenta</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="sage">
+                <div class="theme-preview sage-theme">
+                    <span class="theme-color" style="background: #65a30d;"></span>
+                    <span class="theme-color" style="background: #84cc16;"></span>
+                    <span class="theme-color" style="background: #a3e635;"></span>
+                </div>
+                <span class="theme-name">Sage & Olive</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+            <div class="theme-option" data-theme="sunset">
+                <div class="theme-preview sunset-theme">
+                    <span class="theme-color" style="background: #f97316;"></span>
+                    <span class="theme-color" style="background: #fb923c;"></span>
+                    <span class="theme-color" style="background: #fbbf24;"></span>
+                </div>
+                <span class="theme-name">Sunset & Tangerine</span>
+                <i class="fas fa-check theme-check"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-switcher.js"></script>
+</body>
+</html>
+
