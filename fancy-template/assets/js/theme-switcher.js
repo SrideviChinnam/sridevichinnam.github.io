@@ -410,6 +410,5 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     loadSavedTheme();
-    console.log('Theme switcher initialized!');
 });
 

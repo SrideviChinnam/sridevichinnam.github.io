@@ -65,6 +65,23 @@ body {
     overflow-x: hidden;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--bg-white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -130,9 +147,12 @@ a {
     box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 2px;
 }
 
 .btn-secondary {
@@ -397,7 +417,8 @@ a {
 }
 
 .input-group input:focus {
-    outline: none;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
@@ -599,6 +620,59 @@ a {
 }
 
 /* ============================================
+   Partners Section
+   ============================================ */
+.partners {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-white);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.partner-card {
+    background: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: var(--transition);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.partner-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: var(--text-gray);
+}
+
+.partner-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.partner-placeholder span {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* ============================================
    Benefits Section
    ============================================ */
 .benefits {
@@ -716,8 +790,11 @@ a {
     transition: var(--transition);
 }
 
-.faq-question:hover {
+.faq-question:hover,
+.faq-question:focus {
     background: var(--bg-light);
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
 }
 
 .faq-question h3 {
@@ -1060,6 +1137,10 @@ a {
 }
 
 @media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
     .nav-menu {
         position: fixed;
         top: 70px;

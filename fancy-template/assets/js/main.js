@@ -19,6 +19,7 @@ const modalWaitlistForm = document.getElementById('modalWaitlistForm');
 const joinWaitlistBtn = document.getElementById('joinWaitlistBtn');
 const ctaWaitlistBtn = document.getElementById('ctaWaitlistBtn');
 const benefitsWaitlistBtn = document.getElementById('benefitsWaitlistBtn');
+const partnersWaitlistBtn = document.getElementById('partnersWaitlistBtn');
 const loginBtn = document.getElementById('loginBtn');
 
 // FAQ Elements
@@ -162,7 +163,8 @@ function handleWaitlistSubmit(e, emailInput, nameInput = null, phoneInput = null
     }
     
     // Simulate form submission (replace with actual API call)
-    console.log('Waitlist submission:', { email, name, phone });
+    // In production, remove this console.log or replace with actual API call
+    // console.log('Waitlist submission:', { email, name, phone });
     
     // Simulate API delay
     setTimeout(() => {
@@ -463,8 +465,6 @@ function openModal() {
 // Initialize All Enhanced Features
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('RentEarn website loaded successfully!');
-    
     // Initialize enhanced features
     initScrollProgress();
     initParallax();
@@ -482,6 +482,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (benefitsWaitlistBtn) {
         benefitsWaitlistBtn.addEventListener('click', openModalEnhanced);
+    }
+    if (partnersWaitlistBtn) {
+        partnersWaitlistBtn.addEventListener('click', openModalEnhanced);
     }
 });
 
