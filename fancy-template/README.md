@@ -36,9 +36,6 @@ A premium, fully responsive website template designed for marketplace sale on pl
 fancy-template/
 ├── index.html                    # Main HTML file
 ├── README.md                     # This documentation file
-├── LICENSE.md                     # License information
-├── MARKETPLACE_METADATA.md        # Marketplace listing information
-├── MARKETPLACE_READINESS_CHECKLIST.md  # Pre-submission checklist
 ├── assets/
 │   ├── css/
 │   │   └── style.css            # Main stylesheet (all styles)
@@ -46,12 +43,6 @@ fancy-template/
 │   │   ├── main.js              # Main JavaScript functionality
 │   │   └── theme-switcher.js    # Theme switching functionality
 │   └── images/                  # Image assets folder (for your custom images)
-└── documentation/
-    ├── INSTALLATION.md           # Installation guide
-    ├── CUSTOMIZATION.md         # Customization guide
-    ├── BROWSER_COMPATIBILITY.md # Browser compatibility info
-    ├── PACKAGING.md             # Marketplace packaging guide
-    └── IMAGE_OPTIMIZATION.md    # Image optimization guide
 ```
 
 ## 🎨 Design Features
@@ -102,13 +93,9 @@ fancy-template/
 3. **Open** `index.html` in your web browser to preview
 4. **Customize** the content, colors, and styling to match your brand
 
-**For detailed installation instructions**, see [documentation/INSTALLATION.md](documentation/INSTALLATION.md)
-
 ### Local Development
 
 Simply open `index.html` in any modern web browser. No build process or server required.
-
-**For advanced setup options**, see [documentation/INSTALLATION.md](documentation/INSTALLATION.md)
 
 ### Deployment
 
@@ -119,9 +106,7 @@ Upload all files to your web server maintaining the folder structure:
 
 ## ✏️ Customization Guide
 
-**For comprehensive customization instructions**, see [documentation/CUSTOMIZATION.md](documentation/CUSTOMIZATION.md)
-
-### Quick Start: Changing Colors
+### Changing Colors
 
 The template uses CSS variables for easy color customization. Edit the variables in `assets/css/style.css`:
 
@@ -203,8 +188,6 @@ fetch('/api/waitlist', {
 - ✅ Edge (latest)
 - ✅ Opera (latest)
 
-**For detailed browser compatibility information**, see [documentation/BROWSER_COMPATIBILITY.md](documentation/BROWSER_COMPATIBILITY.md)
-
 ## 🎯 Best Practices Implemented
 
 - ✅ Semantic HTML5 elements
@@ -267,20 +250,7 @@ This template is provided for use in your projects. All code is original and fre
 For questions or issues:
 - Check the code comments for guidance
 - Review this documentation
-- See [documentation/INSTALLATION.md](documentation/INSTALLATION.md) for setup help
-- See [documentation/CUSTOMIZATION.md](documentation/CUSTOMIZATION.md) for customization help
 - Contact: support@rentearn.app (placeholder - update with your contact)
-
-## 📚 Additional Documentation
-
-- **[Installation Guide](documentation/INSTALLATION.md)** - Detailed setup instructions
-- **[Customization Guide](documentation/CUSTOMIZATION.md)** - How to customize the template
-- **[Browser Compatibility](documentation/BROWSER_COMPATIBILITY.md)** - Browser support details
-- **[Packaging Guide](documentation/PACKAGING.md)** - Marketplace packaging instructions
-- **[Image Optimization](documentation/IMAGE_OPTIMIZATION.md)** - Image optimization best practices
-- **[License Information](LICENSE.md)** - Complete licensing details
-- **[Marketplace Metadata](MARKETPLACE_METADATA.md)** - Listing information
-- **[Readiness Checklist](MARKETPLACE_READINESS_CHECKLIST.md)** - Pre-submission checklist
 
 ## 🎉 Credits
 

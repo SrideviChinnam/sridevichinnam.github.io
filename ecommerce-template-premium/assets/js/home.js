@@ -121,7 +121,13 @@ function setupEventListeners() {
     // Mobile menu toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isActive);
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
         });
     }
     
@@ -150,6 +156,14 @@ function setupEventListeners() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            if (menuToggle) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
         });
     });
 }

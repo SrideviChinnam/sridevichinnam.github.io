@@ -31,7 +31,7 @@ function loadCartFromStorage() {
         try {
             cart = JSON.parse(savedCart);
         } catch (e) {
-            console.error('Error loading cart from storage:', e);
+            // Error loading cart - initialize empty cart
             cart = [];
         }
     }
@@ -53,7 +53,7 @@ function addToCartHandler(productId) {
     const product = products.find(p => p.id === productId);
     
     if (!product) {
-        console.error('Product not found:', productId);
+        // Product not found - could log to error tracking service in production
         return;
     }
     

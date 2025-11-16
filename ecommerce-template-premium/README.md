@@ -39,14 +39,17 @@ ecommerce-template-premium/
 ├── cart.html                # Shopping Cart page
 ├── about.html               # About Us page
 ├── contact.html             # Contact page
-├── README.md                # Documentation (this file)
+├── README.md                # Quick start guide (this file)
+├── DOCUMENTATION.md         # Comprehensive documentation ⭐
+├── LICENSE.txt              # License information
+├── ATTRIBUTIONS.md          # Third-party resources & licenses
 │
 └── assets/
     ├── css/
     │   └── style.css       # Premium stylesheet with animations
     │
     ├── js/
-    │   ├── animations.js   # Advanced animation system ⭐ NEW
+    │   ├── animations.js   # Advanced animation system
     │   ├── products.js     # Shop page functionality
     │   ├── cart-page.js    # Cart page functionality
     │   ├── cart-counter.js # Cart count across pages
@@ -57,6 +60,8 @@ ecommerce-template-premium/
     │   └── products/       # Product images (sample SVGs included)
     └── fonts/             # Placeholder for custom fonts
 ```
+
+> 📖 **For detailed documentation, see [DOCUMENTATION.md](DOCUMENTATION.md)**
 
 ## 🎯 Key Differences from Standard Version
 
@@ -76,26 +81,20 @@ ecommerce-template-premium/
 ### 1. Open the Template
 Simply open `index.html` in your web browser to view the template.
 
-### 2. Customize Colors
-Edit the CSS variables in `assets/css/style.css`:
+### 2. Quick Customization
+- **Colors**: Edit CSS variables in `assets/css/style.css`
+- **Products**: Edit product arrays in `assets/js/home.js` and `assets/js/products.js`
+- **Images**: Replace sample images in `assets/images/products/`
+- **Text**: Edit HTML files directly
 
-```css
-:root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary-color: #ec4899;
-    --accent-color: #f59e0b;
-    /* ... more variables */
-}
-```
-
-### 3. Add Your Products
-Edit the product arrays in:
-- `assets/js/products.js` (for shop page)
-- `assets/js/home.js` (for home page featured products)
-
-### 4. Replace Images
-Replace the sample SVG images in `assets/images/products/` with your own product photos.
+### 3. Detailed Customization
+See **[DOCUMENTATION.md](DOCUMENTATION.md)** for comprehensive customization guide including:
+- Color schemes
+- Adding products
+- Modifying layouts
+- Customizing animations
+- Form integration
+- And much more!
 
 ## 🎨 Animation Features Explained
 
@@ -185,6 +184,8 @@ The premium template uses a modern gradient color scheme:
 - **Google Fonts - Inter** (CDN) - For typography
 - **No JavaScript frameworks** - Pure vanilla JS
 
+> 📄 **For licensing information, see [LICENSE.txt](LICENSE.txt) and [ATTRIBUTIONS.md](ATTRIBUTIONS.md)**
+
 ## 🔧 Performance Tips
 
 1. **Optimize Images**: Use WebP format and compress images
@@ -194,17 +195,21 @@ The premium template uses a modern gradient color scheme:
 
 ## 📄 License
 
-This template is available under the MIT License. Feel free to use it for personal or commercial projects.
+This template is available under the MIT License. See [LICENSE.txt](LICENSE.txt) for full details.
 
-## 🙏 Credits
+## 🙏 Credits & Attributions
 
-- **Font Awesome** - Icons
-- **Google Fonts** - Inter font family
+- **Font Awesome** - Icons (https://fontawesome.com)
+- **Google Fonts** - Inter font family (https://fonts.google.com/specimen/Inter)
 - **Sample Images** - Local SVG placeholders included
+
+For complete third-party resource information, see [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
 ## 🆘 Support
 
-For issues, questions, or customization help, please refer to the code comments or create an issue in the repository.
+- **Documentation**: See [DOCUMENTATION.md](DOCUMENTATION.md) for comprehensive guide
+- **Troubleshooting**: Check the Troubleshooting section in DOCUMENTATION.md
+- **Code Comments**: All code files include helpful comments
 
 ---
 

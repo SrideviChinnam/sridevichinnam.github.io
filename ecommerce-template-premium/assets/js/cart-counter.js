@@ -17,7 +17,7 @@ function getCart() {
         try {
             return JSON.parse(savedCart);
         } catch (e) {
-            console.error('Error loading cart:', e);
+            // Error loading cart - initialize empty cart
             return [];
         }
     }

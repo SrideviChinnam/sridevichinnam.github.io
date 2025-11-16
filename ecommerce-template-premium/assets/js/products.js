@@ -141,10 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Display products
     if (productsGrid) {
-        console.log('Products grid found, displaying products...');
         displayProducts(products);
-    } else {
-        console.error('ERROR: productsGrid element not found!');
     }
     
     setupEventListeners();
@@ -157,11 +154,9 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function displayProducts(productsToShow) {
     if (!productsGrid) {
-        console.error('displayProducts: productsGrid is null!');
         return;
     }
     
-    console.log('displayProducts called with', productsToShow.length, 'products');
     productsGrid.innerHTML = '';
     
     if (productsToShow.length === 0) {
@@ -169,19 +164,16 @@ function displayProducts(productsToShow) {
         return;
     }
     
-    productsToShow.forEach((product, index) => {
+    productsToShow.forEach((product) => {
         try {
             const productCard = createProductCard(product);
             if (productCard) {
                 productsGrid.appendChild(productCard);
-                if (index === 0) console.log('First product card created successfully');
             }
         } catch (error) {
-            console.error('Error creating product card:', error, product);
+            // Silently handle errors - could log to error tracking service in production
         }
     });
-    
-    console.log('Total cards in grid:', productsGrid.children.length);
 }
 
 /**

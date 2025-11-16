@@ -8,6 +8,10 @@
     <meta name="author" content="Your Name">
     <title>ShopHub Premium - Trendy E-commerce Template</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grad)' rx='20'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grad)' rx='20'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3ES%3C/text%3E%3C/svg%3E">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -36,12 +40,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html">ShopHub <span style="font-size: 0.7em; opacity: 0.8;">Premium</span></a>
+                    <a href="index.html" aria-label="ShopHub Premium Home">ShopHub <span class="logo-premium">Premium</span></a>
                 </div>
                 
-                <nav class="nav-menu" id="navMenu">
+                <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
                     <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -50,16 +54,17 @@
                 
                 <div class="header-actions">
                     <div class="search-box">
-                        <input type="text" placeholder="Search products..." id="searchInput">
-                        <i class="fas fa-search"></i>
+                        <label for="searchInput" class="sr-only">Search products</label>
+                        <input type="text" placeholder="Search products..." id="searchInput" aria-label="Search products">
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </div>
-                    <a href="cart.html" class="cart-icon" id="cartIcon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
+                    <a href="cart.html" class="cart-icon" id="cartIcon" aria-label="Shopping cart">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count" id="cartCount" aria-live="polite">0</span>
                     </a>
-                    <div class="menu-toggle" id="menuToggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -71,12 +76,12 @@
             <div class="hero-content">
                 <h1 class="hero-title">Welcome to ShopHub Premium</h1>
                 <p class="hero-subtitle">Experience the future of online shopping with stunning design and smooth animations</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <div class="hero-cta">
                     <a href="shop.html" class="btn btn-primary">
-                        <i class="fas fa-shopping-bag"></i> Shop Now
+                        <i class="fas fa-shopping-bag" aria-hidden="true"></i> Shop Now
                     </a>
                     <a href="#products" class="btn btn-secondary">
-                        <i class="fas fa-arrow-down"></i> Explore
+                        <i class="fas fa-arrow-down" aria-hidden="true"></i> Explore
                     </a>
                 </div>
             </div>
@@ -88,34 +93,42 @@
         <div class="container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="categories-grid">
-                <a href="shop.html" class="category-card fade-in">
-                    <div class="category-image">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Fashion</h3>
-                    <p>Latest trends in clothing</p>
-                </a>
-                <a href="shop.html" class="category-card fade-in">
-                    <div class="category-image">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>Electronics</h3>
-                    <p>Tech gadgets & devices</p>
-                </a>
-                <a href="shop.html" class="category-card fade-in">
-                    <div class="category-image">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Home & Living</h3>
-                    <p>Furniture & decor</p>
-                </a>
-                <a href="shop.html" class="category-card fade-in">
-                    <div class="category-image">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <h3>Sports</h3>
-                    <p>Fitness & outdoor gear</p>
-                </a>
+                <article class="category-card fade-in">
+                    <a href="shop.html" aria-label="Browse Fashion category">
+                        <div class="category-image" aria-hidden="true">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Fashion</h3>
+                        <p>Latest trends in clothing</p>
+                    </a>
+                </article>
+                <article class="category-card fade-in">
+                    <a href="shop.html" aria-label="Browse Electronics category">
+                        <div class="category-image" aria-hidden="true">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Electronics</h3>
+                        <p>Tech gadgets & devices</p>
+                    </a>
+                </article>
+                <article class="category-card fade-in">
+                    <a href="shop.html" aria-label="Browse Home & Living category">
+                        <div class="category-image" aria-hidden="true">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Home & Living</h3>
+                        <p>Furniture & decor</p>
+                    </a>
+                </article>
+                <article class="category-card fade-in">
+                    <a href="shop.html" aria-label="Browse Sports category">
+                        <div class="category-image" aria-hidden="true">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Sports</h3>
+                        <p>Fitness & outdoor gear</p>
+                    </a>
+                </article>
             </div>
         </div>
     </section>
@@ -127,42 +140,52 @@
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be dynamically generated by JavaScript -->
             </div>
+            <div class="products-cta">
+                <a href="shop.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag" aria-hidden="true"></i> View All Products
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services/Features Section -->
-    <section class="services fade-in">
+    <section class="services fade-in" id="services">
         <div class="container">
             <h2 class="section-title">Why Choose Us</h2>
             <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
+                <article class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-shipping-fast"></i>
                     </div>
                     <h3>Free Shipping</h3>
                     <p>Free shipping on orders over $50</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-undo"></i>
                     </div>
                     <h3>Easy Returns</h3>
                     <p>30-day return policy</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Secure Payment</h3>
                     <p>100% secure checkout</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
+                </article>
+                <article class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>24/7 Support</h3>
                     <p>Customer support anytime</p>
-                </div>
+                </article>
+            </div>
+            <div class="services-cta">
+                <a href="shop.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i> Start Shopping
+                </a>
             </div>
         </div>
     </section>
@@ -172,16 +195,16 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">About ShopHub Premium</h2>
+                    <h2 class="section-title section-title--left">About ShopHub Premium</h2>
                     <p>Welcome to ShopHub Premium, where cutting-edge design meets exceptional shopping experience. We've crafted a platform that combines stunning visuals with smooth, engaging animations to make your shopping journey delightful.</p>
                     <p>Our mission is to revolutionize online shopping through innovative design, seamless user experience, and premium quality products. Every interaction is carefully designed to be intuitive and enjoyable.</p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">
-                        <i class="fas fa-envelope"></i> Get in Touch
+                    <a href="contact.html" class="btn btn-primary btn--margin-top">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
                     </a>
                 </div>
                 <div class="about-image fade-in">
-                    <div class="placeholder-image">
-                        <i class="fas fa-store"></i>
+                    <div class="placeholder-image" role="img" aria-label="ShopHub Premium store illustration">
+                        <i class="fas fa-store" aria-hidden="true"></i>
                         <p>About Us Image</p>
                     </div>
                 </div>
@@ -194,44 +217,48 @@
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
             <div class="contact-content">
-                <div class="contact-info">
+                <address class="contact-info">
                     <div class="info-item fade-in">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h3>Address</h3>
                             <p>123 Shopping Street, City, State 12345</p>
                         </div>
                     </div>
                     <div class="info-item fade-in">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
                         </div>
                     </div>
                     <div class="info-item fade-in">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>info@shophub.com</p>
+                            <p><a href="mailto:info@shophub.com">info@shophub.com</a></p>
                         </div>
                     </div>
-                </div>
-                <form class="contact-form fade-in" id="contactForm">
+                </address>
+                <form class="contact-form fade-in" id="contactForm" aria-label="Contact form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fas fa-paper-plane"></i> Send Message
+                    <button type="submit" class="btn btn-primary btn--full-width">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
                     </button>
                 </form>
             </div>
@@ -274,8 +301,9 @@
                 <div class="footer-section">
                     <h4>Newsletter</h4>
                     <p>Subscribe to get updates on new products and special offers.</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email" required>
+                    <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter subscription">
+                        <label for="newsletter-email" class="sr-only">Your email</label>
+                        <input type="email" id="newsletter-email" placeholder="Your email" required aria-required="true">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
@@ -287,9 +315,9 @@
     </footer>
 
     <!-- Product Modal -->
-    <div class="product-modal" id="productModal">
+    <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal" id="closeModal">&times;</span>
+            <button class="close-modal" id="closeModal" aria-label="Close product modal">&times;</button>
             <div class="modal-body" id="modalBody">
                 <!-- Product details will be inserted here -->
             </div>
@@ -297,6 +325,7 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="assets/js/theme-switcher.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/home.js"></script>
     <script src="assets/js/cart-counter.js"></script>
