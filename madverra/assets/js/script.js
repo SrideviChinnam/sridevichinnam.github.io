@@ -91,3 +91,13 @@ window.addEventListener("resize", () => {
 });
 
 });
+
+document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(link) {
+  link.addEventListener('click', function () {
+    let navbar = document.querySelector('.navbar-collapse');
+    let bsCollapse = new bootstrap.Collapse(navbar, {
+      toggle: false
+    });
+    bsCollapse.hide();
+  });
+});

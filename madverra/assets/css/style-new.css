@@ -74,6 +74,8 @@
   }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:focus-visible{
     background-position: 100% center;
+    background-color: var(--black) !important;
+    color: var(--white) !important;
   }
 
   canvas {
@@ -89,22 +91,19 @@
   .fixed-top{
     transition: 0.3s;
   }
-  
-.scrolled  .navbar-brand img{
-  height: 40px !important;
-}
+
 .navbar.bg-light {
     --bs-bg-opacity: 1;
     background-color: #ffffff4a !important;
     box-shadow: inset 0 0 10px 0 #9c9c9c;
 }
 .navbar.bg-light.scrolled {
-    width: 100% !important;
+    /* width: 100% !important;
     border-radius: 0 !important;
     top: 0 !important;
     margin: 0 !important;
     background-color: #f4f4f6d9 !important;
-    transition: 0.3s;
+    transition: 0.3s; */
 }
   .navbar-brand img{
     height: 50px;
@@ -661,6 +660,9 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(90deg, var(--blue) 50%, var(--yellow) 50%);
+  flex-direction: column;
+  position: relative;
+  z-index: 999;
 }
 
 .contact_wrapper {
@@ -798,6 +800,9 @@
       display: flex;
       align-items: center;
     }
+    .pricing-card .bounce{
+      display: none;
+    }
   }
   @media(max-width:991.5px){
     .banner, .work, .section.footer{
@@ -828,6 +833,32 @@
     .features {
       margin: 1rem 0;
     }
+    .pricing-card .features{
+      overflow: hidden;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--black);
+      top: 0;
+      transition: all .3s ease;
+      margin: 0rem 0;
+      padding-inline-start: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .pricing-card:hover .features{
+      opacity: 1;
+      overflow: visible;
+    }
+    .pricing-card .bounce{
+      text-align: center;
+    }
+    .pricing-card .bounce i{
+      animation: bounce 2s infinite;
+    }
     .navbar-expand-lg .navbar-nav .nav-link:hover::before, .navbar-expand-lg .navbar-nav .nav-link.active::before {
         width: 5% !important;
         right: initial !important;
@@ -838,6 +869,9 @@
     .navbar-toggler{
       border-color: var(--black) !important;
       background-color: var(--black) !important;
+    }
+    .navbar.bg-light.scrolled{
+      background-color: #ffffffdc !important;
     }
   }
 
@@ -1171,3 +1205,14 @@
       font-size: 1.2rem;
     }
   }
+  @keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+	40% {
+    transform: translateY(-30px);
+  }
+	60% {
+    transform: translateY(-15px);
+  }
+}
