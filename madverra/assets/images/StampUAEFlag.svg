@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3348 1889" width="3348" height="1889">
+	<title>StampUAEFlag</title>
+	<style>
+		.s0 { fill: #00732f } 
+		.s1 { fill: #ffffff } 
+		.s2 { fill: #000000 } 
+		.s3 { fill: #ff0000 } 
+	</style>
+	<g id="g4154">
+		<g id="g4142">
+			<path id="green" fill-rule="evenodd" class="s0" d="m3762 0v648.3h-3802v-648.3z"/>
+			<path id="rect5" fill-rule="evenodd" class="s1" d="m3762 648.3v648.3h-3802v-648.3z"/>
+			<path id="rect7" fill-rule="evenodd" class="s2" d="m3762 1296.6v648.3h-3802v-648.3z"/>
+			<path id="red" fill-rule="evenodd" class="s3" d="m658-23v1935h-804v-1935z"/>
+		</g>
+	</g>
+</svg>

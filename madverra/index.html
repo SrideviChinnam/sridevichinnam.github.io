@@ -1,0 +1,424 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Madverra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ================== Icon ================== -->
+    <link rel="apple-touch-icon" href="assets/images/madverra-logo.ico">
+    <link rel="icon" href="assets/images/madverra-logo.ico"> 
+    <!-- ================== Fontawesome Icon ================== -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" rel="stylesheet">
+    
+    <!-- ================== Font ================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- ================== Bootstrap CSS ================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <!-- ================== Custom CSS ================== -->
+    <link rel="stylesheet" href="assets/css/style-new.css">
+  </head>
+  <body>
+    <canvas id="particleCanvas"></canvas>
+  <!-- ================== Navbar ================== -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img alt="Madverra" src="assets/images/madverra-logo.svg"> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Who We Are</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#our-work">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary" href="#offers">Offers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <!-- ================== Banner ================== -->
+     <section class="banner bg-transparent" id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mx-auto text-center">
+             <img class="w-100 h-auto d-block mt-5" src="assets/images/madverra-title.svg" alt="Madverra">
+          </div>
+        </div>
+      </div>
+     </section>    
+    <!-- ================== About Section ================== -->
+    <section class="custom-section about" id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-2 order-lg-0">
+            <span class="title">About US</span>
+            <h2>Who We Are</h2>
+            <p>At <span class="orang-text">Madverra</span>, we blend creativity with technology to bring your ideas to life. Whether it's crafting a strong digital presence or designing unique visuals, we provide innovative solutions tailored to your needs.</p>
+           
+            <span class="para-specific">
+              Lead Your Era with Madverra! 🚀
+            </span>
+            <div class="madverra-ceo">
+              <div class="testimonial-author title">Madhu Babu</div>
+              <span><span>CEO</span> &nbsp; | &nbsp; Digital Marketing Expert</span>
+            </div>
+          </div>
+          <div class="col-lg-6 p-0">
+            <img class="w-100 h-auto d-block d-lg-none mb-5" src="assets/images/madhu.jpeg" alt="Madverra">           
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================== Services Section ================== -->
+    <section class="custom-section services" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-3">
+            <span class="title">Service</span>
+            <h2>What We Offer</h2>
+          </div>
+        </div>
+      </div>
+      <div class="grid-offer text-left grid sm:grid-cols-2 md:grid-cols-2 gap-3 max-w-5xl mx-auto px-4 px-lg-0">
+        <div class="card bg-gray-800 p-10 position-relative">
+          <div class="circle">
+          </div>
+          <div class="position-relative lg:pr-52">
+            <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">Digital <br /> Marketing</h2>
+            <p class="text-gray-400">Elevate your brand with targeted online campaigns</p>
+          </div>
+          <div class="icon"></div>
+        </div>
+        <div class="card bg-gray-800 p-10 position-relative">
+          <div class="circle">
+          </div>
+          <div class="position-relative lg:pl-48">
+            <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl"> Web Designing &  <br /> SEO</h2>
+            <p class="text-gray-400">Build a stunning website with optimized visibility</p>
+          </div>
+        </div>
+        <div class="card bg-gray-800 p-10 position-relative">
+          <div class="circle">
+          </div>
+          <div class="position-relative lg:pr-44">
+            <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl"> Business Cards & <br />Poster Designing</h2>
+            <p class="text-gray-400"> Create visually striking designs that leave a lasting impression</p>
+          </div>
+        </div>
+        <div class="card bg-gray-800 p-10 position-relative">
+          <div class="circle">
+          </div>
+          <div class="position-relative lg:pl-48">
+            <h2 class="capitalize text-white mb-4 text-2xl xl:text-3xl">Video Editing & <br /> Content Creation </h2>
+            <p class="text-gray-400">Engage your audience with compelling visuals</p>
+          </div>
+        </div>
+      </div>          
+    </section>
+    <!-- ================== Our Work Section ================== -->
+    <section class="custom-section work align-items-start" id="our-work">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-4">
+            <span class="title">Our Projects</span>
+            <h2 class="text-white">Showcasing Creativity & Excellence</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-lg-3">
+            <div class="card-custom">
+              <div class="card-custom-image">
+                <video src="assets/images/video-pavanads.mp4" class="card-img-top" muted autoplay loop controls></video>
+              </div>
+              <h4 class="card-custom-title">Pavan ADS</h4>
+              <a target="_blank" href="https://youtube.com/@myradigiworld?si=8upOp54awtvx5bMS"><button class="btn btn-play"><i class="fab fa-youtube"></i></button></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="card-custom">
+              <div class="card-custom-image">
+                <video src="assets/images/video-3s.mp4" class="card-img-top" muted autoplay loop controls></video>
+              </div>
+              <h4 class="card-custom-title">3S Institute</h4>
+              <a target="_blank" href="https://youtube.com/@myradigiworld?si=8upOp54awtvx5bMS"><button class="btn btn-play"><i class="fab fa-youtube"></i></button></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="card-custom">
+              <div class="card-custom-image">
+                <video src="assets/images/video-hf.mp4" class="card-img-top" muted autoplay loop controls></video>
+              </div>
+              <h4 class="card-custom-title">HF</h4>
+              <a target="_blank" href="https://youtube.com/@myradigiworld?si=8upOp54awtvx5bMS"><button class="btn btn-play"><i class="fab fa-youtube"></i></button></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <div class="card-custom">
+              <div class="card-custom-image">
+                <video src="assets/images/video-pavanads.mp4" class="card-img-top" muted autoplay loop controls></video>
+              </div>
+              <h4 class="card-custom-title">Pavan ADS</h4>
+              <a target="_blank" href="https://youtube.com/@myradigiworld?si=8upOp54awtvx5bMS"><button class="btn btn-play"><i class="fab fa-youtube"></i></button></a>
+            </div>
+          </div>      
+        </div>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="reach-us">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex info_single align-items-center">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="bold">INDIA: &nbsp;</span>
+                    <span>+91 8008947386</span>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="d-flex info_single align-items-center">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="bold">UAE: &nbsp;</span>
+                    <span>+971 50 578 3252</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================== Price ================== -->
+
+    <section class="custom-section price" id="offers">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-4">
+            <span class="title">Price</span>
+            <h2 class="text-dark">What We Offer</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-4 mb-3">
+            <div class="pricing-card">
+              <div class="inner-glow"></div>
+              <div class="card-blur"></div>
+              <div class="plan-icon"><i class="fas fa-bullhorn"></i></div>
+              <h2 class="plan-name">Digital Marketing</h2>
+              <div class="price">
+                <i class="fas fa-rupee-sign"></i> 20000<span>/month</span>
+              </div>
+              <ul class="features mb-0">
+                <li>Search Engine Optimization (SEO)</li>
+                <li>Pay-Per-Click (PPC) Advertising</li>
+                <li>Social Media Marketing</li>
+                <li>Content Marketing</li>
+                <li>Email Marketing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3">
+            <div class="pricing-card">
+              <div class="inner-glow"></div>
+              <div class="card-blur"></div>
+              <div class="plan-icon"><i class="fas fa-laptop-code"></i></div>
+              <h2 class="plan-name">Web Design</h2>
+              <div class="price">
+                <i class="fas fa-rupee-sign"></i> 20000<span>/month</span>
+              </div>
+              <ul class="features mb-0">
+                <li>Improved user engagement</li>
+                <li>Increased conversions</li>
+                <li>Enhanced brand credibility</li>
+                <li>Better search engine optimization (SEO)</li>
+                <li>Competitive advantage</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3">
+            <div class="pricing-card popular">
+              <div class="inner-glow"></div>
+              <div class="card-blur"></div>
+              <div class="highlight">POPULAR</div>
+              <div class="plan-icon"><i class="fas fa-video"></i></div>
+              <h2 class="plan-name">Promotional Video</h2>
+              <div class="price">
+                <i class="fas fa-rupee-sign"></i> 1500<span>/one minute video</span>
+              </div>
+              <ul class="features mb-0">
+                <li>Increased engagement</li>
+                <li>Improved brand awareness</li>
+                <li>Enhanced credibility </li>
+                <li>Boosted conversions</li>
+                <li>Measurable results</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3">
+            <div class="pricing-card">
+              <div class="inner-glow"></div>
+              <div class="card-blur"></div>
+              <div class="plan-icon"><i class="far fa-images"></i></div>
+              <h2 class="plan-name">Poster design</h2>
+              <div class="price">
+                <i class="fas fa-rupee-sign"></i> 300<span>/poster</span>
+              </div>
+              <ul class="features mb-0">
+                <li>Eye-catching visuals</li>
+                <li>Clear typography</li>
+                <li>Concise messaging</li>
+                <li>Color scheme</li>
+                <li>Composition</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3">
+            <div class="pricing-card">
+              <div class="inner-glow"></div>
+              <div class="card-blur"></div>
+              <div class="plan-icon"><i class="far fa-address-card"></i></div>
+              <h2 class="plan-name">Business card (design+print)</h2>
+              <div class="price">
+                <i class="fas fa-rupee-sign"></i> 500<span>/100 cards</span>
+              </div>
+              <ul class="features mb-0">
+                <li>Clear typography</li>
+                <li>Simple logo</li>
+                <li>White space</li>
+                <li>Color scheme</li>
+                <li>Imagery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ================== Contact ================== -->
+
+    <section class="custom-section contact" id="contact">
+      <div class="contact_wrapper">
+      
+        <div class="contact_msg">
+          <span class="title">
+            Contact Us
+          </span>
+          <h2>Connect with Us</h2>
+
+          <div class="contact-info-right">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="d-flex info_single align-items-center">
+                  <!-- <img class="" src="assets/images/Flag-of-India.svg" alt="Madverra"> -->
+                  
+                  <i class="fas fa-mobile-alt"></i>
+                  <span class="bold">INDIA: &nbsp;</span>
+                  <span>+91 8008947386</span>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="d-flex info_single align-items-center">
+                  
+                  <i class="fab fa-whatsapp"></i>
+                  <span class="bold">UAE: &nbsp;</span>
+                  <span>+971 50 578 3252</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social">
+          <a target="_blank" class="btn social-btn" href=""><i class="fab fa-youtube"></i></a>
+          <a target="_blank" class="btn social-btn" href=""><i class="fab fa-instagram"></i></a>
+          <a target="_blank" class="btn social-btn" href=""><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>    
+    </section>
+    </div>
+
+    <!-- ================== Footer ================== -->
+
+    <footer class="section footer">
+      <div class="footer__header">
+        <a href="index.html" class="footer__logo">
+           <img class="logo primary" src="assets/images/madverra-white-logo.svg" alt="Madverra">
+        </a>
+        <ul class="social">
+          <li class="social__item">
+            <a href="" target="_blank" class="btn social">
+              <span class="icon twitter">
+                <i class="fab fa-youtube"></i>
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" target="_blank" class="btn social">
+              <span class="icon youtube">
+                <i class="fab fa-instagram"></i>
+              </span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="" target="_blank" class="btn social">
+              <span class="icon telegram">
+                <i class="fab fa-facebook-f"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <button type="button" class="btn icon">
+          <span class="icon drop-up">
+            <i class="fas fa-chevron-up"></i>
+          </span>
+        </button>
+      </div>
+      <ul class="footer__list position-relative">
+        <li class="footer__item">
+          <a href="index.html" class="footer__link">Home</a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link">About Us</a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link">Services</a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link">Our Work</a>
+        </li>
+        <li class="footer__item">
+          <a href="#" class="footer__link">Offers</a>
+        </li>
+      </ul>
+      <div class="footer__copyright position-relative">
+        <p class="desc copyright mb-0">© Copyrights reserved by Madverra</p>
+      </div>
+    </footer>
+    <button type="button" class="btn icon">
+      <span class="icon drop-up"></span>
+    </button>
+     
+    <!-- ================== Script ================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
