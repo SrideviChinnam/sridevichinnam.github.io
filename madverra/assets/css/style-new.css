@@ -1,7 +1,8 @@
  /* ================== Root ================== */
  :root { 
     --white:#ffffff;
-    --gold:#cac003;
+    --yellow:#F4E805;
+    --blue:#F4E805;
     --black:#000;
   }
   body{
@@ -41,7 +42,7 @@
     padding-left: 35px;
   }
   .orang-text{
-    color: var(--gold);
+    color: var(--yellow);
     font-weight: 500;
   }
   .para-specific {
@@ -66,7 +67,7 @@
   }
   .btn-primary{
     /* background:linear-gradient(to right, var(--hot-pink), var(--purple)); */
-    background-color: var(--gold);
+    background-color: var(--yellow);
     color: var(--black);
     border: none;  
     transition: background .3s linear
@@ -125,7 +126,7 @@
     width: 0;
     height: 2px;
     transition: all .3s;
-    background: var(--gold);
+    background: var(--yellow);
     border-radius: 60%;
   }
   .navbar-expand-lg .navbar-nav .nav-link:hover::before,
@@ -204,7 +205,7 @@
     background-repeat: no-repeat;
     background-position: right center;
     background-attachment: fixed;
-    background-color: var(--gold);
+    background-color: var(--blue);
     position: relative;
   }
   .about::before {
@@ -238,7 +239,7 @@
   }
   .title{
     position: relative;
-    color: var(--gold);
+    color: var(--yellow);
     font-size: 14px;
     padding-right: 40px;
     margin-bottom: 15px;
@@ -253,7 +254,7 @@
     bottom: 7px;
     width: 30px;
     height: 1px;
-    background-color: var(--gold);
+    background-color: var(--yellow);
     top: 50%;
     transform: translateY(-50%);
   }
@@ -265,7 +266,7 @@
     display: block;
     font-size: 16px;
     padding: 0px;
-    color: var(--gold);
+    color: var(--yellow);
     font-weight: 600;
     -moz-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -286,7 +287,7 @@
     height: 100%;
     transition: 0.6s;
     z-index: 0;
-    background-color: var(--gold);
+    background-color: var(--yellow);
   }
   .card:nth-child(1)::before {
     bottom: 0;
@@ -435,7 +436,7 @@
   margin: auto;
   opacity: 0;
   transition: all .3s;
-  background: var(--gold);
+  background: var(--yellow);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -448,7 +449,7 @@
   opacity: 1;
 }
 .btn-play:hover{
-  background: var(--gold);
+  background: var(--yellow);
   color: var(--white);
   transform: scale(1.1) rotate(360deg);
 }
@@ -460,8 +461,8 @@
   margin-top: 1.5rem;
   border-radius: 10px;
   padding: 1rem 2rem;
-  background: rgba(202, 192, 3, 0.64);
-  border: 1px solid var(--gold);
+  background: rgb(244, 232, 5, .64);
+  border: 1px solid var(--yellow);
 }
 .info_single{
   margin: 30px 0px;
@@ -610,7 +611,7 @@
 
 .features li::before {
   content: "\f0e7";
-  color: var(--gold);
+  color: var(--yellow);
   font-size: 0.9rem;
   font-family: "Font Awesome 5 Free";
   font-weight: 600;
@@ -626,7 +627,7 @@
   position: absolute;
   top: 1rem;
   right: -4rem;
-  background: var(--gold);
+  background: var(--yellow);
   color: var(--black);
   padding: 0.5rem 4rem;
   transform: rotate(45deg);
@@ -658,7 +659,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, var(--gold) 50%, var(--gold) 50%);
+  background: linear-gradient(90deg, var(--blue) 50%, var(--yellow) 50%);
   flex-direction: column;
   position: relative;
   z-index: 999;
@@ -691,7 +692,7 @@
   flex-direction: column;
   gap: 10px;
   border-top-left-radius: 10px;
-  background: var(--gold);
+  background: var(--yellow);
   transform: translateY(-50%);
   border-bottom-left-radius: 10px;
 }
@@ -708,7 +709,7 @@
 }
 .contact_wrapper .social .btn:hover{
   transform: rotate(360deg) scale(1.1);
-  background: var(--gold);
+  background: var(--yellow);
   color: var(--black);
 }
 .contact_wrapper .info_single{
@@ -988,11 +989,11 @@
     width: 0;
     height: 2px;
     transition: all .3s;
-    background: var(--gold);
+    background: var(--yellow);
     border-radius: 60%;
   }
   .footer__item.active .footer__link, .footer__item:hover .footer__link {
-    color: var(--gold);
+    color: var(--yellow);
   }
   .footer__item.active .footer__link::before, .footer__item:hover .footer__link::before {
     width: 45%;
