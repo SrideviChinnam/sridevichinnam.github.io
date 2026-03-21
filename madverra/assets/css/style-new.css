@@ -1041,6 +1041,9 @@
     .footer__header {
       grid-template-columns: 1fr;
     }
+    .social{
+      padding-inline-start: 0 !important;
+    }
   }
   .footer__header > .btn.icon {
     position: absolute;
