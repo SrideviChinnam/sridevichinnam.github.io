@@ -1041,9 +1041,6 @@
     .footer__header {
       grid-template-columns: 1fr;
     }
-    .social{
-      padding-inline-start: 0 !important;
-    }
   }
   .footer__header > .btn.icon {
     position: absolute;
@@ -1144,6 +1141,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 5px !important;
   }
   .btn.social .icon {
     transition: transform 0.3s ease, color 0.3s ease;
@@ -1187,6 +1185,7 @@
     justify-self: center;
     gap: 20px;
     margin-bottom: 0;
+    padding-left: 0 !important;
   }
   
   .icon {
